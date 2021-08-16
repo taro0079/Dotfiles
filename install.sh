@@ -11,14 +11,14 @@ curl https://get.volta.sh | bash
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # Install zsh-syntax-highlight
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME
 
 for file in .??*
 do
     [[ "$file" == ".git" ]] && continue
     [[ "$file" == ".DS_Store" ]] && continue
 
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    ln -s $HOME/Dotfiles/$file $HOME/$file
     echo "$file"
 done
 
