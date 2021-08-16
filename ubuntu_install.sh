@@ -1,5 +1,17 @@
 #!/bin/bash
+# initialize package manager
+sudo apt update
+sudo apt upgrade
 
+# Install github cil
+if type "gh" > /dev/null 2>&1; then
+	echo "gh is already installed"
+else
+	curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+	sudo apt update
+	sudo apt install gh
+fi
 
 # Install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -48,5 +60,6 @@ do
 	    ln -sfnv $HOME/Dotfiles/$file $HOME/$file
     fi
 done
+
 
 
