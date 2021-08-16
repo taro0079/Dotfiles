@@ -22,4 +22,5 @@ do
     echo "$file"
 done
 
+ln -s $HOME/Dotfiles/.config/nvim $HOME/.config/nvim
 
