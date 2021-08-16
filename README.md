@@ -1,6 +1,4 @@
-# Requirement
-- python3
-```
-pip install dotfiles
-```
+# このDotfilesは何ですか？
+もりたの環境構築ファイルです。
+このレポジトリをクローンして自分の環境に合ったshファイルを実行するたけで簡単に環境を構築できます。
 
