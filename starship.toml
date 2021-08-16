@@ -1,0 +1,34 @@
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
+[character]
+vicmd_symbol = "[normal](bold green) "
+success_symbol = "[insert ➜](bold green) "
+error_symbol = "[insert ➜](bold red) "
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = " "
+style = "bold green"
+
+[git_commit]
+commit_hash_length = 4
+
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
