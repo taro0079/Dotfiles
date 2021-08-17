@@ -1,8 +1,20 @@
+" vim-plugがない場合に自動でダウンロードする
+if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" インストールされていないプラグインを自動でインストール
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 if exists('g:vscode')
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 call plug#end()
 else
+
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'alvarosevilla95/luatab.nvim'

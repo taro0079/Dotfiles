@@ -36,3 +36,5 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # 補完の有効化
 autoload -U compinit
 compinit
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
