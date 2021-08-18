@@ -18,7 +18,7 @@ else
 fi
 
 # Install zsh-syntax-highlight
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.zsh/zsh-autosuggestions
 ## Install cargo
 if type "cargo" > /dev/null 2>&1; then

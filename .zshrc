@@ -30,7 +30,7 @@ bindkey -v
 # starship
 eval "$(starship init zsh)"
 
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # 補完の有効化
