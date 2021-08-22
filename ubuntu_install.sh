@@ -2,7 +2,7 @@
 # initialize package manager
 sudo apt update
 sudo apt upgrade
-sudo apt install build-essential
+sudo apt install build-essential curl
 
 # Install github cil
 if type "gh" > /dev/null 2>&1; then
