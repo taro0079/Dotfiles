@@ -12,7 +12,12 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 if exists('g:vscode')
 call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
+Plug 'rhysd/clever-f.vim'
+Plug 'haya14busa/vim-edgemotion'
 call plug#end()
+" edge motion
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
 else
 
 call plug#begin('~/.vim/plugged')
@@ -36,6 +41,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'sainnhe/gruvbox-material'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
+Plug 'haya14busa/vim-edgemotion'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
@@ -74,4 +80,7 @@ let g:eskk#directory = "~/.eskk"
 let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
 let g:eskk#enable_completion = 1
 set imdisable
+" edge motion
+map <C-j> <Plug>(edgemotion-j)
+map <C-k> <Plug>(edgemotion-k)
 endif
