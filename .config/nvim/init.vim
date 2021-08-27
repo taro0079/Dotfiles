@@ -14,10 +14,29 @@ call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/clever-f.vim'
 Plug 'haya14busa/vim-edgemotion'
+Plug 't9md/vim-quickhl'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 " edge motion
 map <C-j> <Plug>(edgemotion-j)
 map <C-k> <Plug>(edgemotion-k)
+
+"vim quickhl
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+
+nmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+xmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+
+nmap <Space>c <Plug>(quickhl-manual-clear)
+vmap <Space>c <Plug>(quickhl-manual-clear)
+
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+
+nmap <Space>j <Plug>(quickhl-cword-toggle)
+nmap <Space>] <Plug>(quickhl-tag-toggle)
+map H <Plug>(operator-quickhl-manual-this-motion)
 else
 
 call plug#begin('~/.vim/plugged')
@@ -42,6 +61,8 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
 Plug 'haya14busa/vim-edgemotion'
+Plug 't9md/vim-quickhl'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
@@ -83,4 +104,38 @@ set imdisable
 " edge motion
 map <C-j> <Plug>(edgemotion-j)
 map <C-k> <Plug>(edgemotion-k)
+
+"vim quickhl
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+
+nmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+xmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+
+nmap <Space>c <Plug>(quickhl-manual-clear)
+vmap <Space>c <Plug>(quickhl-manual-clear)
+
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+
+nmap <Space>j <Plug>(quickhl-cword-toggle)
+nmap <Space>] <Plug>(quickhl-tag-toggle)
+map H <Plug>(operator-quickhl-manual-this-motion)
+"vim quickhl
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+
+nmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+xmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+
+nmap <Space>c <Plug>(quickhl-manual-clear)
+vmap <Space>c <Plug>(quickhl-manual-clear)
+
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+
+nmap <Space>j <Plug>(quickhl-cword-toggle)
+nmap <Space>] <Plug>(quickhl-tag-toggle)
+map H <Plug>(operator-quickhl-manual-this-motion)
+
 endif
