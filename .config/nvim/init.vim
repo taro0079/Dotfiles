@@ -35,6 +35,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'hrsh7th/nvim-compe'
 Plug 'sainnhe/gruvbox-material'
 Plug 'tpope/vim-surround'
+Plug 'rhysd/clever-f.vim'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
