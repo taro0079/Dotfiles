@@ -16,6 +16,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'haya14busa/vim-edgemotion'
 Plug 't9md/vim-quickhl'
 Plug 'preservim/nerdcommenter'
+Plug 'unblevable/quick-scope'
 call plug#end()
 " edge motion
 map <C-j> <Plug>(edgemotion-j)
@@ -63,6 +64,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'haya14busa/vim-edgemotion'
 Plug 't9md/vim-quickhl'
 Plug 'preservim/nerdcommenter'
+Plug 'unblevable/quick-scope'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
