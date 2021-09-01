@@ -10,7 +10,7 @@
 # fi
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="/home/taro/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="~/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 if [[ $(command -v exa) ]]; then
   alias e='exa --icons --git'

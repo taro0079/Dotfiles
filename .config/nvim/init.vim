@@ -65,6 +65,7 @@ Plug 'haya14busa/vim-edgemotion'
 Plug 't9md/vim-quickhl'
 Plug 'preservim/nerdcommenter'
 Plug 'unblevable/quick-scope'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
