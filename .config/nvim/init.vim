@@ -66,6 +66,8 @@ Plug 't9md/vim-quickhl'
 Plug 'preservim/nerdcommenter'
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
