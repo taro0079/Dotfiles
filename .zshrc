@@ -34,6 +34,9 @@ eval "$(starship init zsh)"
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+export GOPATH=~/go  # GOPATHにすると決めた場所
+export PATH=$GOPATH/bin:$PATH
+
 # 補完の有効化
 autoload -U compinit
 compinit
