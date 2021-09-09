@@ -1,3 +1,4 @@
+set textwidth=100
 " vim-plugがない場合に自動でダウンロードする
 if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -68,6 +69,7 @@ Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
 let g:gruvbox_material_background = 'hard'
