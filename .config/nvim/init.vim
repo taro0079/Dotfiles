@@ -68,14 +68,16 @@ Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+
+Plug 'tanvirtin/monokai.nvim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'lervag/vimtex'
 call plug#end()
 
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_enable_italic = 1
-"let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_diagnostic_virtual_text = 'colored'
-let g:gruvbox_material_disable_italic_comment = 1
-colorscheme gruvbox-material
+syntax on
+colorscheme codedark
+set termguicolors
 
 
 lua << EOF

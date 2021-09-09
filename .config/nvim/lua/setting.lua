@@ -12,7 +12,7 @@ end
 
 require('lualine').setup{
 	options = {
-		theme = "gruvbox_material"
+		theme = "codedark"
 	}
 }
 -- require('github-theme').setup()
