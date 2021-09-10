@@ -10,7 +10,8 @@
 # fi
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="~/.local/share/gem/ruby/3.0.0/bin:$PATH"
+# Mac
+#export PATH="~/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 if [[ $(command -v exa) ]]; then
   alias e='exa --icons --git'
@@ -32,7 +33,7 @@ bindkey -v
 eval "$(starship init zsh)"
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 
@@ -46,7 +47,9 @@ export PATH=$GOPATH/bin:$PATH
 autoload -U compinit
 compinit
 export PATH="$HOME/.rbenv/bin:$PATH"
+# mac
+export PATH="$HOME/.cargo/bin:$PATH"
 eval "$(rbenv init -)"
 
 
-export FZF_DEFAULT_COMMAND="find -L"
+#export FZF_DEFAULT_COMMAND="find -L"
