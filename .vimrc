@@ -25,8 +25,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'dense-analysis/ale'
-Plug 'ruby-formatter/rufo-vim'
+"Plug 'dense-analysis/ale'
+"Plug 'ruby-formatter/rufo-vim'
 call plug#end()
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -126,6 +126,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>fa <Plug>(coc-format)
 
 augroup mygroup
   autocmd!
@@ -206,9 +207,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 " ale
-let g:ale_fixers = {
-      \ 'ruby': ['rubocop'],
-      \ }
-
-" Enable rufo (RUby FOrmat)
-let g:rufo_auto_formatting = 1
+"let g:ale_fixers = {
+"      \ 'ruby': ['rubocop'],
+"      \ }
+"
+"" Enable rufo (RUby FOrmat)
+"let g:rufo_auto_formatting = 1
