@@ -60,7 +60,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'tyru/eskk.vim'
 Plug 'windwp/nvim-autopairs'
 Plug 'hrsh7th/nvim-compe'
-Plug 'sainnhe/gruvbox-material'
+"Plug 'sainnhe/gruvbox-material'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
 Plug 'haya14busa/vim-edgemotion'
@@ -70,6 +70,7 @@ Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
 
 
 
@@ -82,7 +83,7 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 syntax on
-colorscheme codedark
+colorscheme gruvbox
 set termguicolors
 
 
@@ -317,5 +318,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
 
 endif

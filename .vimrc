@@ -8,7 +8,7 @@ set number
 set showmatch
 set incsearch
 syntax on
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.oldvim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'rhysd/clever-f.vim'
 Plug 'haya14busa/vim-edgemotion'
@@ -25,6 +25,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'yuki-yano/fern-preview.vim'
 "Plug 'dense-analysis/ale'
 "Plug 'ruby-formatter/rufo-vim'
 call plug#end()
@@ -213,3 +218,17 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "
 "" Enable rufo (RUby FOrmat)
 "let g:rufo_auto_formatting = 1
+
+let g:fern#renderer = "nerdfont"
+
+function! s:fern_settings() abort
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
+
+augroup fern-settings
+  autocmd!
+  autocmd FileType fern call s:fern_settings()
+augroup END
