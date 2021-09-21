@@ -57,3 +57,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 
 # starship
 eval "$(starship init zsh)"
+
+export DENO_INSTALL="/home/taro/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
