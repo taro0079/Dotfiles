@@ -55,6 +55,8 @@ Plug 'Shougo/ddc-nvim-lsp', {'on': []}
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'Shougo/deoppet.nvim'
+Plug 'vim-skk/denops-skkeleton.vim'
 call plug#end()
 
 augroup load_us_insert
@@ -99,7 +101,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " Customize global settings
 " Use around source.
 " https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around', 'nvimlsp'])
+call ddc#custom#patch_global('sources', ['around', 'nvimlsp', 'deoppet', 'skkeleton'])
 "
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
@@ -114,6 +116,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'forceCompletionPattern': '\.|:|->',
         \},
         \ 'necovim': {'mark': 'vim'},
+	\ 'deoppet': {'dup': v:true, 'mark': 'dp'},
+	\'skkeleton': {
+        \     'mark': 'skkeleton',
+        \     'matchers': ['skkeleton'],
+        \     'sorters': []
+        \   },
       \ })
 
 
@@ -189,3 +197,7 @@ nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_ne
 "-- float terminal also you can pass the cli command in open_float_terminal function
 nnoremap <silent> <A-d> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR> 
 tnoremap <silent> <A-d> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
+
+" skk
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
