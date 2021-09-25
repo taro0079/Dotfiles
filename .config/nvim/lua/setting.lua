@@ -75,6 +75,8 @@ local on_attach = function(client, bufnr)
 require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.gopls.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.rust_analyzer.setup{on_attach = on_attach, capabilities = capabilities}
  
  require'lspconfig'.html.setup {
    capabilities = capabilities,
@@ -108,4 +110,7 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', { expr = true })
 
 local saga = require 'lspsaga'
 saga.init_lsp_saga()
+
+require('go').setup()
+require('rust-tools').setup({})
 

@@ -60,3 +60,6 @@ eval "$(starship init zsh)"
 
 export DENO_INSTALL="/home/taro/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+export PATH=$PATH:$GOPATH/bin
+

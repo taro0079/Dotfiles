@@ -12,6 +12,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/ddc-around'
+Plug 'nvim-lua/popup.nvim'
 Plug 'matsui54/ddc-nvim-lsp-doc'
 Plug 'easymotion/vim-easymotion'
 Plug 'alvarosevilla95/luatab.nvim'
@@ -49,6 +50,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "Plug 'morhetz/gruvbox'
 "Plug 'tanvirtin/monokai.nvim'
+Plug 'ray-x/go.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'lervag/vimtex'
 Plug 'Shougo/ddc-nvim-lsp', {'on': []}
@@ -57,6 +59,10 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'Shougo/deoppet.nvim'
 Plug 'vim-skk/denops-skkeleton.vim'
+Plug 'haishanh/night-owl.vim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'simrat39/rust-tools.nvim'
+
 call plug#end()
 
 augroup load_us_insert
@@ -68,8 +74,10 @@ augroup END
 
 
 syntax on
-colorscheme codedark
-set termguicolors
+colorscheme night-owl
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 
 lua << EOF
@@ -201,3 +209,5 @@ tnoremap <silent> <A-d> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_t
 " skk
 imap <C-j> <Plug>(skkeleton-toggle)
 cmap <C-j> <Plug>(skkeleton-toggle)
+
+
