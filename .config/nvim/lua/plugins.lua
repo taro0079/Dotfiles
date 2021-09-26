@@ -2,6 +2,8 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'bluz71/vim-nightfly-guicolors'
+  use {'tyru/eskk.vim',
+  config = function() require('eskk-setting') end}
   use {'lervag/vimtex',
   config = function()require('vimtex-settings')end
   }
