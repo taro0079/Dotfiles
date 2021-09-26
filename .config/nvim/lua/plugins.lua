@@ -2,6 +2,10 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'bluz71/vim-nightfly-guicolors'
+  use {'lervag/vimtex',
+  config = function()require('vimtex-settings')end
+  }
+  
 
   use {'junegunn/fzf', run = ':fzf#install()' }
   use 'SirVer/ultisnips'
