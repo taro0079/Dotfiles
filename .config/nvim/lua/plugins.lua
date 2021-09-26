@@ -7,6 +7,11 @@ require('packer').startup(function()
   use {'lervag/vimtex',
   config = function()require('vimtex-settings')end
   }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvimtree-settings' end
+    }
   
 
   use {'junegunn/fzf', run = ':fzf#install()' }
