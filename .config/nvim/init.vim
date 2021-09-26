@@ -1,216 +1,195 @@
-" vim-plugがない場合に自動でダウンロードする
-if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" インストールされていないプラグインを自動でインストール
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'Shougo/ddc-around'
-Plug 'nvim-lua/popup.nvim'
-Plug 'matsui54/ddc-nvim-lsp-doc'
-Plug 'easymotion/vim-easymotion'
-Plug 'alvarosevilla95/luatab.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'hoob3rt/lualine.nvim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'neovim/nvim-lspconfig'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'Shougo/ddc.vim'
-Plug 'vim-denops/denops.vim'
-Plug 'Shougo/ddc-matcher_head'
-Plug 'Shougo/ddc-sorter_rank'
-Plug 'kabouzeid/nvim-lspinstall'
-Plug 'Shougo/neco-vim'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'f-person/git-blame.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-"Plug 'tyru/eskk.vim'
-Plug 'windwp/nvim-autopairs'
-Plug 'hrsh7th/nvim-compe'
-"Plug 'sainnhe/gruvbox-material'
-Plug 'tpope/vim-surround'
-"Plug 'rhysd/clever-f.vim'
-"Plug 'haya14busa/vim-edgemotion'
-"Plug 't9md/vim-quickhl'
-Plug 'preservim/nerdcommenter'
-"Plug 'unblevable/quick-scope'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-"Plug 'morhetz/gruvbox'
-"Plug 'tanvirtin/monokai.nvim'
-Plug 'ray-x/go.nvim'
-Plug 'tomasiser/vim-code-dark'
-Plug 'lervag/vimtex'
-Plug 'Shougo/ddc-nvim-lsp', {'on': []}
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'Shougo/deoppet.nvim'
-Plug 'vim-skk/denops-skkeleton.vim'
-Plug 'haishanh/night-owl.vim'
-Plug 'mfussenegger/nvim-dap'
-Plug 'simrat39/rust-tools.nvim'
-
-call plug#end()
-
-augroup load_us_insert
-    autocmd!
-    autocmd InsertEnter * call plug#load(
-                \ 'ddc-nvim-lsp',
-                \ )| autocmd! load_us_insert
-augroup END
-
-
-syntax on
-colorscheme night-owl
-if (has("termguicolors"))
- set termguicolors
-endif
-
-
-lua << EOF
-require'setting'
-EOF
 set number
-syntax on
-" keymap
-nnoremap <space>t :tabnew <cr>
-nnoremap <space>ve :e ~/.config/nvim/init.vim <cr>
-nnoremap <space>vr :source ~/.config/nvim/init.vim <cr>
-:tnoremap <Esc> <C-\><C-n>
-command! -nargs=* T split | wincmd j | resize 10 | terminal <args>
-autocmd TermOpen * startinsert
-
-" nvim tree keymapping
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
-nnoremap <leader>v :vsp<cr>
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" ddc settings
-" Customize global settings
-" Use around source.
-" https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around', 'nvimlsp', 'deoppet', 'skkeleton'])
+"set number
+"call plug#begin('~/.vim/plugged')
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'bluz71/vim-nightfly-guicolors'
+"Plug 'hoob3rt/lualine.nvim'
+"Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'ryanoasis/vim-devicons'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'alvarosevilla95/luatab.nvim'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/vim-vsnip-integ'
+"Plug 'hrsh7th/nvim-compe'
+"Plug 'SirVer/ultisnips'
+"Plug 'kabouzeid/nvim-lspinstall'
+"Plug 'honza/vim-snippets'
+"Plug 'windwp/nvim-autopairs'
 "
-" Use matcher_head and sorter_rank.
-" https://github.com/Shougo/ddc-matcher_head
-" https://github.com/Shougo/ddc-sorter_rank
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank']},
-      \   'around': {'mark': 'A'},
-      \   'nvimlsp': {
-      \   'mark': 'LSP',
-      \   'forceCompletionPattern': '\.|:|->',
-        \},
-        \ 'necovim': {'mark': 'vim'},
-	\ 'deoppet': {'dup': v:true, 'mark': 'dp'},
-	\'skkeleton': {
-        \     'mark': 'skkeleton',
-        \     'matchers': ['skkeleton'],
-        \     'sorters': []
-        \   },
-      \ })
-
-
-" Change source options
-call ddc#custom#patch_global('sourceOptions', {
-      \ 'around': {'mark': 'A'},
-      \ })
-call ddc#custom#patch_global('sourceParams', {
-      \ 'around': {'maxSize': 500},
-      \ 'nvimlsp': {'useIcon': v:true},
-      \ })
-
-" Customize settings on a filetype
-call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
-call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
-      \ 'clangd': {'mark': 'C'},
-      \ })
-call ddc#custom#patch_filetype('markdown', 'sourceParams', {
-      \ 'around': {'maxSize': 100},
-      \ })
-call ddc#custom#patch_filetype(
-      \ ['vim', 'toml'], 'sources', ['necovim', 'around']
-      \ )
-call ddc#custom#patch_filetype(
-      \ ['help', 'markdown'], 'sources', ['nextword', 'around']
-      \ )
-
-" Mappings
-
-" <TAB>: completion.
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#manual_complete()
-
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-
-" Use ddc.
-call ddc#enable()
-call ddc_nvim_lsp_doc#enable()
-
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-"lsp saga
-nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
-"-- code action
-nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
-vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
-"-- show hover doc
-nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-"-- scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-"-- scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-"-- rename
-nnoremap <silent><leader>gr <cmd>lua require('lspsaga.rename').rename()<CR>
-" preview definition
-nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-"-- show
-nnoremap <silent><leader>cd <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
-
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
-"-- only show diagnostic if cursor is over the area
-nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
-
-"-- jump diagnostic
-nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
-nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
-"-- float terminal also you can pass the cli command in open_float_terminal function
-nnoremap <silent> <A-d> <cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR> 
-tnoremap <silent> <A-d> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>
-
-" skk
-imap <C-j> <Plug>(skkeleton-toggle)
-cmap <C-j> <Plug>(skkeleton-toggle)
-
-
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-let g:vimtex_view_general_options_latexmk = '--unique'
+"
+"call plug#end()
+"
+"set termguicolors
+"colorscheme nightfly
+"
+"lua <<EOF
+"require'nvim-treesitter.configs'.setup {
+"  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"  highlight = {
+"    enable = true, 
+"    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+"    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+"    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+"    -- Instead of true it can also be a list of languages
+"    additional_vim_regex_highlighting = false,
+"  },
+"}
+"
+"
+"vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+"vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+"vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+"vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+"vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm({ 'keys': '<CR>', 'select': v:true })", { expr = true })
+"
+"require'compe'.setup {
+"  enabled = true;
+"  autocomplete = true;
+"  debug = false;
+"  min_length = 1;
+"  preselect = 'enable';
+"  throttle_time = 80;
+"  source_timeout = 200;
+"  resolve_timeout = 800;
+"  incomplete_delay = 400;
+"  max_abbr_width = 100;
+"  max_kind_width = 100;
+"  max_menu_width = 100;
+"  documentation = {
+"    border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
+"    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+"    max_width = 120,
+"    min_width = 60,
+"    max_height = math.floor(vim.o.lines * 0.3),
+"    min_height = 1,
+"  };
+"
+"  source = {
+"    path = true;
+"    buffer = true;
+"    calc = true;
+"    nvim_lsp = true;
+"    nvim_lua = true;
+"    vsnip = true;
+"    ultisnips = true;
+"    luasnip = true;
+"  };
+"}
+"
+"require('lualine').setup {
+"	options = {
+"		theme =  'nightfly'
+"		}
+"	}
+"
+"
+"vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'
+"
+"local nvim_lsp = require('lspconfig')
+"
+"-- Use an on_attach function to only map the following keys
+"-- after the language server attaches to the current buffer
+"local on_attach = function(client, bufnr)
+"  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+"  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+"
+"  -- Enable completion triggered by <c-x><c-o>
+"  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+"
+"  -- Mappings.
+"  local opts = { noremap=true, silent=true }
+"
+"  -- See `:help vim.lsp.*` for documentation on any of the below functions
+"  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+"  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+"  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+"  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+"  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+"  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+"  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+"  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+"  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+"  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+"  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+"  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+"  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+"  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+"  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+"  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+"  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+"
+"end
+"
+"-- Use a loop to conveniently call 'setup' on multiple servers and
+"-- map buffer local keybindings when the language server attaches
+"local servers = { 'pylsp', 'rust_analyzer', 'tsserver', 'texlab'}
+"for _, lsp in ipairs(servers) do
+"  nvim_lsp[lsp].setup {
+"    on_attach = on_attach,
+"    flags = {
+"      debounce_text_changes = 150,
+"    }
+"  }
+"end
+"
+"
+"
+"local function setup_servers()
+"  require'lspinstall'.setup()
+"  local servers = require'lspinstall'.installed_servers()
+"  for _, server in pairs(servers) do
+"    require'lspconfig'[server].setup{}
+"  end
+"end
+"
+"setup_servers()
+"
+"-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+"require'lspinstall'.post_install_hook = function ()
+"  setup_servers() -- reload installed servers
+"  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+"end
+"
+"local capabilities = vim.lsp.protocol.make_client_capabilities()
+"capabilities.textDocument.completion.completionItem.snippetSupport = true
+"require'lspconfig'.ruby.setup{on_attach = on_attach, capabilities = capabilities}
+"require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
+"require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
+"
+"require('nvim-autopairs').setup{}
+"
+"EOF
+"
+"" Using Lua functions
+"nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+"nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+"nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+"nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+"
+""" Expand
+""imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+""smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+""
+""" Expand or jump
+""imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+""smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+""
+""" Jump forward or backward
+""imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+""smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+""imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+""smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+""inoremap <silent><expr> <C-Space> compe#complete()
+""inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+""inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+""inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+""inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+"
+"inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+lua << EOF
+require'plugins'
+EOF
