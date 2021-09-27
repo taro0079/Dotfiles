@@ -42,6 +42,14 @@ require('packer').startup(function()
 
   use { 'hrsh7th/vim-vsnip' }
   use { 'hrsh7th/vim-vsnip-integ'}
+  use {'easymotion/vim-easymotion'}
+  use {'rhysd/clever-f.vim'}
+  use {'haya14busa/vim-edgemotion'}
+  use {'t9md/vim-quickhl'}
+  use {'preservim/nerdcommenter'}
+  use {'unblevable/quick-scope'}
+  use {'tpope/vim-fugitive'}
+
 
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end

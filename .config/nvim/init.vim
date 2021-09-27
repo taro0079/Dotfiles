@@ -193,3 +193,4 @@ set number
 lua << EOF
 require'plugins'
 EOF
+
