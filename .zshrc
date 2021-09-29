@@ -62,4 +62,4 @@ export DENO_INSTALL="/home/taro/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 export PATH=$PATH:$GOPATH/bin
-
+export PATH=$PATH:~/.nimble/bin

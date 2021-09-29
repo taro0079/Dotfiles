@@ -41,6 +41,7 @@ require('packer').startup(function()
    }
 
   use { 'hrsh7th/vim-vsnip' }
+  use {"lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end}
   use { 'hrsh7th/vim-vsnip-integ'}
   use {'easymotion/vim-easymotion'}
   use {'rhysd/clever-f.vim'}
@@ -49,13 +50,15 @@ require('packer').startup(function()
   use {'preservim/nerdcommenter'}
   use {'unblevable/quick-scope'}
   use {'tpope/vim-fugitive'}
+  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
+  use {'baabelfish/nvim-nim'}
 
 
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
   }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
---  config = require('nvim-treesitter-settings')
+  config = function() require('nvim-treesitter-settings') end
   }
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
