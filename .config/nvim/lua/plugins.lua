@@ -2,6 +2,7 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'bluz71/vim-nightfly-guicolors'
+  use 'yonlu/omni.vim'
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
   use {'vim-skk/denops-skkeleton.vim',
@@ -70,7 +71,7 @@ require('packer').startup(function()
 end)
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
-vim.cmd[[colorscheme nightfly]]
+vim.cmd[[colorscheme omni]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"

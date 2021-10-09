@@ -31,7 +31,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'texlab', 'nimls'}
+local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'texlab', 'nimls', 'solargraph'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -46,6 +46,7 @@ require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilitie
 require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.nimls.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
 
 
 local function setup_servers()
