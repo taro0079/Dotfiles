@@ -3,6 +3,8 @@ require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'bluz71/vim-nightfly-guicolors'
   use 'yonlu/omni.vim'
+  use 'mdlerch/vim-gnuplot'
+  use 'folke/tokyonight.nvim'
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
   use {'vim-skk/denops-skkeleton.vim',
@@ -71,7 +73,8 @@ require('packer').startup(function()
 end)
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
-vim.cmd[[colorscheme omni]]
+vim.g.tokyonight_style = 'night'
+vim.cmd[[colorscheme tokyonight]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
