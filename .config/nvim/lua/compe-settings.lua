@@ -22,6 +22,7 @@ require'compe'.setup {
     vsnip = true;
     ultisnips = true;
     luasnip = true;
+    latex_symbols = true;
   };
 }
 

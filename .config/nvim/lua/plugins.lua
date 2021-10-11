@@ -5,6 +5,8 @@ require('packer').startup(function()
   use 'yonlu/omni.vim'
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
+  use 'GoldsteinE/compe-latex-symbols'
+
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
   use {'vim-skk/denops-skkeleton.vim',
