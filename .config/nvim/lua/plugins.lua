@@ -12,6 +12,7 @@ require('packer').startup(function()
   -- use {'vim-skk/denops-skkeleton.vim', config = function() require('skkeleton-setting') end}
   use 'tyru/eskk.vim'
   use 'vim-denops/denops.vim'
+  use 'skanehira/preview-markdown.vim'
   use {'lervag/vimtex',
   config = function()require('vimtex-settings')end
   }
