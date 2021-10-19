@@ -6,6 +6,11 @@ require('packer').startup(function()
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
   use 'GoldsteinE/compe-latex-symbols'
+  use 'kdheepak/lazygit.nvim'
+  use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
 
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
