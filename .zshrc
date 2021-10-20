@@ -64,8 +64,5 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:~/.nimble/bin
 
-# only for wsl
-export BROWSER=wslview
-alias open=wslview
 
 
