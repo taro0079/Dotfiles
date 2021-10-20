@@ -82,6 +82,9 @@ end)
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
 vim.g.tokyonight_style = 'night'
+vim.g.tokyonight_italic_function = true
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+
 vim.cmd[[colorscheme tokyonight]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
