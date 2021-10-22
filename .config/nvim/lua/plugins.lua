@@ -11,6 +11,10 @@ require('packer').startup(function()
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+  use { 'projekt0n/github-nvim-theme',
+  after = 'lualine.nvim',
+  config = function()require('github-color-settings') end
+  }
 
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
@@ -81,11 +85,11 @@ require('packer').startup(function()
 end)
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
-vim.g.tokyonight_style = 'night'
-vim.g.tokyonight_italic_function = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+--vim.g.tokyonight_style = 'night'
+--vim.g.tokyonight_italic_function = true
+--vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
-vim.cmd[[colorscheme tokyonight]]
+--vim.cmd[[colorscheme tokyonight]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
