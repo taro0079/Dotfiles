@@ -1,0 +1,68 @@
+Please report this error to author.
+`:help eskk` to see author's e-mail address.
+
+火 10/19 13:14:00 2021
+
+--- char ---
+char: ''(0)
+mode(): i
+--- char ---
+
+--- exception ---
+exception type: Vim internal error
+v:exception: Can't read '/usr/local/share/skk/SKK-JISYO.L'!
+v:throwpoint: function eskk#filter[75]..<SNR>92_asym_filter[46]..<SNR>92_do_escape[6]..<SNR>92_dict_update_rank[1]..eskk#get_skk_dict[2]..eskk#dictionary#new[1]..<SNR>130_Dictionary_new[4]..<SNR>130_PhysicalDict_new[10]..<SNR>130_PhysicalDict_update_lines[9]..<SNR>130_PhysicalDict_update_lines_main, line 2
+
+   function <SNR>130_PhysicalDict_update_lines_main() abort dict
+1      unlockvar 1 self._content_lines
+2      let self._content_lines  = readfile(self.path)
+3      lockvar 1 self._content_lines
+4      call self.parse_lines()
+5   
+6      let self._ftime_at_set = getftime(self.path)
+   endfunction
+--- exception ---
+
+--- preedit ---
+(no preedit)
+--- preedit ---
+
+--- Vim's :version ---
+NVIM v0.5.1
+Build type: Release
+LuaJIT 2.1.0-beta3
+Compilation: clang -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -DNVIM_TS_HAS_SET_MATCH_LIMIT -O2 -DNDEBUG -Wall -Wextra -pedantic -Wno-unused-parameter -Wstrict-prototypes -std=gnu99 -Wshadow -Wconversion -Wmissing-prototypes -Wimplicit-fallthrough -Wvla -fstack-protector-strong -fno-common -fdiagnostics-color=auto -DINCLUDE_GENERATED_DECLARATIONS -D_GNU_SOURCE -DNVIM_MSGPACK_HAS_FLOAT32 -DNVIM_UNIBI_HAS_VAR_FROM -DMIN_LOG_LEVEL=3 -I/tmp/neovim-20210926-83501-wt6eyz/neovim-0.5.1/build/config -I/tmp/neovim-20210926-83501-wt6eyz/neovim-0.5.1/src -I/opt/homebrew/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX11.sdk/usr/include -I/opt/homebrew/opt/gettext/include -I/tmp/neovim-20210926-83501-wt6eyz/neovim-0.5.1/build/src/nvim/auto -I/tmp/neovim-20210926-83501-wt6eyz/neovim-0.5.1/build/include
+Compiled by brew@HMBRW-A-001-M1-005.local
+
+Features: +acl +iconv +tui
+See ":help feature-compile"
+
+      システム vimrc: "$VIM/sysinit.vim"
+       省略時の $VIM: "/opt/homebrew/Cellar/neovim/0.5.1/share/nvim"
+
+Run :checkhealth for more info
+--- Vim's :version ---
+
+
+--- Operating System ---
+"uname -a" = Darwin moritatarous-MacBook-Air.local 20.6.0 Darwin Kernel Version 20.6.0: Mon Aug 30 06:12:20 PDT 2021; root:xnu-7195.141.6~3/RELEASE_ARM64_T8101 arm64
+--- Operating System ---
+
+--- feature-list ---
+gui_running = 0
+unix = 1
+mac = 1
+macunix = 1
+win16 = 0
+win32 = 0
+win64 = 0
+win32unix = 0
+win95 = 0
+amiga = 0
+beos = 0
+dos16 = 0
+dos32 = 0
+os2 = 1
+qnx = 0
+vms = 0
+--- feature-list ---
