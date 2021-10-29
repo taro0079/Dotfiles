@@ -19,7 +19,10 @@ require('packer').startup(function()
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
   -- use {'vim-skk/denops-skkeleton.vim', config = function() require('skkeleton-setting') end}
-  use 'hrsh7th/nvim-cmp'
+  use {'hrsh7th/nvim-cmp',
+  config = function()require('cmp-setting') end
+  }
+  
   use 'tyru/eskk.vim'
   use 'vim-denops/denops.vim'
   use 'skanehira/preview-markdown.vim'
@@ -107,4 +110,5 @@ vim.cmd[[set termguicolors]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+
 

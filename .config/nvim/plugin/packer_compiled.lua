@@ -77,9 +77,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/clever-f.vim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
   ["cmp-nvim-ultisnips"] = {
     loaded = true,
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-path"
   },
   ["cmp-snippy"] = {
     loaded = true,
@@ -155,6 +171,7 @@ _G.packer_plugins = {
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-cmp"] = {
+    config = { "\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16cmp-setting\frequire\0" },
     loaded = true,
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
@@ -269,6 +286,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\1\0028\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\29nvim-treesitter-settings\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16cmp-setting\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22nvimtree-settings\frequire\0", "config", "nvim-tree.lua")
@@ -281,10 +302,10 @@ time([[Config for indent-blankline.nvim]], false)
 time([[Config for luatab.nvim]], true)
 try_loadstring("\27LJ\1\2K\0\0\2\0\4\0\0054\0\0\0007\0\1\0%\1\3\0:\1\2\0G\0\1\0&%!v:lua.require'luatab'.tabline()\ftabline\6o\bvim\0", "config", "luatab.nvim")
 time([[Config for luatab.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21lualine-settings\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20lspsaga-setting\frequire\0", "config", "lspsaga.nvim")
@@ -293,10 +314,10 @@ time([[Config for lspsaga.nvim]], false)
 time([[Config for vimtex]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20vimtex-settings\frequire\0", "config", "vimtex")
 time([[Config for vimtex]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21lualine-settings\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
