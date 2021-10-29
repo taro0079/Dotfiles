@@ -102,6 +102,7 @@ use 'hrsh7th/cmp-cmdline'
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup() end
   }
+  use 'onsails/lspkind-nvim'
 end)
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]

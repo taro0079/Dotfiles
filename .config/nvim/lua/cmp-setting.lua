@@ -51,3 +51,10 @@ local cmp = require'cmp'
       { name = 'cmdline' }
     })
   })
+local lspkind = require('lspkind')
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+  }
+}
+
