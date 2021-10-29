@@ -69,13 +69,29 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/LuaSnip"
+  },
   ["clever-f.vim"] = {
     loaded = true,
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/clever-f.vim"
   },
-  ["compe-latex-symbols"] = {
+  ["cmp-nvim-ultisnips"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/compe-latex-symbols"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
+  },
+  ["cmp-snippy"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-snippy"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
   },
   ["denops.vim"] = {
     loaded = true,
@@ -138,10 +154,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
-  ["nvim-compe"] = {
-    config = { "\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19compe-settings\frequire\0" },
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -155,6 +170,10 @@ _G.packer_plugins = {
   ["nvim-nim"] = {
     loaded = true,
     path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-nim"
+  },
+  ["nvim-snippy"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-snippy"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22nvimtree-settings\frequire\0" },
@@ -258,10 +277,6 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\1\0028\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\29indent-blankline-setting\frequire\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-compe
-time([[Config for nvim-compe]], true)
-try_loadstring("\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19compe-settings\frequire\0", "config", "nvim-compe")
-time([[Config for nvim-compe]], false)
 -- Config for: luatab.nvim
 time([[Config for luatab.nvim]], true)
 try_loadstring("\27LJ\1\2K\0\0\2\0\4\0\0054\0\0\0007\0\1\0%\1\3\0:\1\2\0G\0\1\0&%!v:lua.require'luatab'.tabline()\ftabline\6o\bvim\0", "config", "luatab.nvim")

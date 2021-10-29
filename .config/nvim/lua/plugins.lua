@@ -5,7 +5,7 @@ require('packer').startup(function()
   use 'yonlu/omni.vim'
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
-  use 'GoldsteinE/compe-latex-symbols'
+--  use 'GoldsteinE/compe-latex-symbols'
   use 'kdheepak/lazygit.nvim'
   use {
   'nvim-telescope/telescope.nvim',
@@ -19,6 +19,7 @@ require('packer').startup(function()
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
   -- use {'vim-skk/denops-skkeleton.vim', config = function() require('skkeleton-setting') end}
+  use 'hrsh7th/nvim-cmp'
   use 'tyru/eskk.vim'
   use 'vim-denops/denops.vim'
   use 'skanehira/preview-markdown.vim'
@@ -46,18 +47,31 @@ require('packer').startup(function()
        require("lsp")
      end
    }
-   use { "hrsh7th/nvim-compe",
-   config = function()
-     require("compe-settings")
-   end
-   }
+ --  use { "hrsh7th/nvim-compe",
+ --  config = function()
+ --    require("compe-settings")
+ --  end
+ --  }
    use { 'hoob3rt/lualine.nvim',
    config = function()
      require("lualine-settings")
    end
 
    }
+use {'hrsh7th/cmp-vsnip'}
 
+use {'L3MON4D3/LuaSnip'}
+
+use {'saadparwaiz1/cmp_luasnip'}
+
+use {'quangnguyen30192/cmp-nvim-ultisnips'}
+
+use {'dcampos/nvim-snippy'}
+use {'dcampos/cmp-snippy'}
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'hrsh7th/cmp-cmdline'
   use { 'hrsh7th/vim-vsnip' }
   use {"lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end}
   use { 'hrsh7th/vim-vsnip-integ'}
