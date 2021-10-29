@@ -16,6 +16,9 @@ require('packer').startup(function()
   config = function()require('github-color-settings') end
   }
 
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp',
+  config = function()require('cmp_tabnine-setting') end
+  }
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
   -- use {'vim-skk/denops-skkeleton.vim', config = function() require('skkeleton-setting') end}
