@@ -30,10 +30,11 @@ local cmp = require'cmp'
       { name = 'luasnip' }, -- For luasnip users.
       { name = 'ultisnips' }, -- For ultisnips users.
       { name = 'snippy' }, -- For snippy users.
-      { name = 'cmp_tabnine' },
+      { name = 'path' }
+--      { name = 'skkeleton' }
     }, {
       { name = 'buffer' },
-    })
+    }),
   })
 
   -- Use buffer source for `/`.

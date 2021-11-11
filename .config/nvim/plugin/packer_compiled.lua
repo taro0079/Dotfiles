@@ -71,85 +71,109 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/LuaSnip"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["clever-f.vim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/clever-f.vim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/clever-f.vim",
+    url = "https://github.com/rhysd/clever-f.vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-cmdline"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-ultisnips"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
+    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-path"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cmp-snippy"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-snippy"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-snippy",
+    url = "https://github.com/dcampos/cmp-snippy"
   },
   ["cmp-vsnip"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["denops.vim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/denops.vim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/denops.vim",
+    url = "https://github.com/vim-denops/denops.vim"
   },
   ["eskk.vim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/eskk.vim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/eskk.vim",
+    url = "https://github.com/tyru/eskk.vim"
   },
   fzf = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/fzf"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   ["fzf.vim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/fzf.vim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
   },
   ["github-nvim-theme"] = {
     config = { "\27LJ\1\0025\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\26github-color-settings\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/opt/github-nvim-theme"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/opt/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["indent-blankline.nvim"] = {
     config = { "\27LJ\1\0028\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\29indent-blankline-setting\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lazygit.nvim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20lspsaga-setting\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     after = { "github-nvim-theme" },
@@ -159,125 +183,154 @@ _G.packer_plugins = {
   ["luatab.nvim"] = {
     config = { "\27LJ\1\2K\0\0\2\0\4\0\0054\0\0\0007\0\1\0%\1\3\0:\1\2\0G\0\1\0&%!v:lua.require'luatab'.tabline()\ftabline\6o\bvim\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/luatab.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/luatab.nvim",
+    url = "https://github.com/alvarosevilla95/luatab.nvim"
   },
   nerdcommenter = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
   },
   ["nvim-autopairs"] = {
     config = { "\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     config = { "\27LJ\1\2+\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\16cmp-setting\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     config = { "\27LJ\1\2#\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\blsp\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
+    url = "https://github.com/kabouzeid/nvim-lspinstall"
   },
   ["nvim-nim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-nim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-nim",
+    url = "https://github.com/baabelfish/nvim-nim"
   },
   ["nvim-snippy"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-snippy"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-snippy",
+    url = "https://github.com/dcampos/nvim-snippy"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22nvimtree-settings\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     config = { "\27LJ\1\0028\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\29nvim-treesitter-settings\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["omni.vim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/omni.vim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/omni.vim",
+    url = "https://github.com/yonlu/omni.vim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["preview-markdown.vim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/preview-markdown.vim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/preview-markdown.vim",
+    url = "https://github.com/skanehira/preview-markdown.vim"
   },
   ["quick-scope"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/quick-scope"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/quick-scope",
+    url = "https://github.com/unblevable/quick-scope"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ultisnips = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/ultisnips"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
   },
   ["vim-easymotion"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-easymotion"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+    url = "https://github.com/easymotion/vim-easymotion"
   },
   ["vim-edgemotion"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-edgemotion"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-edgemotion",
+    url = "https://github.com/haya14busa/vim-edgemotion"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gnuplot"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-gnuplot"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-gnuplot",
+    url = "https://github.com/mdlerch/vim-gnuplot"
   },
   ["vim-nightfly-guicolors"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
+    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-quickhl"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-quickhl"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-quickhl",
+    url = "https://github.com/t9md/vim-quickhl"
   },
   ["vim-snippets"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-snippets"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   },
   vimtex = {
     config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20vimtex-settings\frequire\0" },
     loaded = true,
-    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vimtex"
+    path = "/home/taro/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
@@ -310,14 +363,14 @@ time([[Config for lualine.nvim]], false)
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20lspsaga-setting\frequire\0", "config", "lspsaga.nvim")
 time([[Config for lspsaga.nvim]], false)
--- Config for: vimtex
-time([[Config for vimtex]], true)
-try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20vimtex-settings\frequire\0", "config", "vimtex")
-time([[Config for vimtex]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: vimtex
+time([[Config for vimtex]], true)
+try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20vimtex-settings\frequire\0", "config", "vimtex")
+time([[Config for vimtex]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
