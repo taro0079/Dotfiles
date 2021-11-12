@@ -7,14 +7,16 @@ require('packer').startup(function()
   use 'folke/tokyonight.nvim'
 --  use 'GoldsteinE/compe-latex-symbols'
   use 'kdheepak/lazygit.nvim'
+  use 'olimorris/onedarkpro.nvim'
+  use 'hrsh7th/cmp-omni'
   use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-  use { 'projekt0n/github-nvim-theme',
-  after = 'lualine.nvim',
-  config = function()require('github-color-settings') end
-  }
+  --use { 'projekt0n/github-nvim-theme',
+--  after = 'lualine.nvim',
+--  config = function()require('github-color-settings') end
+--  }
 
 --  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp',
 --  config = function()require('cmp_tabnine-setting') end
@@ -56,11 +58,6 @@ require('packer').startup(function()
        require("lsp")
      end
    }
- --  use { "hrsh7th/nvim-compe",
- --  config = function()
- --    require("compe-settings")
- --  end
- --  }
    use { 'hoob3rt/lualine.nvim',
    config = function()
      require("lualine-settings")
@@ -117,5 +114,5 @@ vim.cmd[[set termguicolors]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
-
+require('onedarkpro').load()
 

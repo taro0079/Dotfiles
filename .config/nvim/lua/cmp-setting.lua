@@ -30,7 +30,8 @@ local cmp = require'cmp'
       { name = 'luasnip' }, -- For luasnip users.
       { name = 'ultisnips' }, -- For ultisnips users.
       { name = 'snippy' }, -- For snippy users.
-      { name = 'path' }
+      { name = 'path' },
+      { name = 'omni' },
 --      { name = 'skkeleton' }
     }, {
       { name = 'buffer' },
