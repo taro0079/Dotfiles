@@ -1,3 +1,6 @@
+vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
+vim.cmd[[set termguicolors]]
+
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
@@ -49,7 +52,7 @@ require('packer').startup(function()
   use 'junegunn/fzf.vim'
   use 'honza/vim-snippets'
   use {'alvarosevilla95/luatab.nvim',
-    config = function()vim.o.tabline = '%!v:lua.require\'luatab\'.tabline()'end,
+    config = function() require('luatab-settings') end,
     requires='kyazdani42/nvim-web-devicons'
 
    }
@@ -104,8 +107,6 @@ use 'hrsh7th/cmp-cmdline'
   }
   use 'onsails/lspkind-nvim'
 end)
-vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
-vim.cmd[[set termguicolors]]
 --vim.g.tokyonight_style = 'night'
 --vim.g.tokyonight_italic_function = true
 --vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
