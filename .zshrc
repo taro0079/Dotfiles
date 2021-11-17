@@ -13,8 +13,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Mac
 #export PATH="~/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
-neofetch
-
 alias e='exa --icons --git'
 alias l=e
 alias ls=e

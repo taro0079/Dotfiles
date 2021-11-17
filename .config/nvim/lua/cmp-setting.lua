@@ -31,7 +31,7 @@ local cmp = require'cmp'
       { name = 'ultisnips' }, -- For ultisnips users.
       { name = 'snippy' }, -- For snippy users.
       { name = 'path' },
-      { name = 'omni' },
+--      { name = 'omni' },
 --      { name = 'skkeleton' }
     }, {
       { name = 'buffer' },
