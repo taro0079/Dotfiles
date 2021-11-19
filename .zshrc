@@ -61,6 +61,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:~/.nimble/bin
+export PATH="/opt/homebrew/bin:$PATH"
 
 
 

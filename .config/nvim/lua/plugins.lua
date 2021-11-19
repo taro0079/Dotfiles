@@ -2,6 +2,17 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
+use {'Shougo/ddc.vim', config = function() require'ddc-settings' end}
+use 'Shougo/ddc-around'
+use 'Shougo/ddc-matcher_head'
+use 'Shougo/ddc-sorter_rank'
+use 'joshdick/onedark.vim'
+use {'vim-skk/skkeleton', config=function() require'skkeleton-setting' end}
+use 'tani/ddc-fuzzy'
+use 'Shougo/pum.vim'
+use 'Shougo/ddc-omni'
+use 'tani/ddc-path'
+use 'Shougo/ddc-nvim-lsp'
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'bluz71/vim-nightfly-guicolors'
@@ -10,13 +21,10 @@ require('packer').startup(function()
   use 'folke/tokyonight.nvim'
   use 'kdheepak/lazygit.nvim'
   use 'olimorris/onedarkpro.nvim'
-  use 'hrsh7th/cmp-omni'
   use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
-  use {'hrsh7th/nvim-cmp',
-  config = function()require('cmp-setting') end
-  }
+ }
   
   use 'tyru/eskk.vim'
   use 'vim-denops/denops.vim'
@@ -51,45 +59,37 @@ require('packer').startup(function()
    end
 
    }
-use {'hrsh7th/cmp-vsnip'}
 
 use {'L3MON4D3/LuaSnip'}
 
-use {'saadparwaiz1/cmp_luasnip'}
 
-use {'quangnguyen30192/cmp-nvim-ultisnips'}
 
 use {'dcampos/nvim-snippy'}
-use {'dcampos/cmp-snippy'}
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'hrsh7th/cmp-cmdline'
-  use { 'hrsh7th/vim-vsnip' }
-  use {"lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end}
-  use { 'hrsh7th/vim-vsnip-integ'}
-  use {'easymotion/vim-easymotion'}
-  use {'rhysd/clever-f.vim'}
-  use {'haya14busa/vim-edgemotion'}
-  use {'t9md/vim-quickhl'}
-  use {'preservim/nerdcommenter'}
-  use {'unblevable/quick-scope'}
-  use {'tpope/vim-fugitive'}
-  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
-  use {'baabelfish/nvim-nim'}
+use { 'hrsh7th/vim-vsnip' }
+use {"lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end}
+use { 'hrsh7th/vim-vsnip-integ'}
+use {'easymotion/vim-easymotion'}
+use {'rhysd/clever-f.vim'}
+use {'haya14busa/vim-edgemotion'}
+use {'t9md/vim-quickhl'}
+use {'preservim/nerdcommenter'}
+use {'unblevable/quick-scope'}
+use {'tpope/vim-fugitive'}
+use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
+use {'baabelfish/nvim-nim'}
 
 
-  use { 'windwp/nvim-autopairs',
-  config = function() require('nvim-autopairs').setup() end
-  }
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-  config = function() require('nvim-treesitter-settings') end
-  }
-  use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
-  use 'onsails/lspkind-nvim'
+use { 'windwp/nvim-autopairs',
+config = function() require('nvim-autopairs').setup() end
+}
+use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+config = function() require('nvim-treesitter-settings') end
+}
+use {
+  'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+  config = function() require('gitsigns').setup() end
+}
+use 'onsails/lspkind-nvim'
 end)
 --vim.g.tokyonight_style = 'night'
 --vim.g.tokyonight_italic_function = true
