@@ -31,10 +31,10 @@ require('packer').startup(function()
   config = function()require('cmp-setting') end
   }
   
-  use 'tyru/eskk.vim'
--- use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end}
+--  use 'tyru/eskk.vim'
+  use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end}
 
--- use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
+ use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
   use 'vim-denops/denops.vim'
   use 'skanehira/preview-markdown.vim'
   use {'lervag/vimtex',
@@ -67,7 +67,7 @@ require('packer').startup(function()
    end
 
    }
-use {'hrsh7th/cmp-vsnip'}
+use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
 
 use {'L3MON4D3/LuaSnip'}
 

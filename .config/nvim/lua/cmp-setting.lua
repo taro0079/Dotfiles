@@ -32,7 +32,7 @@ local cmp = require'cmp'
       { name = 'snippy' }, -- For snippy users.
       { name = 'path' },
 --      { name = 'omni' },
---      { name = 'skkeleton' }
+      { name = 'skkeleton' }
     }, {
       { name = 'buffer' },
     }),
