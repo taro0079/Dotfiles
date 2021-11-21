@@ -1,8 +1,14 @@
 font:
   normal:
-    family: FantasqueSansMono Nerd Font
+    family: VictorMono Nerd Font
     style: Regular
-  size: 15
+  bold:
+    family: VictorMono Nerd Font
+    style: Bold
+  italic:
+    family: VictorMono Nerd Font
+    style: Italic
+  size: 12
 
 colors:
   # Default colors
