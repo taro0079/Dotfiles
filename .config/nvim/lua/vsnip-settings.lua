@@ -13,10 +13,3 @@ vim.cmd[[imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'    
 vim.cmd[[smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>']]
 vim.cmd[[imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>']]
 vim.cmd[[smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>']]
-
--- Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
--- See https://github.com/hrsh7th/vim-vsnip/pull/50
-vim.cmd[[nmap        s   <Plug>(vsnip-select-text)]]
-vim.cmd[[xmap        s   <Plug>(vsnip-select-text)]]
-vim.cmd[[nmap        S   <Plug>(vsnip-cut-text)]]
-vim.cmd[[xmap        S   <Plug>(vsnip-cut-text)]]
