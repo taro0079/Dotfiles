@@ -57,11 +57,6 @@ require('packer').startup(function()
     requires='kyazdani42/nvim-web-devicons'
 
    }
-  use {'kabouzeid/nvim-lspinstall',
-   config = function ()
-       require("lsp")
-     end
-   }
    use { 'hoob3rt/lualine.nvim',
    config = function()
      require("lualine-settings")
