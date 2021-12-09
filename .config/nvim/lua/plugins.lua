@@ -2,7 +2,6 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
-  use {'tveskag/nvim-blame-line', config=function()require'nvim-blame-line-settings' end }
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'bluz71/vim-nightfly-guicolors'
@@ -99,9 +98,10 @@ use 'hrsh7th/cmp-cmdline'
   }
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
+    config = function() require'gitsigns-setting' end
   }
   use 'onsails/lspkind-nvim'
+  use {'williamboman/nvim-lsp-installer', config= function() require'lsp' end}
 end)
 --vim.g.tokyonight_style = 'night'
 --vim.g.tokyonight_italic_function = true
