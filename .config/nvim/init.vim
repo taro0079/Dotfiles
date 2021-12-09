@@ -1,14 +1,11 @@
 set number
-set completeopt=menu,menuone,noselect
+set nocompatible
 
 lua << EOF
 require'plugins'
 require 'keymaps'
 EOF
 
-if exists('g:nvui')
-	set guifont=VictorMono\ Nerd\ Font:h12,JetbrainsMono\ NF,Meiryo\ UI
-endif
 
 " Open files in horizontal split
 nnoremap <silent> <Leader>s :call fzf#run({
