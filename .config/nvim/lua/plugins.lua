@@ -45,8 +45,6 @@ require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require'nvimtree-settings' end
     }
-  
-
   use {'junegunn/fzf', run = ':fzf#install()' }
   use 'SirVer/ultisnips'
   use 'junegunn/fzf.vim'
@@ -56,12 +54,28 @@ require('packer').startup(function()
     requires='kyazdani42/nvim-web-devicons'
 
    }
-   use { 'hoob3rt/lualine.nvim',
-   config = function()
-     require("lualine-settings")
-   end
+--   use { 'hoob3rt/lualine.nvim',
+--   config = function()
+--     require("lualine-settings")
+--   end}
 
-   }
+     use {
+  'glepnir/galaxyline.nvim',
+    branch = 'main',
+    -- your statusline
+    config = function() require'galaxyline-setting' end,
+    -- some optional icons
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+}
+     use {
+	     "folke/trouble.nvim",
+	     requires = "kyazdani42/nvim-web-devicons",
+	     config = function()
+		     require("trouble").setup {
+       }
+       end
+}
+
 use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
 
 use {'L3MON4D3/LuaSnip'}
