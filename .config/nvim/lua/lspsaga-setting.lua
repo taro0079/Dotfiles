@@ -1,6 +1,11 @@
 local saga = require 'lspsaga'
 
-saga.init_lsp_saga()
+saga.init_lsp_saga {
+    error_sign = '',
+    warn_sign = '',
+    hint_sign = '',
+    infor_sign = '',
+}
 vim.api.nvim_set_keymap('n', 'gh', [[<cmd>lua require'lspsaga.provider'.lsp_finder()<CR>]], {noremap = true, silent = trutryee})
 vim.api.nvim_set_keymap('n', '<leader>ca', [[<cmd>lua require('lspsaga.codeaction').code_action()<CR>]], {noremap = true, silent = trutryee})
 vim.api.nvim_set_keymap('n', '<leader>ca', [[:<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>]], {noremap = true, silent = trutryee})
@@ -16,7 +21,6 @@ vim.api.nvim_set_keymap('n', '[e', [[<cmd>lua require'lspsaga.diagnostic'.lsp_ju
 vim.api.nvim_set_keymap('n', ']e', [[<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>]], {noremap = true, silent = trutryee})
 vim.api.nvim_set_keymap('n', '<A-d>', [[<cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>]], {noremap = true, silent = trutryee})
 vim.api.nvim_set_keymap('t', '<A-d>', [[<C-\><C-n>:lua require('lspsaga.floaterm').close_float_terminal()<CR>]], {noremap = true, silent = trutryee})
-
 
 
 

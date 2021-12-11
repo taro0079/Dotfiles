@@ -3,7 +3,7 @@ vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use 'neovim/nvim-lspconfig'
+  use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
   use 'bluz71/vim-nightfly-guicolors'
   use 'yonlu/omni.vim'
   use 'mdlerch/vim-gnuplot'
@@ -100,7 +100,7 @@ use 'hrsh7th/cmp-cmdline'
   use {'preservim/nerdcommenter'}
   use {'unblevable/quick-scope'}
   use {'tpope/vim-fugitive'}
-  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
+--  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
   use {'baabelfish/nvim-nim'}
 
 
@@ -115,7 +115,7 @@ use 'hrsh7th/cmp-cmdline'
     config = function() require'gitsigns-setting' end
   }
   use 'onsails/lspkind-nvim'
-  use {'williamboman/nvim-lsp-installer', config= function() require'lsp' end}
+  use {'williamboman/nvim-lsp-installer'}
 end)
 --vim.g.tokyonight_style = 'night'
 --vim.g.tokyonight_italic_function = true

@@ -1,5 +1,6 @@
 local nvim_lsp = require('lspconfig')
 
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -30,8 +31,8 @@ local on_attach = function(client, bufnr)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'texlab', 'nimls', 'solargraph'}
+---- map buffer local keybindings when the language server attaches
+local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'texlab', 'solargraph'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -42,11 +43,11 @@ for _, lsp in ipairs(servers) do
 end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
-require'lspconfig'.nimls.setup{on_attach = on_attach, capabilities = capabilities}
-require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
+--require'lspconfig'.nimls.setup{on_attach = on_attach, capabilities = capabilities}
 
 
 -- local function setup_servers()
@@ -66,8 +67,59 @@ require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabi
 --   setup_servers() -- reload installed servers
 --   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 -- end
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+--local lsp_installer = require("nvim-lsp-installer")
+
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+--lsp_installer.on_server_ready(function(server)
+--    local opts = {}
+--    opts.on_attach = on_attach
+--    server:setup(opts)
+--end)
+local function goto_definition(split_cmd)
+  local util = vim.lsp.util
+  local log = require("vim.lsp.log")
+  local api = vim.api
+
+  -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
+  local handler = function(_, result, ctx)
+    if result == nil or vim.tbl_isempty(result) then
+      local _ = log.info() and log.info(ctx.method, "No location found")
+      return nil
+    end
+
+    if split_cmd then
+      vim.cmd(split_cmd)
+    end
+
+    if vim.tbl_islist(result) then
+      util.jump_to_location(result[1])
+
+      if #result > 1 then
+        util.set_qflist(util.locations_to_items(result))
+        api.nvim_command("copen")
+        api.nvim_command("wincmd p")
+      end
+    else
+      util.jump_to_location(result)
+    end
+  end
+
+  return handler
+end
+
+vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+})
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "LspDiagnosticsSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
