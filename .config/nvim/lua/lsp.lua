@@ -47,7 +47,7 @@ require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabi
 require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
---require'lspconfig'.nimls.setup{on_attach = on_attach, capabilities = capabilities}
+require'lspconfig'.nimls.setup{on_attach = on_attach, capabilities = capabilities}
 
 
 -- local function setup_servers()
@@ -60,22 +60,22 @@ require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabiliti
 --   end
 -- end
 -- 
--- setup_servers()
+--setup_servers()
 -- 
 -- -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 -- require'lspinstall'.post_install_hook = function ()
 --   setup_servers() -- reload installed servers
 --   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 -- end
---local lsp_installer = require("nvim-lsp-installer")
+local lsp_installer = require("nvim-lsp-installer")
 
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
---lsp_installer.on_server_ready(function(server)
---    local opts = {}
---    opts.on_attach = on_attach
---    server:setup(opts)
---end)
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    opts.on_attach = on_attach
+    server:setup(opts)
+end)
 local function goto_definition(split_cmd)
   local util = vim.lsp.util
   local log = require("vim.lsp.log")

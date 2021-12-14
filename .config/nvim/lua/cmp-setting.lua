@@ -62,7 +62,10 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'path' },
+    { name = 'spell' },
     { name = 'luasnip' },
+    { name = 'dictionary',
+      keyword_length = 2,}
   },
 }
 

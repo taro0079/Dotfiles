@@ -4,6 +4,9 @@ set nocompatible
 lua << EOF
 require'plugins'
 require 'keymaps'
+
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us' }
 EOF
 
 

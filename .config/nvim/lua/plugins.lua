@@ -12,6 +12,7 @@ require('packer').startup(function()
   use 'kdheepak/lazygit.nvim'
   use 'olimorris/onedarkpro.nvim'
   use 'hrsh7th/cmp-omni'
+  use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
   use {
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
@@ -90,6 +91,7 @@ use 'hrsh7th/cmp-nvim-lsp'
 use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
+use 'f3fora/cmp-spell'
   use { 'hrsh7th/vim-vsnip' }
   use {"lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end}
   use { 'hrsh7th/vim-vsnip-integ'}
