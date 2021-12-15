@@ -1,8 +1,8 @@
 set laststatus=2
 set spell
-set spelllang+=cjk
+"set spelllang+=cjk
 set showcmd
-"set cursorline
+set cursorline
 set number
 set showmatch
 set incsearch
@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 
 
 Plug 'Shougo/ddc.vim'
@@ -22,14 +23,18 @@ Plug 'Shougo/ddc-around'
 
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
+Plug 'matsui54/ddc-dictionary'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'shun/ddc-vim-lsp'
 Plug 'vim-skk/skkeleton'
+Plug 'Shougo/ddc-omni'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 
 call plug#end()
@@ -44,14 +49,7 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 set imdisable
 
-" Customize global settings
-" Use around source.
-" https://github.com/Shougo/ddc-around
-call ddc#custom#patch_global('sources', ['around', 'vim-lsp', 'skkeleton'])
-
-" Use matcher_head and sorter_rank.
-" https://github.com/Shougo/ddc-matcher_head
-" https://github.com/Shougo/ddc-sorter_rank
+call ddc#custom#patch_global('sources',['around','vim-lsp','skkeleton','dictionary'])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
@@ -60,13 +58,16 @@ call ddc#custom#patch_global('sourceOptions', {
       \	  'matchers': ['matcher_head'],
       \   'mark': 'lsp',
       \},
-      \   'skkeleton': {
+      \ 'skkeleton': {
       \     'mark': 'skkeleton',
       \     'matchers': ['skkeleton'],
       \     'sorters': [],
       \     'minAutoCompleteLength': 2,
       \   },
+      \ 'dictionary': {'mark': 'D'},
+	    \ 'omni': {'mark': 'O'},
       \ })
+
 
 
 " Change source options
@@ -75,7 +76,14 @@ call ddc#custom#patch_global('sourceOptions', {
       \ })
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
+      \ 'dictionary': {'dictPaths':
+      \ ['/usr/share/dict/german',
+      \ '/usr/share/dict/words',
+      \ '/usr/share/dict/spanish'],
+      \ 'smartCase': v:true,
+      \ },
       \ })
+
 
 " Customize settings on a filetype
 call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
@@ -105,3 +113,40 @@ cmap <C-j> <Plug>(skkeleton-toggle)
 call skkeleton#config({
  \   'globalJisyo': '~/.eskk/SKK-JISYO.L',
  \ })
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nmap <buffer> <leader>f <plug>(lsp-document-format)
+    inoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    inoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go,*.py,*.rb call execute('LspDocumentFormatSync')
+endfunction
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
+
+call vimtex#init()
+call ddc#custom#patch_filetype(['tex'], 'sourceOptions', {
+      \ 'omni': {
+      \   'forceCompletionPattern': g:vimtex#re#deoplete
+      \ },
+      \ })
+call ddc#custom#patch_filetype(['tex'], 'sourceParams', {
+      \ 'omni': {'omnifunc': 'vimtex#complete#omnifunc'},
+      \ })

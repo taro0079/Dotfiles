@@ -55,19 +55,19 @@ require('packer').startup(function()
     requires='kyazdani42/nvim-web-devicons'
 
    }
---   use { 'hoob3rt/lualine.nvim',
---   config = function()
---     require("lualine-settings")
---   end}
+   use { 'hoob3rt/lualine.nvim',
+   config = function()
+     require("lualine-settings")
+   end}
 
-     use {
-  'glepnir/galaxyline.nvim',
-    branch = 'main',
-    -- your statusline
-    config = function() require'galaxyline-setting' end,
-    -- some optional icons
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-}
+--     use {
+--  'glepnir/galaxyline.nvim',
+--    branch = 'main',
+--    -- your statusline
+--    config = function() require'galaxyline-setting' end,
+--    -- some optional icons
+--    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+--}
      use {
 	     "folke/trouble.nvim",
 	     requires = "kyazdani42/nvim-web-devicons",
@@ -118,6 +118,7 @@ use 'f3fora/cmp-spell'
   }
   use 'onsails/lspkind-nvim'
   use {'williamboman/nvim-lsp-installer'}
+  use 'hrsh7th/cmp-nvim-lua'
 end)
 --vim.g.tokyonight_style = 'night'
 --vim.g.tokyonight_italic_function = true

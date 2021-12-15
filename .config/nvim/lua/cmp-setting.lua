@@ -6,7 +6,6 @@ local function check_backspace()
   local col = vim.fn.col '.' - 1
   return col == 0 or vim.fn.getline('.'):sub(col, col):match '%s' ~= nil
 end
-
 local feedkeys = vim.fn.feedkeys
 local pumvisible = vim.fn.pumvisible
 local replace_termcodes = vim.api.nvim_replace_termcodes
@@ -67,5 +66,21 @@ cmp.setup {
     { name = 'dictionary',
       keyword_length = 2,}
   },
-}
+  experimental = {
+	  ghost_text = true
+  }
 
+}
+cmp.setup.cmdline('/', {
+	sources = {
+		{ name = 'buffer'}
+	}
+})
+
+cmp.setup.cmdline(':', {
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+		{ name = 'cmdline' }
+	})
+})

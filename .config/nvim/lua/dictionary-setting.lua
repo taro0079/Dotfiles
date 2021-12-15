@@ -1,7 +1,7 @@
 require("cmp_dictionary").setup({
     dic = {
-        ["*"] = "/usr/share/dict/cracklib-small",
- --       ["markdown"] = { "path/to/mddict", "path/to/mddict2" },
+        ["*"] = "/usr/share/dict/words",
+        ["markdown"] = { "path/to/mddict", "path/to/mddict2" },
     },
     -- The following are default values, so you don't need to write them if you don't want to change them
     exact = 2,
