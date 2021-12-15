@@ -12,6 +12,8 @@ require('packer').startup(function()
   use 'kdheepak/lazygit.nvim'
   use 'olimorris/onedarkpro.nvim'
   use 'hrsh7th/cmp-omni'
+  use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
+
   use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
   use {
   'nvim-telescope/telescope.nvim',
