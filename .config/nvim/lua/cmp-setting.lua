@@ -63,13 +63,13 @@ cmp.setup {
     { name = 'path' },
     { name = 'spell' },
     { name = 'luasnip' },
+    { name = 'calc' },
     { name = 'dictionary',
       keyword_length = 2,}
   },
   experimental = {
 	  ghost_text = true
   }
-
 }
 cmp.setup.cmdline('/', {
 	sources = {

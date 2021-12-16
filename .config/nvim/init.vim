@@ -1,5 +1,7 @@
 set number
 set nocompatible
+set clipboard+=unnamedplus
+
 
 lua << EOF
 require'plugins'

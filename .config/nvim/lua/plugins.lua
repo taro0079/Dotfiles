@@ -11,6 +11,7 @@ require('packer').startup(function()
 --  use 'GoldsteinE/compe-latex-symbols'
   use 'kdheepak/lazygit.nvim'
   use 'olimorris/onedarkpro.nvim'
+  use 'hrsh7th/cmp-calc'
   use 'hrsh7th/cmp-omni'
   use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
 
