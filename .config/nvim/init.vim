@@ -1,9 +1,7 @@
 set number
 set nocompatible
 set clipboard+=unnamedplus
-
-
-
+set pumblend=10
 
 lua << EOF
 require'plugins'
