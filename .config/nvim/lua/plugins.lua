@@ -105,7 +105,7 @@ use 'f3fora/cmp-spell'
   use {'unblevable/quick-scope'}
   use {'tpope/vim-fugitive'}
 --  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
-  use {'baabelfish/nvim-nim'}
+--  use {'baabelfish/nvim-nim'}
 
 
   use { 'windwp/nvim-autopairs',
