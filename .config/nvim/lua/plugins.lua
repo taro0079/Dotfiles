@@ -30,7 +30,6 @@ require('packer').startup(function()
 --  }
   -- use {'tyru/eskk.vim',
   -- config = function() require('eskk-setting') end}
-  -- use {'vim-skk/denops-skkeleton.vim', config = function() require('skkeleton-setting') end}
   use {'hrsh7th/nvim-cmp',
   config = function()require('cmp-setting') end
   }

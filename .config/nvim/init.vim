@@ -3,6 +3,8 @@ set nocompatible
 set clipboard+=unnamedplus
 
 
+
+
 lua << EOF
 require'plugins'
 require 'keymaps'
@@ -21,3 +23,8 @@ nnoremap <silent> <Leader>s :call fzf#run({
 nnoremap <silent> <Leader>v :call fzf#run({
 \   'right': winwidth('.') / 2,
 \   'sink':  'vertical botright split' })<CR>
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
+call skkeleton#config({
+ \   'globalJisyo': '~/.eskk/SKK-JISYO.L',
+ \ })
