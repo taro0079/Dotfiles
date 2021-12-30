@@ -3,6 +3,7 @@ vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use 'segeljakt/vim-silicon'
   use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
   use 'bluz71/vim-nightfly-guicolors'
   use 'yonlu/omni.vim'
