@@ -2,7 +2,10 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
+
   use 'wbthomason/packer.nvim'
+  use 'kat0h/bufpreview.vim'
+  use {"akinsho/toggleterm.nvim", config = function() require'toggleterm-setting' end}
   use 'segeljakt/vim-silicon'
   use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
   use 'bluz71/vim-nightfly-guicolors'
