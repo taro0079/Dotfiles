@@ -19,6 +19,8 @@ cmp.setup {
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
+      vim.fn["UltiSnips#Anon"](args.body)
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   formatting = {
@@ -63,6 +65,8 @@ cmp.setup {
     { name = 'path' },
     { name = 'spell' },
     { name = 'luasnip' },
+    { name = 'ultisnips' },
+    { name = 'vsnip' },
     { name = 'calc' },
     { name = 'dictionary',
       keyword_length = 2,}

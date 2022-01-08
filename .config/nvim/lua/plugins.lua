@@ -105,7 +105,7 @@ use 'f3fora/cmp-spell'
   use {'rhysd/clever-f.vim'}
   use {'haya14busa/vim-edgemotion'}
   use {'t9md/vim-quickhl'}
-  use {'preservim/nerdcommenter'}
+  use {'numToStr/Comment.nvim', config = function() require('Comment').setup() end}
   use {'unblevable/quick-scope'}
   use {'tpope/vim-fugitive'}
 --  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}

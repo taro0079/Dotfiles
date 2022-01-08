@@ -40,7 +40,8 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
@@ -73,6 +74,7 @@ local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
     local opts = {}
     opts.on_attach = on_attach
+    opts.capabilities = capabilities
     server:setup(opts)
 end)
 
