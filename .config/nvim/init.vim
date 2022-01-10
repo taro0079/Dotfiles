@@ -1,4 +1,5 @@
 set number
+set relativenumber
 set nocompatible
 set clipboard+=unnamedplus
 set pumblend=10
