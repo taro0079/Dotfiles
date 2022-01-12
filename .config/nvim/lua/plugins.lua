@@ -12,6 +12,12 @@ require('packer').startup(function()
   use 'yonlu/omni.vim'
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
+  use 'lambdalisue/fern.vim'
+  use 'lambdalisue/fern-git-status.vim'
+  use 'lambdalisue/fern-renderer-nerdfont.vim'
+  use 'yuki-yano/fern-preview.vim'
+  use 'lambdalisue/nerdfont.vim'
+
 --  use 'GoldsteinE/compe-latex-symbols'
   use 'kdheepak/lazygit.nvim'
   use 'olimorris/onedarkpro.nvim'
@@ -24,21 +30,10 @@ require('packer').startup(function()
   'nvim-telescope/telescope.nvim',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-  --use { 'projekt0n/github-nvim-theme',
---  after = 'lualine.nvim',
---  config = function()require('github-color-settings') end
---  }
-
---  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp',
---  config = function()require('cmp_tabnine-setting') end
---  }
-  -- use {'tyru/eskk.vim',
-  -- config = function() require('eskk-setting') end}
   use {'hrsh7th/nvim-cmp',
   config = function()require('cmp-setting') end
   }
   
---  use 'tyru/eskk.vim'
   use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end}
 
  use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
@@ -47,11 +42,6 @@ require('packer').startup(function()
   use {'lervag/vimtex',
   config = function()require('vimtex-settings')end
   }
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvimtree-settings' end
-    }
   use {'junegunn/fzf', run = ':fzf#install()' }
   use 'SirVer/ultisnips'
   use 'junegunn/fzf.vim'
