@@ -14,5 +14,5 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]]
 vim.cmd[[
-nnoremap <Space>e <cmd>Fern . -reveal=% -drawer -toggle<cr>
+nnoremap <C-n> <cmd>Fern . -reveal=% -drawer -toggle<cr>
 ]]

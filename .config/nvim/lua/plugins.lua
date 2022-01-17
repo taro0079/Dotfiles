@@ -2,8 +2,9 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
-
   use 'wbthomason/packer.nvim'
+  use 'simrat39/symbols-outline.nvim'
+  use 'liuchengxu/vista.vim'
   use 'kat0h/bufpreview.vim'
   use {"akinsho/toggleterm.nvim", config = function() require'toggleterm-setting' end}
   use 'segeljakt/vim-silicon'
@@ -55,15 +56,6 @@ require('packer').startup(function()
    config = function()
      require("lualine-settings")
    end}
-
---     use {
---  'glepnir/galaxyline.nvim',
---    branch = 'main',
---    -- your statusline
---    config = function() require'galaxyline-setting' end,
---    -- some optional icons
---    requires = {'kyazdani42/nvim-web-devicons', opt = true}
---}
      use {
 	     "folke/trouble.nvim",
 	     requires = "kyazdani42/nvim-web-devicons",
@@ -98,10 +90,6 @@ use 'f3fora/cmp-spell'
   use {'numToStr/Comment.nvim', config = function() require('Comment').setup() end}
   use {'unblevable/quick-scope'}
   use {'tpope/vim-fugitive'}
---  use {'glepnir/lspsaga.nvim',  config = function() require('lspsaga-setting') end}
---  use {'baabelfish/nvim-nim'}
-
-
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
   }
@@ -116,11 +104,6 @@ use 'f3fora/cmp-spell'
   use {'williamboman/nvim-lsp-installer'}
   use 'hrsh7th/cmp-nvim-lua'
 end)
---vim.g.tokyonight_style = 'night'
---vim.g.tokyonight_italic_function = true
---vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-
---vim.cmd[[colorscheme tokyonight]]
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
