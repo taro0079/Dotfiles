@@ -89,6 +89,8 @@ use 'f3fora/cmp-spell'
   use {'t9md/vim-quickhl'}
   use {'numToStr/Comment.nvim', config = function() require('Comment').setup() end}
   use {'unblevable/quick-scope'}
+  use {'tpope/vim-rails'}
+  use {'tpope/vim-surround'}
   use {'tpope/vim-fugitive'}
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
