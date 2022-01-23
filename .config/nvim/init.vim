@@ -50,3 +50,10 @@ augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
 augroup END
+
+if has('termguicolors')
+	set termguicolors
+endif
+
+set background=dark
+colorscheme gruvbox-material

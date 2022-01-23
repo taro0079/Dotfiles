@@ -105,9 +105,10 @@ use 'f3fora/cmp-spell'
   use 'onsails/lspkind-nvim'
   use {'williamboman/nvim-lsp-installer'}
   use 'hrsh7th/cmp-nvim-lua'
+  use {'sainnhe/gruvbox-material'}
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
-require('onedarkpro').load()
+-- require('onedarkpro').load()
 
