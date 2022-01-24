@@ -108,7 +108,7 @@ use 'f3fora/cmp-spell'
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
     config = function() require'nvimtree-settings' end
-}
+    }
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 

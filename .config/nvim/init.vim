@@ -43,4 +43,4 @@ if has('termguicolors')
 endif
 
 set background=dark
-colorscheme gruvbox-material
+colorscheme nightfly
