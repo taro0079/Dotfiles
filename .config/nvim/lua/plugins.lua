@@ -13,10 +13,6 @@ require('packer').startup(function()
   use 'yonlu/omni.vim'
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
-  use 'lambdalisue/fern.vim'
-  use 'lambdalisue/fern-git-status.vim'
-  use 'lambdalisue/fern-renderer-nerdfont.vim'
-  use 'yuki-yano/fern-preview.vim'
   use 'lambdalisue/nerdfont.vim'
 
 --  use 'GoldsteinE/compe-latex-symbols'
@@ -106,6 +102,13 @@ use 'f3fora/cmp-spell'
   use {'williamboman/nvim-lsp-installer'}
   use 'hrsh7th/cmp-nvim-lua'
   use {'sainnhe/gruvbox-material'}
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = function() require'nvimtree-settings' end
+}
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
