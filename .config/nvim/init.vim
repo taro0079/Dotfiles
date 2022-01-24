@@ -38,9 +38,9 @@ let g:silicon = {
       \   'window-controls':       v:true,
       \ }
 
-if has('termguicolors')
-	set termguicolors
-endif
 
 set background=dark
 colorscheme nightfly
+if has('termguicolors')
+	set termguicolors
+endif
