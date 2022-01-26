@@ -1,8 +1,9 @@
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
-vim.cmd[[set termguicolors]]
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use 'kristijanhusak/vim-carbon-now-sh'
+  use 'luisiacc/gruvbox-baby'
   use 'simrat39/symbols-outline.nvim'
   use 'liuchengxu/vista.vim'
   use 'kat0h/bufpreview.vim'

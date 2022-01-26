@@ -40,7 +40,7 @@ let g:silicon = {
 
 
 set background=dark
-colorscheme nightfly
+colorscheme gruvbox-baby
 if has('termguicolors')
 	set termguicolors
 endif
