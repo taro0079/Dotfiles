@@ -2,6 +2,7 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use { 'stsewd/fzf-checkout.vim' }
   use 'kristijanhusak/vim-carbon-now-sh'
   use 'luisiacc/gruvbox-baby'
   use 'simrat39/symbols-outline.nvim'

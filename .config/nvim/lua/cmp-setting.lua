@@ -18,8 +18,8 @@ cmp.setup {
   completion = { completeopt = 'menu,menuone,noinsert' },
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
-      vim.fn["UltiSnips#Anon"](args.body)
+  --    luasnip.lsp_expand(args.body)
+  --    vim.fn["UltiSnips#Anon"](args.body)
       vim.fn["vsnip#anonymous"](args.body)
     end,
   },

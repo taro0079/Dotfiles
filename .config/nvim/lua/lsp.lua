@@ -47,7 +47,6 @@ require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabi
 require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
-require'lspconfig'.nimls.setup{on_attach = on_attach, capabilities = capabilities}
 
 
 -- local function setup_servers()
