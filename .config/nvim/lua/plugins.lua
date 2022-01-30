@@ -1,5 +1,4 @@
 vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
-
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use { 'stsewd/fzf-checkout.vim' }
@@ -45,11 +44,11 @@ require('packer').startup(function()
   use 'SirVer/ultisnips'
   use 'junegunn/fzf.vim'
   use 'honza/vim-snippets'
-  use {'alvarosevilla95/luatab.nvim',
-    config = function() require('luatab-settings') end,
-    requires='kyazdani42/nvim-web-devicons'
+  -- use {'alvarosevilla95/luatab.nvim',
+  --   config = function() require('luatab-settings') end,
+  --   requires='kyazdani42/nvim-web-devicons'
 
-   }
+  --  }
    use { 'hoob3rt/lualine.nvim',
    config = function()
      require("lualine-settings")
@@ -111,6 +110,11 @@ use 'f3fora/cmp-spell'
     },
     config = function() require'nvimtree-settings' end
     }
+    -- use {'mfussenegger/nvim-dap', config= function() require'dap-setting' end}
+    -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config=require("dapui").setup()}
+    use { 'Mofiqul/vscode.nvim' }
+    use { 'kdheepak/tabline.nvim', config = function() require'tabline-setting' end, requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true}} }
+
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 

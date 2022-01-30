@@ -38,9 +38,11 @@ let g:silicon = {
       \   'window-controls':       v:true,
       \ }
 
+" For dark theme
+let g:vscode_style = "dark"
+" Enable transparent background.
+let g:vscode_transparency = 1
+" Enable italic comment
+let g:vscode_italic_comment = 1
+colorscheme vscode
 
-set background=dark
-colorscheme gruvbox-baby
-if has('termguicolors')
-	set termguicolors
-endif
