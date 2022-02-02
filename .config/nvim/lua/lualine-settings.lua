@@ -1,6 +1,6 @@
 require('lualine').setup {
 	options = {
-		theme = 'vscode'
+		theme = 'tokyonight'
 	},
 	sections = {
 		lualine_a = {
@@ -29,7 +29,6 @@ require('lualine').setup {
 				}
 			}
 		},
-		lualine_x = { require'tabline'.tabline_tabs },
 
 	}
 }

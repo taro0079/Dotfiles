@@ -39,10 +39,5 @@ let g:silicon = {
       \ }
 
 " For dark theme
-let g:vscode_style = "dark"
-" Enable transparent background.
-let g:vscode_transparency = 1
-" Enable italic comment
-let g:vscode_italic_comment = 1
-colorscheme vscode
+colorscheme tokyonight
 
