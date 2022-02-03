@@ -2,6 +2,7 @@ set number
 set relativenumber
 set nocompatible
 set clipboard+=unnamedplus
+
 set pumblend=10
 
 lua << EOF

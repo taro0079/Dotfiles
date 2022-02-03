@@ -12,6 +12,8 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>b <cmd>Telescope buffers theme=get_dropdown<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches theme=get_dropdown<cr>
+nnoremap <leader>gc <cmd>Telescope git_commits theme=get_dropdown<cr>
+nnoremap <leader>gs <cmd>Telescope git_status theme=get_dropdown<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]]
 
