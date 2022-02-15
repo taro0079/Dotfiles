@@ -15,6 +15,7 @@ require('packer').startup(function()
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
   use 'lambdalisue/nerdfont.vim'
+  use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
 
 --  use 'GoldsteinE/compe-latex-symbols'
   use 'kdheepak/lazygit.nvim'
@@ -99,6 +100,7 @@ use 'f3fora/cmp-spell'
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require'gitsigns-setting' end
   }
+  use { 'romgrk/barbar.nvim', config = function() require'barbar-setting' end}
   use 'onsails/lspkind-nvim'
   use {'williamboman/nvim-lsp-installer'}
   use 'hrsh7th/cmp-nvim-lua'
@@ -114,7 +116,7 @@ use 'f3fora/cmp-spell'
     -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config=require("dapui").setup()}
     -- use { 'Mofiqul/vscode.nvim' }
     -- use { 'kdheepak/tabline.nvim', config = function() require'tabline-setting' end, requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true}} }
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', config=function() require'bufferline-setting' end}
+--    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', config=function() require'bufferline-setting' end}
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
