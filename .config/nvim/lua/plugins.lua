@@ -15,7 +15,8 @@ require('packer').startup(function()
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
   use 'lambdalisue/nerdfont.vim'
-  use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
+  -- use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
+  use { 'rebelot/kanagawa.nvim', config=function () require'kanagawa-setting' end }
 
 --  use 'GoldsteinE/compe-latex-symbols'
   use 'kdheepak/lazygit.nvim'
