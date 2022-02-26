@@ -41,7 +41,7 @@ let g:silicon = {
 
 " For dark theme
 set termguicolors
-colorscheme doom-one
+colorscheme tokyonight
 " NOTE: If barbar's option dict isn't created yet, create it
 let bufferline = get(g:, 'bufferline', {})
 
