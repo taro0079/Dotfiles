@@ -94,9 +94,10 @@ use 'f3fora/cmp-spell'
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
   }
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-  config = function() require('nvim-treesitter-settings') end
-  }
+  -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+  -- config = function() require('nvim-treesitter-settings') end
+  -- }
+  use { 'lambdalisue/fern.vim' }
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require'gitsigns-setting' end
