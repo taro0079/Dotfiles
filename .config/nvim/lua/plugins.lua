@@ -14,7 +14,6 @@ require('packer').startup(function()
   use 'yonlu/omni.vim'
   use 'mdlerch/vim-gnuplot'
   use 'folke/tokyonight.nvim'
-  use 'lambdalisue/nerdfont.vim'
   -- use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
   -- use { 'rebelot/kanagawa.nvim', config=function () require'kanagawa-setting' end }
 
@@ -94,10 +93,17 @@ use 'f3fora/cmp-spell'
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
   }
-  -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-  -- config = function() require('nvim-treesitter-settings') end
-  -- }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+  config = function() require('nvim-treesitter-settings') end
+  }
+  -- fern
   use { 'lambdalisue/fern.vim' }
+  use { 'lambdalisue/fern-git-status.vim' }
+  use { 'lambdalisue/nerdfont.vim' } 
+  use { 'lambdalisue/fern-renderer-nerdfont.vim' } 
+  use { 'lambdalisue/glyph-palette.vim' }
+  use { 'antoinemadec/FixCursorHold.nvim' }
+
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require'gitsigns-setting' end
@@ -107,13 +113,13 @@ use 'f3fora/cmp-spell'
   use {'williamboman/nvim-lsp-installer'}
   use 'hrsh7th/cmp-nvim-lua'
   use {'sainnhe/gruvbox-material'}
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = function() require'nvimtree-settings' end
-    }
+  -- use {
+    -- 'kyazdani42/nvim-tree.lua',
+    -- requires = {
+    --   'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    -- },
+    -- config = function() require'nvimtree-settings' end
+    -- }
     -- use {'mfussenegger/nvim-dap', config= function() require'dap-setting' end}
     -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config=require("dapui").setup()}
     -- use { 'Mofiqul/vscode.nvim' }

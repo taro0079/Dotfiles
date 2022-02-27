@@ -118,3 +118,14 @@ let bufferline.letters =
 " Sets the name of unnamed buffers. By default format is "[Buffer X]"
 " where X is the buffer number. But only a static string is accepted here.
 let bufferline.no_name_title = v:null
+
+let g:fern#renderer = "nerdfont"
+let g:fern#default_hidden=1
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
+

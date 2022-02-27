@@ -16,6 +16,11 @@ nnoremap <leader>gs <cmd>Telescope git_status theme=get_dropdown<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]]
 
+vim.cmd[[
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+
+]]
+
 local function map(mode, lhs, rhs, opts)
     local options = {noremap = true}
     if opts then options = vim.tbl_extend('force', options, opts) end

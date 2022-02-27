@@ -68,6 +68,7 @@ require('gitsigns').setup {
 		map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
 		map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>')
 		map('n', '<leader>th', '<cmd>Gitsigns toggle_linehl<CR>')
+		map('n', '<leader>tw', '<cmd>Gitsigns toggle_word_diff<CR>')
 
 		-- Text object
 		map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
