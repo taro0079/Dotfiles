@@ -45,6 +45,7 @@ require('packer').startup(function()
   use 'SirVer/ultisnips'
   use 'junegunn/fzf.vim'
   use 'honza/vim-snippets'
+  use { 'tiagovla/tokyodark.nvim'}
   -- use {'alvarosevilla95/luatab.nvim',
   --   config = function() require('luatab-settings') end,
   --   requires='kyazdani42/nvim-web-devicons'
@@ -113,6 +114,7 @@ use 'f3fora/cmp-spell'
   use {'williamboman/nvim-lsp-installer'}
   use 'hrsh7th/cmp-nvim-lua'
   use {'sainnhe/gruvbox-material'}
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config=function () require('diffview-setting') end }
   -- use {
     -- 'kyazdani42/nvim-tree.lua',
     -- requires = {

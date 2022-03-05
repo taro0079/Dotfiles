@@ -11,6 +11,10 @@ require 'keymaps'
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
+
+vim.g.tokyodark_transparent_background = true
+vim.g.tokyodark_enable_italic_comment = true
+vim.g.tokyodark_enable_italic = true
 EOF
 
 
@@ -41,7 +45,7 @@ let g:silicon = {
 
 " For dark theme
 set termguicolors
-colorscheme tokyonight
+colorscheme tokyodark
 " NOTE: If barbar's option dict isn't created yet, create it
 let bufferline = get(g:, 'bufferline', {})
 
@@ -127,5 +131,3 @@ augroup my-glyph-palette
 
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
-
-
