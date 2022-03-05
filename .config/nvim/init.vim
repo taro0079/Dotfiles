@@ -12,9 +12,11 @@ require 'keymaps'
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
 
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
+-- vim.g.tokyodark_transparent_background = true
+-- vim.g.tokyodark_enable_italic_comment = true
+-- vim.g.tokyodark_enable_italic = true
+vim.g.tokyonight_transparent = true
+
 EOF
 
 
@@ -45,7 +47,7 @@ let g:silicon = {
 
 " For dark theme
 set termguicolors
-colorscheme tokyodark
+colorscheme tokyonight
 " NOTE: If barbar's option dict isn't created yet, create it
 let bufferline = get(g:, 'bufferline', {})
 
