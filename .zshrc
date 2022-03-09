@@ -112,8 +112,8 @@ fshow() {
 FZF-EOF"
 }
 
-fhist() { 
-	BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History >")
-	CURSOR=$#BUFFER
-}
 
+fh() {
+	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+
+}
