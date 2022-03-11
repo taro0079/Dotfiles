@@ -15,6 +15,8 @@ nnoremap <leader>gb <cmd>Telescope git_branches theme=get_dropdown<cr>
 nnoremap <leader>gc <cmd>Telescope git_commits theme=get_dropdown<cr>
 nnoremap <leader>gs <cmd>Telescope git_status theme=get_dropdown<cr>
 nnoremap <leader>fH <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>ps <cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")}) <cr>
+
 ]]
 
 vim.cmd[[
