@@ -16,7 +16,7 @@ threshold = 100
 style = "bold green"
 
 [character]
-vicmd_symbol = "[normal](bold green) "
+vicmd_symbol = "[normal ➜](bold blue) "
 success_symbol = "[insert ➜](bold green) "
 error_symbol = "[insert ➜](bold red) "
 

@@ -26,7 +26,7 @@ alias eta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less
 alias lta=eta
 alias l='clear && ls'
 # vim keybind
-bindkey -d
+bindkey -v
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
