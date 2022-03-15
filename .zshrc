@@ -26,7 +26,7 @@ alias eta='exa -T -a -I "node_modules|.git|.cache" --color=always --icons | less
 alias lta=eta
 alias l='clear && ls'
 # vim keybind
-bindkey -d
+bindkey -v
 
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -98,5 +98,26 @@ fbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
-setopt nonomatch
 
+setopt nonomatch
+  export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+
+
+# fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+
+fh() {
+	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+
+}

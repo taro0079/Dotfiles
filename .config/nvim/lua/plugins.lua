@@ -37,7 +37,8 @@ require('packer').startup(function()
 
  use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
   use 'vim-denops/denops.vim'
-  use 'skanehira/preview-markdown.vim'
+  use {"ellisonleao/glow.nvim"}
+
   use {'lervag/vimtex',
   config = function()require('vimtex-settings')end
   }
@@ -115,6 +116,9 @@ use 'f3fora/cmp-spell'
   use 'hrsh7th/cmp-nvim-lua'
   use {'sainnhe/gruvbox-material'}
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config=function () require('diffview-setting') end }
+  use { 'catppuccin/nvim',
+  	as = "catppuccin"}
+	use { 'EdenEast/nightfox.nvim' }
   -- use {
     -- 'kyazdani42/nvim-tree.lua',
     -- requires = {

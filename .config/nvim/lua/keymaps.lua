@@ -8,12 +8,15 @@ vim.cmd[[
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').search_history()<cr>
 nnoremap <leader>gf <cmd>Telescope git_files theme=get_dropdown<cr>
 nnoremap <leader>b <cmd>Telescope buffers theme=get_dropdown<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches theme=get_dropdown<cr>
 nnoremap <leader>gc <cmd>Telescope git_commits theme=get_dropdown<cr>
 nnoremap <leader>gs <cmd>Telescope git_status theme=get_dropdown<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>fH <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>ps <cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")}) <cr>
+
 ]]
 
 vim.cmd[[
