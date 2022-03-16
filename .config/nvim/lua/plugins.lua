@@ -37,7 +37,8 @@ require('packer').startup(function()
 
  use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
   use 'vim-denops/denops.vim'
-  use 'skanehira/preview-markdown.vim'
+  use {"ellisonleao/glow.nvim"}
+
   use {'lervag/vimtex',
   config = function()require('vimtex-settings')end
   }
