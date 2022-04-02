@@ -80,6 +80,7 @@ use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
 use 'f3fora/cmp-spell'
+use { 'junegunn/vim-easy-align' }
   use { 'hrsh7th/vim-vsnip' }
   use {"lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end}
   use { 'hrsh7th/vim-vsnip-integ'}
