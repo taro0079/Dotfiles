@@ -2,6 +2,7 @@ set number
 set relativenumber
 set nocompatible
 set clipboard+=unnamedplus
+set cursorline
 
 set pumblend=10
 
@@ -47,7 +48,7 @@ let g:silicon = {
 
 " For dark theme
 set termguicolors
-colorscheme nightfox
+colorscheme gruvbox-material
 " NOTE: If barbar's option dict isn't created yet, create it
 let bufferline = get(g:, 'bufferline', {})
 

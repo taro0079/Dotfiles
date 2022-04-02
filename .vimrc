@@ -1,6 +1,4 @@
 set laststatus=2
-set spell
-"set spelllang+=cjk
 set showcmd
 set cursorline
 set relativenumber
