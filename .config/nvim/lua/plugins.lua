@@ -9,6 +9,7 @@ require('packer').startup(function()
   use 'kat0h/bufpreview.vim'
   use {"akinsho/toggleterm.nvim", config = function() require'toggleterm-setting' end}
   use {'neoclide/coc.nvim', branch = 'release'}
+  use { 'tpope/vim-endwise' }
 
 
   -- use 'segeljakt/vim-silicon'
