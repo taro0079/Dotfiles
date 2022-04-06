@@ -100,3 +100,31 @@ map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+vim.api.nvim_set_keymap('n', '<leader>gp', ':VGit buffer_hunk_preview<CR>', {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap('n', '<leader>gr', ':VGit buffer_hunk_reset<CR>', {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap('n', '<C-k>', ':VGit hunk_up<CR>', {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap('n', '<C-j>', ':VGit hunk_down<CR>', {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap('n', '<leader>gh', ':VGit buffer_history_preview<CR>', {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap('n', '<leader>gu', ':VGit buffer_reset<CR>', {
+    noremap = true,
+    silent = true,
+})
+vim.api.nvim_set_keymap('n', '<leader>gd', ':VGit buffer_diff_preview<CR>', {
+    noremap = true,
+    silent = true,
+})

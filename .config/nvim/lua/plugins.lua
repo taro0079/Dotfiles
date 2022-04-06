@@ -8,38 +8,40 @@ require('packer').startup(function()
   use 'liuchengxu/vista.vim'
   use 'kat0h/bufpreview.vim'
   use {"akinsho/toggleterm.nvim", config = function() require'toggleterm-setting' end}
-  use {'neoclide/coc.nvim', branch = 'release'}
-  use { 'tpope/vim-endwise' }
+  -- use {'neoclide/coc.nvim', branch = 'release'}
+  -- use { 'tpope/vim-endwise' }
 
 
   -- use 'segeljakt/vim-silicon'
+  -- Git
+  use { 'tanvirtin/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}, config = function() require'vgit-setting' end }
 
   -- LSP
-  -- use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
-  -- use {'hrsh7th/nvim-cmp',
-  -- config = function()require('cmp-setting') end
-  -- }
-  -- use { 'hrsh7th/vim-vsnip-integ'}
-  -- use {'L3MON4D3/LuaSnip'}
-  -- use {'saadparwaiz1/cmp_luasnip'}
-  -- use {'quangnguyen30192/cmp-nvim-ultisnips'}
-  -- use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
-  -- use { 'hrsh7th/vim-vsnip' }
-  -- use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
-  -- use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
-  -- use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
-  -- use 'onsails/lspkind-nvim'
-  -- use 'hrsh7th/cmp-nvim-lua'
-  -- use {'williamboman/nvim-lsp-installer'}
-  -- use {'dcampos/nvim-snippy'}
-  -- use {'dcampos/cmp-snippy'}
-  -- use 'hrsh7th/cmp-nvim-lsp'
-  -- use 'hrsh7th/cmp-buffer'
-  -- use 'hrsh7th/cmp-path'
-  -- use 'hrsh7th/cmp-cmdline'
-  -- use 'f3fora/cmp-spell'
+  use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
+  use { 'junegunn/vim-emoji' }
+  use {'hrsh7th/nvim-cmp',
+  config = function()require('cmp-setting') end
+  }
+  use { 'hrsh7th/vim-vsnip-integ'}
+  use {'L3MON4D3/LuaSnip'}
+  use {'saadparwaiz1/cmp_luasnip'}
+  use {'quangnguyen30192/cmp-nvim-ultisnips'}
+  use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
+  use { 'hrsh7th/vim-vsnip' }
+  use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
+  use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
+  use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
+  use 'onsails/lspkind-nvim'
+  use 'hrsh7th/cmp-nvim-lua'
+  use {'williamboman/nvim-lsp-installer'}
+  use {'dcampos/nvim-snippy'}
+  use {'dcampos/cmp-snippy'}
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'f3fora/cmp-spell'
   use 'yonlu/omni.vim'
-  use 'mdlerch/vim-gnuplot'
 
   -- Color Scheme
   -- use 'bluz71/vim-nightfly-guicolors'
@@ -48,15 +50,14 @@ require('packer').startup(function()
   -- use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
   -- use { 'rebelot/kanagawa.nvim', config=function () require'kanagawa-setting' end }
   -- use { 'tiagovla/tokyodark.nvim'}
-  -- use {'sainnhe/gruvbox-material'}
+  use {'sainnhe/gruvbox-material'}
   -- use { 'catppuccin/nvim',
   -- as = "catppuccin"}
   -- use { 'EdenEast/nightfox.nvim' }
 
   -- cmp
---  use 'GoldsteinE/compe-latex-symbols'
-  -- use 'hrsh7th/cmp-calc'
-  -- use 'hrsh7th/cmp-omni'
+  use 'hrsh7th/cmp-calc'
+  use 'hrsh7th/cmp-omni'
 
   use {
   'nvim-telescope/telescope.nvim',
@@ -69,6 +70,7 @@ require('packer').startup(function()
   use {"ellisonleao/glow.nvim"}
 
   use {'junegunn/fzf', run = ':fzf#install()' }
+  use { 'junegunn/fzf.vim' }
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   -- use {'alvarosevilla95/luatab.nvim',
@@ -105,9 +107,11 @@ use { 'junegunn/vim-easy-align' }
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
   }
+  -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
   config = function() require('nvim-treesitter-settings') end
   }
+  use { 'lewis6991/spellsitter.nvim', config = function() require'spellsitter-setting' end}
   -- fern
   use { 'lambdalisue/fern.vim' }
   use { 'lambdalisue/fern-git-status.vim' }
@@ -120,7 +124,7 @@ use { 'junegunn/vim-easy-align' }
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
     config = function() require'gitsigns-setting' end
   }
-  -- use { 'romgrk/barbar.nvim', config = function() require'barbar-setting' end}
+  use { 'romgrk/barbar.nvim', config = function() require'barbar-setting' end}
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config=function () require('diffview-setting') end }
   -- use {
     -- 'kyazdani42/nvim-tree.lua',
