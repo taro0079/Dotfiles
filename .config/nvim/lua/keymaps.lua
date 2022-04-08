@@ -108,14 +108,14 @@ vim.api.nvim_set_keymap('n', '<leader>gr', ':VGit buffer_hunk_reset<CR>', {
     noremap = true,
     silent = true,
 })
-vim.api.nvim_set_keymap('n', '<C-k>', ':VGit hunk_up<CR>', {
-    noremap = true,
-    silent = true,
-})
-vim.api.nvim_set_keymap('n', '<C-j>', ':VGit hunk_down<CR>', {
-    noremap = true,
-    silent = true,
-})
+-- vim.api.nvim_set_keymap('n', '<C-k>', ':VGit hunk_up<CR>', {
+--     noremap = true,
+--     silent = true,
+-- })
+-- vim.api.nvim_set_keymap('n', '<C-j>', ':VGit hunk_down<CR>', {
+--     noremap = true,
+--     silent = true,
+-- })
 vim.api.nvim_set_keymap('n', '<leader>gh', ':VGit buffer_history_preview<CR>', {
     noremap = true,
     silent = true,
