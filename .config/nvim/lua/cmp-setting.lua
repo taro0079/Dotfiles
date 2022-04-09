@@ -59,17 +59,18 @@ cmp.setup {
     's',
   }),
   sources = {
-    { name = 'buffer' },
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
-    { name = 'path' },
+    { name = 'buffer'},
+    { name = 'nvim_lsp'},
+    { name = 'nvim_lua'},
+    { name = 'path'},
     { name = 'spell' },
     { name = 'luasnip' },
     { name = 'ultisnips' },
     { name = 'vsnip' },
+    { name = 'copilot'},
     { name = 'calc' },
     { name = 'dictionary',
-      keyword_length = 2,}
+      keyword_length = 2}
   },
   experimental = {
 	  ghost_text = true
