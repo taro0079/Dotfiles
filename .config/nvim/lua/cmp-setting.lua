@@ -68,7 +68,9 @@ cmp.setup {
     { name = 'ultisnips' },
     { name = 'vsnip' },
     { name = 'copilot'},
+    { name = 'emoji'},
     { name = 'calc' },
+    { name = 'nvim_lsp_signature_help'},
     { name = 'dictionary',
       keyword_length = 2}
   },
@@ -76,16 +78,28 @@ cmp.setup {
 	  ghost_text = true
   }
 }
-cmp.setup.cmdline('/', {
-	sources = {
-		{ name = 'buffer'}
-	}
-})
+-- cmp.setup.cmdline('/', {
+-- 	sources = {
+-- 		{ name = 'buffer'},
+--
+-- 	}
+-- })
 
 cmp.setup.cmdline(':', {
 	sources = cmp.config.sources({
 		{ name = 'path' }
 	}, {
 		{ name = 'cmdline' }
+	}
+	)
+})
+cmp.setup.cmdline('/', {
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp_document_symbol'}
+	},
+	{
+		{ name = 'buffer'}
 	})
+
+
 })

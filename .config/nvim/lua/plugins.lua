@@ -29,6 +29,16 @@ require('packer').startup(function()
   -- LSP
   use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
   use { 'junegunn/vim-emoji' }
+  use { 'folke/lsp-colors.nvim' }
+  use { 'j-hui/fidget.nvim', config = function() require'fidget'.setup{} end }
+  use { 'RRethy/vim-illuminate' }
+  use {
+  "nvim-telescope/telescope-frecency.nvim",
+  config = function()
+    require"telescope".load_extension("frecency")
+  end,
+  requires = {"tami5/sqlite.lua"}
+}
   use {'hrsh7th/nvim-cmp',
   config = function()require('cmp-setting') end
   }
@@ -72,6 +82,9 @@ require('packer').startup(function()
   -- cmp
   use 'hrsh7th/cmp-calc'
   use 'hrsh7th/cmp-omni'
+  use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+  use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
+  use { 'hrsh7th/cmp-emoji' }
 
   use {
   'nvim-telescope/telescope.nvim',
@@ -140,6 +153,7 @@ use { 'junegunn/vim-easy-align' }
   }
   use { 'romgrk/barbar.nvim', config = function() require'barbar-setting' end}
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config=function () require('diffview-setting') end }
+  use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter"})
   -- use {
     -- 'kyazdani42/nvim-tree.lua',
     -- requires = {
@@ -156,6 +170,7 @@ end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
 vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+
 -- require('onedarkpro').load()
 
 

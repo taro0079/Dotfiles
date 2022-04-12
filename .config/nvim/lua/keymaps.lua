@@ -5,6 +5,7 @@ autocmd TermOpen * startinsert
 ]]
 -- vim.cmd[[nnoremap <silent> <leader>gg :LazyGit<CR>]]
 vim.cmd[[
+" nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
@@ -19,6 +20,8 @@ nnoremap <leader>ps <cmd> lua require('telescope.builtin').grep_string({ search 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 ]]
+vim.api.nvim_set_keymap("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
+
 
 vim.cmd[[
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>

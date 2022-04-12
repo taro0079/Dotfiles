@@ -73,6 +73,7 @@ lsp_installer.on_server_ready(function(server)
     local opts = {}
     opts.on_attach = on_attach
     opts.capabilities = capabilities
+    require'illuminate'on_attach(client)
     server:setup(opts)
 end)
 
