@@ -3,7 +3,7 @@ require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use { 'stsewd/fzf-checkout.vim' }
   use 'kristijanhusak/vim-carbon-now-sh'
-  use 'luisiacc/gruvbox-baby'
+  -- use 'luisiacc/gruvbox-baby'
   use 'simrat39/symbols-outline.nvim'
   use 'liuchengxu/vista.vim'
   use 'kat0h/bufpreview.vim'
@@ -11,6 +11,16 @@ require('packer').startup(function()
   -- use {'neoclide/coc.nvim', branch = 'release'}
   -- use { 'tpope/vim-endwise' }
 
+  use { 'github/copilot.vim' }
+  use{
+  "zbirenbaum/copilot.lua",
+  event = {"VimEnter"},
+  config = function()
+    vim.defer_fn(function()
+      require("copilot").setup()
+    end, 100)
+  end,
+}
 
   -- use 'segeljakt/vim-silicon'
   -- Git
@@ -41,6 +51,10 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'f3fora/cmp-spell'
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = {"copilot.lua", "nvim-cmp"},
+}
   use 'yonlu/omni.vim'
 
   -- Color Scheme

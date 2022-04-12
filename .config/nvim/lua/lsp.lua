@@ -46,7 +46,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
 require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
-require'lspconfig'.texlab.setup{on_attach = on_attach, capabilities = capabilities}
 
 
 -- local function setup_servers()
@@ -91,3 +90,10 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+nvim_lsp.emmet_ls.setup({
+	capabilities = capabilities,
+	filetypes = {"html", "css", "typescriptreact", "javascript"}
+
+})
+
