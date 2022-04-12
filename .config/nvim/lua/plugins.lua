@@ -50,10 +50,10 @@ require('packer').startup(function()
   -- use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
   -- use { 'rebelot/kanagawa.nvim', config=function () require'kanagawa-setting' end }
   -- use { 'tiagovla/tokyodark.nvim'}
-  use {'sainnhe/gruvbox-material'}
+  -- use {'sainnhe/gruvbox-material'}
   -- use { 'catppuccin/nvim',
   -- as = "catppuccin"}
-  -- use { 'EdenEast/nightfox.nvim' }
+  use { 'EdenEast/nightfox.nvim' }
 
   -- cmp
   use 'hrsh7th/cmp-calc'
