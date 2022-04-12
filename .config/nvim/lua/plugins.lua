@@ -48,7 +48,7 @@ require('packer').startup(function()
   use {'quangnguyen30192/cmp-nvim-ultisnips'}
   use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
   use { 'hrsh7th/vim-vsnip' }
-  use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
+  -- use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
   use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
   use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
   use 'onsails/lspkind-nvim'
