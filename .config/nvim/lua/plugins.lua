@@ -23,8 +23,6 @@ require('packer').startup(function()
 }
 
   -- use 'segeljakt/vim-silicon'
-  -- Git
-  use { 'tanvirtin/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}, config = function() require'vgit-setting' end }
 
   -- LSP
   use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
@@ -48,7 +46,7 @@ require('packer').startup(function()
   use {'quangnguyen30192/cmp-nvim-ultisnips'}
   use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
   use { 'hrsh7th/vim-vsnip' }
-  use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
+  -- use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
   use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
   use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
   use 'onsails/lspkind-nvim'
@@ -118,6 +116,20 @@ require('packer').startup(function()
        end
 }
 
+	-- git
+	use {'tpope/vim-fugitive'}
+	use {
+		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+		config = function() require'gitsigns-setting' end
+	}
+	use { 'tanvirtin/vgit.nvim', requires = {'nvim-lua/plenary.nvim'}, config = function() require'vgit-setting' end }
+	use { 'TimUntersberger/neogit' ,config=function() require'neogit-setting' end}
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config=function () require('diffview-setting') end }
+	-- use { 'akinsho/git-conflict.nvim', config= function()
+	-- 	require('git-conflict-setting')
+	-- 	end
+	-- }
+
 
 
 use { 'junegunn/vim-easy-align' }
@@ -130,7 +142,6 @@ use { 'junegunn/vim-easy-align' }
   -- use {'unblevable/quick-scope'}
   use {'tpope/vim-rails'}
   use {'tpope/vim-surround'}
-  use {'tpope/vim-fugitive'}
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
   }
@@ -147,12 +158,7 @@ use { 'junegunn/vim-easy-align' }
   use { 'lambdalisue/glyph-palette.vim' }
   use { 'antoinemadec/FixCursorHold.nvim' }
 
-  use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require'gitsigns-setting' end
-  }
   use { 'romgrk/barbar.nvim', config = function() require'barbar-setting' end}
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config=function () require('diffview-setting') end }
   use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter"})
   -- use {
     -- 'kyazdani42/nvim-tree.lua',
