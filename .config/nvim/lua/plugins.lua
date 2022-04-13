@@ -2,7 +2,7 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use { 'stsewd/fzf-checkout.vim' }
-  use 'kristijanhusak/vim-carbon-now-sh'
+  -- use 'kristijanhusak/vim-carbon-now-sh'
   -- use 'luisiacc/gruvbox-baby'
   use 'simrat39/symbols-outline.nvim'
   use 'liuchengxu/vista.vim'
@@ -63,10 +63,10 @@ require('packer').startup(function()
     "zbirenbaum/copilot-cmp",
     after = {"copilot.lua", "nvim-cmp"},
 }
-  use 'yonlu/omni.vim'
 
   -- Color Scheme
   -- use 'bluz71/vim-nightfly-guicolors'
+  -- use 'yonlu/omni.vim'
   -- use 'folke/tokyonight.nvim'
   -- use 'olimorris/onedarkpro.nvim'
   -- use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
@@ -75,7 +75,8 @@ require('packer').startup(function()
   -- use {'sainnhe/gruvbox-material'}
   -- use { 'catppuccin/nvim',
   -- as = "catppuccin"}
-  use { 'EdenEast/nightfox.nvim' }
+	use { 'shaunsingh/nord.nvim' }
+	use { 'EdenEast/nightfox.nvim' }
 
   -- cmp
   use 'hrsh7th/cmp-calc'
@@ -140,7 +141,6 @@ use { 'junegunn/vim-easy-align' }
   use {'t9md/vim-quickhl'}
   use {'numToStr/Comment.nvim', config = function() require('Comment').setup() end}
   -- use {'unblevable/quick-scope'}
-  use {'tpope/vim-rails'}
   use {'tpope/vim-surround'}
   use { 'windwp/nvim-autopairs',
   config = function() require('nvim-autopairs').setup() end
@@ -160,18 +160,6 @@ use { 'junegunn/vim-easy-align' }
 
   use { 'romgrk/barbar.nvim', config = function() require'barbar-setting' end}
   use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter"})
-  -- use {
-    -- 'kyazdani42/nvim-tree.lua',
-    -- requires = {
-    --   'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    -- },
-    -- config = function() require'nvimtree-settings' end
-    -- }
-    -- use {'mfussenegger/nvim-dap', config= function() require'dap-setting' end}
-    -- use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}, config=require("dapui").setup()}
-    -- use { 'Mofiqul/vscode.nvim' }
-    -- use { 'kdheepak/tabline.nvim', config = function() require'tabline-setting' end, requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true}} }
---    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', config=function() require'bufferline-setting' end}
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"      
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>" 
