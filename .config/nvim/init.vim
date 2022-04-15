@@ -16,8 +16,8 @@ lua << EOF
 require'plugins'
 require 'keymaps'
 
-vim.opt.spell = true
-vim.opt.spelllang = { 'en_us' }
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { 'en_us' }
 
 -- vim.g.tokyodark_transparent_background = true
 -- vim.g.tokyodark_enable_italic_comment = true
