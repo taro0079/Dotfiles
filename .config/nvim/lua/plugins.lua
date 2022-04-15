@@ -63,6 +63,7 @@ require('packer').startup(function()
     "zbirenbaum/copilot-cmp",
     after = {"copilot.lua", "nvim-cmp"},
 }
+	use { 'declancm/cinnamon.nvim' }
 
   -- Color Scheme
   -- use 'bluz71/vim-nightfly-guicolors'
