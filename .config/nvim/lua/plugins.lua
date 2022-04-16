@@ -144,6 +144,15 @@ require('packer').startup(function()
 	use { 'antoinemadec/FixCursorHold.nvim' }
 
 	use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
+
+	-- startup plugin
+	use {
+		'goolord/alpha-nvim',
+		requires = { 'kyazdani42/nvim-web-devicons' },
+		config = function ()
+			require'alpha'.setup(require'alpha.themes.startify'.config)
+		end
+	}
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
