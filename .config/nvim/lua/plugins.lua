@@ -2,14 +2,11 @@ vim.cmd[[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 	use { 'stsewd/fzf-checkout.vim' }
-	-- use 'kristijanhusak/vim-carbon-now-sh'
-	-- use 'luisiacc/gruvbox-baby'
 	use 'simrat39/symbols-outline.nvim'
 	use { 'simeji/winresizer' }
 	use 'liuchengxu/vista.vim'
 	use 'kat0h/bufpreview.vim'
 	use {"akinsho/toggleterm.nvim", config = function() require'toggleterm-setting' end}
-	-- use {'neoclide/coc.nvim', branch = 'release'}
 	-- use { 'tpope/vim-endwise' }
 
 	use { 'github/copilot.vim' }
@@ -23,9 +20,8 @@ require('packer').startup(function()
 		end,
 	}
 
-	-- use 'segeljakt/vim-silicon'
 
-	-- LSP
+	-- LSP系のプラグイン
 	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
 	use { 'junegunn/vim-emoji' }
 	use { 'folke/lsp-colors.nvim' }
@@ -38,9 +34,6 @@ require('packer').startup(function()
 		end,
 		requires = {"tami5/sqlite.lua"}
 	}
-	use {'hrsh7th/nvim-cmp',
-		config = function()require('cmp-setting') end
-	}
 	use { 'hrsh7th/vim-vsnip-integ'}
 	use {'L3MON4D3/LuaSnip'}
 	use {'saadparwaiz1/cmp_luasnip'}
@@ -48,44 +41,37 @@ require('packer').startup(function()
 	use {'neovim/nvim-lspconfig', config=function() require'lsp' end}
 	use { 'hrsh7th/vim-vsnip' }
 	-- use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
-	use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
-	use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
 	use 'onsails/lspkind-nvim'
-	use 'hrsh7th/cmp-nvim-lua'
 	use {'williamboman/nvim-lsp-installer'}
 	use {'dcampos/nvim-snippy'}
+	use {
+		"zbirenbaum/copilot-cmp",
+		after = {"copilot.lua", "nvim-cmp"},
+	}
+	use { 'declancm/cinnamon.nvim' } -- スムーズなスクロールできるプラグイン
+
+	-- Color Scheme
+	use { 'shaunsingh/nord.nvim' }
+	use { 'EdenEast/nightfox.nvim' }
+
+	-- cmp
+	use {'hrsh7th/nvim-cmp',
+		config = function()require('cmp-setting') end
+	}
+	use 'hrsh7th/cmp-calc'
+	use 'hrsh7th/cmp-omni'
+	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
+	use { 'hrsh7th/cmp-emoji' }
+	use {'uga-rosa/cmp-dictionary', config= function() require'dictionary-setting' end}
+	use 'hrsh7th/cmp-nvim-lua'
+	use {'hrsh7th/cmp-vsnip', config = function() require'vsnip-settings' end}
 	use {'dcampos/cmp-snippy'}
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'f3fora/cmp-spell'
-	use {
-		"zbirenbaum/copilot-cmp",
-		after = {"copilot.lua", "nvim-cmp"},
-	}
-	use { 'declancm/cinnamon.nvim' }
-
-	-- Color Scheme
-	-- use 'bluz71/vim-nightfly-guicolors'
-	-- use 'yonlu/omni.vim'
-	-- use 'folke/tokyonight.nvim'
-	-- use 'olimorris/onedarkpro.nvim'
-	-- use { 'NTBBloodbath/doom-one.nvim', config=function() require'doom-one-setting' end }
-	-- use { 'rebelot/kanagawa.nvim', config=function () require'kanagawa-setting' end }
-	-- use { 'tiagovla/tokyodark.nvim'}
-	-- use {'sainnhe/gruvbox-material'}
-	-- use { 'catppuccin/nvim',
-	-- as = "catppuccin"}
-	use { 'shaunsingh/nord.nvim' }
-	use { 'EdenEast/nightfox.nvim' }
-
-	-- cmp
-	use 'hrsh7th/cmp-calc'
-	use 'hrsh7th/cmp-omni'
-	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
-	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
-	use { 'hrsh7th/cmp-emoji' }
 
 	use {
 		'nvim-telescope/telescope.nvim',
