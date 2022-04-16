@@ -118,3 +118,9 @@ fh() {
 	print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/moritatarou/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/moritatarou/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/moritatarou/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/moritatarou/google-cloud-sdk/completion.zsh.inc'; fi
