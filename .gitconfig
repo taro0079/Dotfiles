@@ -14,5 +14,10 @@
 [diff]
     colorMoved = default
 [user]
-	email = morita0079@gmail.com
-	name = Taro Morita
+	email = 38848223+taro0079@users.noreply.github.com
+	name = Morita Taro
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

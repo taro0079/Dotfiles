@@ -1,5 +1,6 @@
 vim.cmd [[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
+	use { 'easymotion/vim-easymotion' }
 	use 'wbthomason/packer.nvim'
 	use { 'stsewd/fzf-checkout.vim' }
 	use 'simrat39/symbols-outline.nvim'
@@ -119,7 +120,6 @@ require('packer').startup(function()
 
 	use { 'junegunn/vim-easy-align' } -- 表とかをきれいに整列するプラグイン
 	use { "lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end }
-	use { 'easymotion/vim-easymotion' }
 	use { 'rhysd/clever-f.vim' }
 	use { 'haya14busa/vim-edgemotion' }
 	use { 't9md/vim-quickhl' }
