@@ -1,6 +1,6 @@
 require('lualine').setup {
 	options = {
-		theme = 'nightfox'
+		theme = 'nord'
 	},
 	sections = {
 		lualine_a = {
