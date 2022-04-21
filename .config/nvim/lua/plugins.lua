@@ -103,7 +103,7 @@ require('packer').startup(function()
 		end }
 
 	-- git
-	use { 'tpope/vim-fugitive' }
+	-- use { 'tpope/vim-fugitive' }
 	use {
 		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
 		config = function() require 'gitsigns-setting' end
