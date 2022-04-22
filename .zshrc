@@ -124,3 +124,8 @@ if [ -f '/Users/moritatarou/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mor
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/moritatarou/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/moritatarou/google-cloud-sdk/completion.zsh.inc'; fi
+
+# M1 macでsmooth_line_apiのbundle installでmysql2がこけるのを回避
+if [ "$(uname)" = "Darwin" ]; then
+	export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib
+fi
