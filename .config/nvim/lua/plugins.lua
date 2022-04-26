@@ -27,13 +27,6 @@ require('packer').startup(function()
 	use { 'folke/lsp-colors.nvim' }
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
-	use {
-		"nvim-telescope/telescope-frecency.nvim",
-		config = function()
-			require "telescope".load_extension("frecency")
-		end,
-		requires = { "tami5/sqlite.lua" }
-	}
 	-- use { 'hrsh7th/vim-vsnip-integ' }
 	-- use { 'L3MON4D3/LuaSnip' }
 	-- use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
@@ -91,7 +84,7 @@ require('packer').startup(function()
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
-	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
+	-- use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
 
 	use 'vim-denops/denops.vim'
 	use { "ellisonleao/glow.nvim" } -- markdownをきれいに表示するプラグイン
