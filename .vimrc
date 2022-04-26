@@ -15,6 +15,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ruby-formatter/rufo-vim'
+Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs'
 
 
 " Plug 'sheerun/vim-polyglot'
