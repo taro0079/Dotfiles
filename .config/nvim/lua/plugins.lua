@@ -7,6 +7,7 @@ require('packer').startup(function()
 	use { 'simeji/winresizer' } -- windowのサイズを変更するプラグイン
 	use 'liuchengxu/vista.vim'
 	use { 'ruby-formatter/rufo-vim' }
+	use { 'tpope/vim-endwise' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 	-- use { 'tpope/vim-endwise' } -- TODO: not working

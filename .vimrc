@@ -19,19 +19,19 @@ Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
 
 
-" Plug 'sheerun/vim-polyglot'
-" Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " Plug 'vim-skk/skkeleton'
 
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-" Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 
 call plug#end()
