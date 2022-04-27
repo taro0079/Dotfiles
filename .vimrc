@@ -245,8 +245,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
 let g:UltiSnipsExpandTrigger="<down>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
