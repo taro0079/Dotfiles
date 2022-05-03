@@ -8,6 +8,7 @@ require('packer').startup(function()
 	use 'liuchengxu/vista.vim'
 	use { 'ruby-formatter/rufo-vim' }
 	use { 'tpope/vim-endwise' }
+	use { 'pwntester/octo.nvim' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 	-- use { 'tpope/vim-endwise' } -- TODO: not working
