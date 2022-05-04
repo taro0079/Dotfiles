@@ -12,6 +12,7 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-denops/denops.vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -274,3 +275,5 @@ nmap <F8> :TagbarToggle<CR>
 
 let g:rustfmt_autosave = 1
 
+set runtimepath^=~/dps-helloworld
+let g:denops#debug = 1

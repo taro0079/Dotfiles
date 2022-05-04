@@ -8,6 +8,7 @@ require('packer').startup(function()
 	use 'liuchengxu/vista.vim'
 	use { 'ruby-formatter/rufo-vim' }
 	use { 'tpope/vim-endwise' }
+	use { 'pwntester/octo.nvim' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 	-- use { 'tpope/vim-endwise' } -- TODO: not working
@@ -50,6 +51,7 @@ require('packer').startup(function()
 	-- Color Scheme
 	use { 'shaunsingh/nord.nvim' }
 	use { 'EdenEast/nightfox.nvim' }
+	use { 'sainnhe/gruvbox-material' }
 	-- use { 'projekt0n/github-nvim-theme', config = function() require 'github-color-settings' end }
 
 	-- cmp
