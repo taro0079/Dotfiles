@@ -30,6 +30,7 @@ require('packer').startup(function()
 	use { 'folke/lsp-colors.nvim' }
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
+	use { 'rust-lang/rust.vim' }
 	-- use { 'hrsh7th/vim-vsnip-integ' }
 	-- use { 'L3MON4D3/LuaSnip' }
 	-- use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
