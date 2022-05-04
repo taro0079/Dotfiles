@@ -7,6 +7,7 @@ set showmatch
 set incsearch
 set nocompatible
 set signcolumn=yes
+set termguicolors
 syntax on
 
 call plug#begin('~/.vim/plugged')
@@ -14,15 +15,20 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ruby-formatter/rufo-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'pantharshit00/vim-prisma'
+" Plug 'ruby-formatter/rufo-vim'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
-
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'majutsushi/tagbar'
+
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -151,6 +157,8 @@ nmap <leader>rn <Plug>(coc-rename)
 " " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>fa  <Plug>(coc-format)
+nmap <leader>fa <Plug>(coc-format)
 
 
 
@@ -251,3 +259,18 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+let g:ale_linters = {
+      \  'ruby': ['rubocop']
+      \  }
+let g:ale_linters_explicit = 1
+let g:airline#extensions#ale#enable = 1
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+let g:ale_fix_on_save = 1
+
+nmap <F8> :TagbarToggle<CR>
+
+let g:rustfmt_autosave = 1
+
