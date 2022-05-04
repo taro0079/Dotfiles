@@ -129,3 +129,7 @@ if [ -f '/Users/moritatarou/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 if [ "$(uname)" = "Darwin" ]; then
 	export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
