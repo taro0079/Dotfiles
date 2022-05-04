@@ -11,6 +11,7 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-denops/denops.vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -251,3 +252,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+set runtimepath^=~/dps-helloworld
+let g:denops#debug = 1
