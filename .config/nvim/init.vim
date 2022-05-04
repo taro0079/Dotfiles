@@ -26,7 +26,9 @@ EOF
 
 
 	set termguicolors
-	colorscheme nightfox
+	let g:gruvbox_material_background = 'medium'
+	let g:gruvbox_material_better_performance = 1
+	colorscheme gruvbox-material
 	" NOTE: If barbar's option dict isn't created yet, create it
 	let bufferline = get(g:, 'bufferline', {})
 

@@ -51,6 +51,7 @@ require('packer').startup(function()
 	-- Color Scheme
 	use { 'shaunsingh/nord.nvim' }
 	use { 'EdenEast/nightfox.nvim' }
+	use { 'sainnhe/gruvbox-material' }
 	-- use { 'projekt0n/github-nvim-theme', config = function() require 'github-color-settings' end }
 
 	-- cmp
