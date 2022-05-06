@@ -231,3 +231,12 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 let g:rustfmt_autosave = 1
+let g:ale_linters = {
+      \  'ruby': ['rubocop']
+      \  }
+let g:ale_linters_explicit = 1
+let g:airline#extensions#ale#enable = 1
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+let g:ale_fix_on_save = 1
