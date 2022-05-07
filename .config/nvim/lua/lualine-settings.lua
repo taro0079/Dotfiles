@@ -1,6 +1,6 @@
 require('lualine').setup {
 	options = {
-		theme = 'gruvbox-material',
+		theme = 'nightfox',
 		section_separators = { left = '', right = '' },
 	},
 	sections = {

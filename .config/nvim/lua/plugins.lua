@@ -54,12 +54,7 @@ require('packer').startup(function()
 	use { 'shaunsingh/nord.nvim' }
 	use { 'EdenEast/nightfox.nvim' }
 	use { 'sainnhe/gruvbox-material' }
-	-- use { 'projekt0n/github-nvim-theme', config = function() require 'github-color-settings' end }
-
-	-- cmp
-	-- use { 'hrsh7th/nvim-cmp',
-	-- 	config = function() require('cmp-setting') end
-	-- }
+	-- use { 'Mofiqul/vscode.nvim', config = function() require'vscode-setting' end}
 	use { 'neoclide/coc.nvim', branch = 'release'}
 
 	-- use 'hrsh7th/cmp-calc'
