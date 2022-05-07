@@ -117,6 +117,7 @@ require('packer').startup(function()
 	-- 	require('git-conflict-setting')
 	-- 	end
 	-- }
+	use { 'rhysd/conflict-marker.vim' }
 
 
 
