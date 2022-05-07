@@ -274,6 +274,3 @@ let g:ale_fix_on_save = 1
 nmap <F8> :TagbarToggle<CR>
 
 let g:rustfmt_autosave = 1
-
-set runtimepath^=~/dps-helloworld
-let g:denops#debug = 1
