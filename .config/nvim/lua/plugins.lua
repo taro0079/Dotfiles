@@ -6,7 +6,7 @@ require('packer').startup(function()
 	use 'simrat39/symbols-outline.nvim'
 	use { 'simeji/winresizer' } -- windowのサイズを変更するプラグイン
 	use 'liuchengxu/vista.vim'
-	use { 'ruby-formatter/rufo-vim' }
+	-- use { 'ruby-formatter/rufo-vim' }
 	use { 'tpope/vim-endwise' }
 	use { 'pwntester/octo.nvim' }
 	use 'kat0h/bufpreview.vim'
@@ -23,6 +23,7 @@ require('packer').startup(function()
 			end, 100)
 		end,
 	}
+	use { 'dense-analysis/ale' }
 
 
 	-- LSP系のプラグイン
