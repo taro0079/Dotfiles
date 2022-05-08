@@ -7,7 +7,6 @@ set showmatch
 set incsearch
 set nocompatible
 set signcolumn=yes
-set termguicolors
 syntax on
 
 call plug#begin('~/.vim/plugged')
@@ -31,7 +30,7 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-sneak'
-
+Plug 'liuchengxu/vista.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -55,9 +54,9 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme gruvbox-material
-let g:gruvbox_material_better_performance = 1
+" let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_background = 'soft'
+colorscheme gruvbox-material
 
 let g:rufo_auto_formatting = 1
 

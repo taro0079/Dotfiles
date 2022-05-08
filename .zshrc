@@ -40,7 +40,7 @@ export GOPATH=~/go  # GOPATHにすると決めた場所
 export PATH=$GOPATH/bin:$PATH
 
 # 補完の有効化
-autoload -U compinit
+autoload -U compinit 
 compinit
 export PATH="$HOME/.rbenv/bin:$PATH"
 # mac
@@ -133,3 +133,6 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+alias dox='docker exec -it `docker ps --format "{{.Names}}" | fzf` sh'
+fpath=(~/.zsh/completion $fpath)
+source ~/.ghq/github.com/kwhrtsk/docker-fzf-completion/docker-fzf.zsh
