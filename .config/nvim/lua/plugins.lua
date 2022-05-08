@@ -151,6 +151,9 @@ require('packer').startup(function()
 			require 'alpha'.setup(require 'alpha.themes.startify'.config)
 		end
 	}
+
+	-- Go
+	use { 'ray-x/go.nvim' }
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"

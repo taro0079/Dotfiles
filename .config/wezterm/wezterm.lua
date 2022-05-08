@@ -3,6 +3,8 @@ local wezterm = require 'wezterm';
 return {
 	-- font = wezterm.font("JetBrains Mono", {weight="Bold", italic=true}),
 	font = wezterm.font_with_fallback({
+		{family = "Fira Code", weight="Medium", italic=false},
+		{family = "FiraCode Nerd Font", weight="Medium", italic=false},
 		{family = "FiraCode Nerd Font", weight="Medium", italic=false},
 		{family = "VictorMono Nerd Font Mono", weight="Medium", italic=true},
 		{family = "HackGenNerd", weight="Medium", italic=true},
