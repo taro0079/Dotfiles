@@ -13,7 +13,8 @@ syntax on
 call plug#begin('~/.vim/plugged')
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
@@ -54,7 +55,9 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
+let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_background = 'soft'
 
 let g:rufo_auto_formatting = 1
 
