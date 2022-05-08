@@ -1,17 +1,19 @@
 vim.cmd [[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
+
+	-- motion
 	use { 'easymotion/vim-easymotion' }
+	use { 'justinmk/vim-sneak' }
 	use 'wbthomason/packer.nvim'
 	use { 'stsewd/fzf-checkout.vim' }
 	use 'simrat39/symbols-outline.nvim'
 	use { 'simeji/winresizer' } -- windowのサイズを変更するプラグイン
 	use 'liuchengxu/vista.vim'
-	-- use { 'ruby-formatter/rufo-vim' }
-	use { 'tpope/vim-endwise' }
+	-- for ruby
+	use { 'RRethy/nvim-treesitter-endwise' } 
 	use { 'pwntester/octo.nvim' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
-	-- use { 'tpope/vim-endwise' } -- TODO: not working
 
 	use { 'github/copilot.vim' }
 	use {
@@ -32,13 +34,13 @@ require('packer').startup(function()
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
 	use { 'rust-lang/rust.vim' }
-	-- use { 'hrsh7th/vim-vsnip-integ' }
-	-- use { 'L3MON4D3/LuaSnip' }
-	-- use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
-	-- use { 'hrsh7th/vim-vsnip' }
-	-- use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
-	-- use 'onsails/lspkind-nvim'
-	-- use { 'williamboman/nvim-lsp-installer' }
+	use { 'hrsh7th/vim-vsnip-integ' }
+	use { 'L3MON4D3/LuaSnip' }
+	use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
+	use { 'hrsh7th/vim-vsnip' }
+	use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
+	use 'onsails/lspkind-nvim'
+	use { 'williamboman/nvim-lsp-installer' }
 	-- use { 'dcampos/nvim-snippy' }
 	use { 'declancm/cinnamon.nvim' } -- スムーズなスクロールできるプラグイン
 	use {
@@ -55,29 +57,29 @@ require('packer').startup(function()
 	use { 'EdenEast/nightfox.nvim' }
 	use { 'sainnhe/gruvbox-material' }
 	-- use { 'Mofiqul/vscode.nvim', config = function() require'vscode-setting' end}
-	use { 'neoclide/coc.nvim', branch = 'release'}
-
-	-- use 'hrsh7th/cmp-calc'
-	-- use 'hrsh7th/cmp-omni'
-	-- use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
-	-- use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
-	-- use { 'hrsh7th/cmp-emoji' }
-	-- use { 'uga-rosa/cmp-dictionary', config = function() require 'dictionary-setting' end }
-	-- use 'hrsh7th/cmp-nvim-lua'
-	-- use { 'hrsh7th/cmp-vsnip', config = function() require 'vsnip-settings' end }
-	-- use { 'dcampos/cmp-snippy' }
-	-- use 'hrsh7th/cmp-nvim-lsp'
-	-- use 'hrsh7th/cmp-buffer'
-	-- use 'hrsh7th/cmp-path'
-	-- use 'hrsh7th/cmp-cmdline'
-	-- use 'f3fora/cmp-spell'
-	-- use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
-	-- use { 'saadparwaiz1/cmp_luasnip' }
-	-- use { 'quangnguyen30192/cmp-nvim-ultisnips' }
-	-- use {
-	-- 	"zbirenbaum/copilot-cmp",
-	-- 	after = { "copilot.lua", "nvim-cmp" },
-	-- }
+	-- use { 'neoclide/coc.nvim', branch = 'release'}
+	use { 'hrsh7th/nvim-cmp' ,config = function() require 'cmp-setting' end}
+	use 'hrsh7th/cmp-calc'
+	use 'hrsh7th/cmp-omni'
+	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
+	use { 'hrsh7th/cmp-emoji' }
+	use { 'uga-rosa/cmp-dictionary', config = function() require 'dictionary-setting' end }
+	use 'hrsh7th/cmp-nvim-lua'
+	use { 'hrsh7th/cmp-vsnip', config = function() require 'vsnip-settings' end }
+	use { 'dcampos/cmp-snippy' }
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'f3fora/cmp-spell'
+	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
+	use { 'saadparwaiz1/cmp_luasnip' }
+	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
+	use {
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua", "nvim-cmp" },
+	}
 
 	-- telescope
 	use {
@@ -85,7 +87,7 @@ require('packer').startup(function()
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
-	-- use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
+	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
 
 	use 'vim-denops/denops.vim'
 	use { "ellisonleao/glow.nvim" } -- markdownをきれいに表示するプラグイン
@@ -154,6 +156,7 @@ require('packer').startup(function()
 
 	-- Go
 	use { 'ray-x/go.nvim' }
+	use { 'fatih/vim-go' }
 end)
 vim.g.UltiSnipsExpandTrigger = "<C-s>"
 vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
