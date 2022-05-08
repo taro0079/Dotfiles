@@ -51,6 +51,11 @@ do
 	    do
 		    ln -sfnv $HOME/Dotfiles/$f $HOME/$f
 	    done
+    # elif [ $file == ".vsnip" ] ; then
+	   #  for f in .vsnip/??*
+	   #  do
+		  #   ln -sfnv $HOME/Dotfiles/$f $HOME/$f
+	   #  done
     else
 	    ln -sfnv $HOME/Dotfiles/$file $HOME/$file
     fi
