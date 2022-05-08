@@ -1,6 +1,7 @@
 if !exists('g:vscode')
 	set number
 	set exrc
+	set signcolumn=yes
 	set relativenumber
 	set nocompatible
 	set clipboard+=unnamedplus
@@ -20,13 +21,13 @@ if !exists('g:vscode')
 	require 'keymaps'
 	vim.opt.spell = true
 	vim.opt.spelllang = { 'en_us', 'cjk' }
-	vim.g.tokyonight_transparent = true
+	-- vim.g.tokyonight_transparent = true
 EOF
 
 
 
 	set termguicolors
-	colorscheme nordfox
+	colorscheme nightfox
 	" NOTE: If barbar's option dict isn't created yet, create it
 	let bufferline = get(g:, 'bufferline', {})
 
