@@ -10,7 +10,7 @@ require('packer').startup(function()
 	use { 'simeji/winresizer' } -- windowのサイズを変更するプラグイン
 	use 'liuchengxu/vista.vim'
 	-- for ruby
-	use { 'RRethy/nvim-treesitter-endwise' } 
+	use { 'RRethy/nvim-treesitter-endwise' }
 	use { 'pwntester/octo.nvim' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
@@ -37,8 +37,13 @@ require('packer').startup(function()
 	use { 'hrsh7th/vim-vsnip-integ' }
 	use { 'L3MON4D3/LuaSnip' }
 	use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
+	-- snippets
 	use { 'hrsh7th/vim-vsnip' }
-	use {'ray-x/lsp_signature.nvim', config=function() require "lsp_signature".setup() end}
+	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
+	use { 'SirVer/ultisnips' }
+	use { 'honza/vim-snippets' }
+	-- use { 'norcalli/snippets.nvim', config = function () require 'snippets-setting.lua' end }
+	use { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
 	use 'onsails/lspkind-nvim'
 	use { 'williamboman/nvim-lsp-installer' }
 	-- use { 'dcampos/nvim-snippy' }
@@ -58,7 +63,7 @@ require('packer').startup(function()
 	use { 'sainnhe/gruvbox-material' }
 	-- use { 'Mofiqul/vscode.nvim', config = function() require'vscode-setting' end}
 	-- use { 'neoclide/coc.nvim', branch = 'release'}
-	use { 'hrsh7th/nvim-cmp' ,config = function() require 'cmp-setting' end}
+	use { 'hrsh7th/nvim-cmp', config = function() require 'cmp-setting' end }
 	use 'hrsh7th/cmp-calc'
 	use 'hrsh7th/cmp-omni'
 	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
@@ -94,8 +99,6 @@ require('packer').startup(function()
 
 	use { 'junegunn/fzf', run = ':fzf#install()' }
 	use { 'junegunn/fzf.vim' }
-	use 'SirVer/ultisnips'
-	use 'honza/vim-snippets'
 	use { 'hoob3rt/lualine.nvim',
 		config = function()
 			require("lualine-settings")
