@@ -29,6 +29,7 @@ Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
+Plug 'justinmk/vim-sneak'
 
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -41,6 +42,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'easymotion/vim-easymotion'
 
 
 call plug#end()
@@ -267,6 +270,12 @@ let g:ale_linters = {
 let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enable = 1
 let g:airline#extensions#tabline#enabled = 1
+
+"airlineのシンボルの設定
+if !exists('g:airline_symbols')
+  let g:airline_symbols ={}
+endif
+let g:airline_symbols.branch = ''
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \}
