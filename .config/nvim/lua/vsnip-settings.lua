@@ -15,10 +15,10 @@ vim.cmd[[imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'    
 vim.cmd[[smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>']]
 
 
-vim.cmd[[nmap        s   <Plug>(vsnip-select-text)]]
-vim.cmd[[xmap        s   <Plug>(vsnip-select-text)]]
-vim.cmd[[nmap        S   <Plug>(vsnip-cut-text)]]
-vim.cmd[[xmap        S   <Plug>(vsnip-cut-text)]]
+-- vim.cmd[[nmap        s   <Plug>(vsnip-select-text)]]
+-- vim.cmd[[xmap        s   <Plug>(vsnip-select-text)]]
+-- vim.cmd[[nmap        S   <Plug>(vsnip-cut-text)]]
+-- vim.cmd[[xmap        S   <Plug>(vsnip-cut-text)]]
 
 vim.cmd[[let g:vsnip_filetypes = {}]]
 vim.cmd[[let g:vsnip_filetypes.javascriptreact = ['javascript'] ]]
