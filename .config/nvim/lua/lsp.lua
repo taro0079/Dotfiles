@@ -1,4 +1,7 @@
 local nvim_lsp = require('lspconfig')
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.setup{}
 
 local opts = { noremap=true, silent=true}
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>loa vim.diagnostic.open_float()<CR>', opts)
@@ -30,9 +33,9 @@ end
 -- illuminate setting
 -- Use a loop to conveniently call 'setup' on multiple servers and
 ---- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'solargraph', 'hie', 'hls'}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+-- local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'solargraph', 'hie', 'hls'}
+for _, lsp in ipairs(lsp_installer.get_installed_servers()) do
+  nvim_lsp[lsp.name].setup {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -42,20 +45,18 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
-require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
-require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
+-- require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
+-- require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
+-- require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
 
-local lsp_installer = require("nvim-lsp-installer")
---
 -- -- Register a handler that will be called for all installed servers.
 -- -- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-    opts.on_attach = on_attach
-    opts.capabilities = capabilities
-    server:setup(opts)
-end)
+-- lsp_installer.on_server_ready(function(server)
+--     local opts = {}
+--     opts.on_attach = on_attach
+--     opts.capabilities = capabilities
+--     server:setup(opts)
+-- end)
 --
 --
 vim.diagnostic.config({
