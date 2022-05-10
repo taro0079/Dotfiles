@@ -18,11 +18,12 @@ set pumblend=10
 lua << EOF
 require'plugins'
 require 'keymaps'
+vim.o.updatetime = 300
+vim.o.incsearch = false
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'cjk' }
 -- vim.g.tokyonight_transparent = true
 EOF
-
 
 
 set termguicolors
