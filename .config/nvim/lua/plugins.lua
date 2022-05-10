@@ -160,6 +160,6 @@ require('packer').startup(function()
 	use { 'ray-x/go.nvim' }
 	use { 'fatih/vim-go' }
 end)
-vim.g.UltiSnipsExpandTrigger = "<C-s>"
-vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+-- vim.g.UltiSnipsExpandTrigger = "<C-s>"
+-- vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
+-- vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
