@@ -80,7 +80,6 @@ require('packer').startup(function()
 	use 'f3fora/cmp-spell'
 	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
 	use { 'saadparwaiz1/cmp_luasnip' }
-	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
 	use {
 		"zbirenbaum/copilot-cmp",
 		after = { "copilot.lua", "nvim-cmp" },
