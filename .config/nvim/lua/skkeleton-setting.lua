@@ -1,5 +1,5 @@
-vim.cmd[[imap <C-y> <Plug>(skkeleton-toggle)
-         cmap <C-y> <Plug>(skkeleton-toggle)]]
+vim.cmd[[imap <C-l> <Plug>(skkeleton-toggle)
+         cmap <C-l> <Plug>(skkeleton-toggle)]]
 vim.cmd[[
 call skkeleton#config({
  \   'globalJisyo': '~/.eskk/SKK-JISYO.L',

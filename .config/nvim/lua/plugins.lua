@@ -144,6 +144,7 @@ require('packer').startup(function()
 	use { 'lambdalisue/fern-renderer-nerdfont.vim' }
 	use { 'lambdalisue/glyph-palette.vim' }
 	use { 'antoinemadec/FixCursorHold.nvim' }
+	use { 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' }, config = function() require('neoclip').setup() end }
 
 	use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
 
