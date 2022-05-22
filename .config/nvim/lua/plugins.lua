@@ -88,8 +88,11 @@ require('packer').startup(function()
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		requires = { { 'nvim-lua/plenary.nvim' },
+			config = function() require('telescope-setting') end
+		}
 	}
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
 
@@ -105,10 +108,10 @@ require('packer').startup(function()
 
 	-- git
 	-- use { 'tpope/vim-fugitive' }
-	-- use {
-	-- 	'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-	-- 	config = function() require 'gitsigns-setting' end
-	-- }
+	use {
+		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+		config = function() require 'gitsigns-setting' end
+	}
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
 	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require('diffview-setting') end }
@@ -146,7 +149,7 @@ require('packer').startup(function()
 	use { 'antoinemadec/FixCursorHold.nvim' }
 	use { 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' }, config = function() require('neoclip').setup() end }
 
-	use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
+	-- use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
 
 	-- startup plugin
 	use {

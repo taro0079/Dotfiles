@@ -10,7 +10,8 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = 
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').search_history()<cr>
-nnoremap <leader>gf <cmd>Telescope git_files theme=get_dropdown<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<cr>
+" nnoremap <leader>gf <cmd>Telescope git_files theme=get_dropdown<cr>
 nnoremap <leader>b <cmd>Telescope buffers theme=get_dropdown<cr>
 nnoremap <leader>gb <cmd>Telescope git_branches theme=get_dropdown<cr>
 nnoremap <leader>gc <cmd>Telescope git_commits theme=get_dropdown<cr>
@@ -92,12 +93,12 @@ map('n', '<A-c>', ':BufferClose<CR>', opts)
 --                 :BufferCloseBuffersLeft<CR>
 --                 :BufferCloseBuffersRight<CR>
 -- Magic buffer-picking mode
-map('n', '<C-p>', ':BufferPick<CR>', opts)
+-- map('n', '<C-p>', ':BufferPick<CR>', opts)
 -- Sort automatically by...
-map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
-
-map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
+-- map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
+--
+-- map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
+-- map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
 
 -- Other:
