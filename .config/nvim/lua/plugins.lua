@@ -61,6 +61,10 @@ require('packer').startup(function()
 	use { 'shaunsingh/nord.nvim' }
 	use { 'EdenEast/nightfox.nvim' }
 	use { 'sainnhe/gruvbox-material' }
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin"
+	})
 	-- use { 'Mofiqul/vscode.nvim', config = function() require'vscode-setting' end}
 	-- use { 'neoclide/coc.nvim', branch = 'release'}
 	use { 'hrsh7th/nvim-cmp', config = function() require 'cmp-setting' end }
@@ -115,9 +119,9 @@ require('packer').startup(function()
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
 	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require('diffview-setting') end }
-	use { 'akinsho/git-conflict.nvim', config= function()
+	use { 'akinsho/git-conflict.nvim', config = function()
 		require('git-conflict-setting')
-		end
+	end
 	}
 	use { 'rhysd/conflict-marker.vim' }
 

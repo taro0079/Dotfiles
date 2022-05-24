@@ -23,6 +23,7 @@ nmap <leader>as :action ActivateStructureToolWindow<cr>
 :map <Space>gr <Action>(FindUsages)
 :map <Space>gt <Action>(GotoTest)
 :map <Space>da <Action>(CloseAllEditors)
+:map <Space>rt <Action>(RunTestGroup)
 nmap <C-n> :NERDTreeToggle<cr>
 
 " ヤンクでクリップボードにコピー
