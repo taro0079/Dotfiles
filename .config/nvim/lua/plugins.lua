@@ -108,17 +108,17 @@ require('packer').startup(function()
 
 	-- git
 	-- use { 'tpope/vim-fugitive' }
-	use {
-		'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-		config = function() require 'gitsigns-setting' end
-	}
+	-- use {
+	-- 	'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+	-- 	config = function() require 'gitsigns-setting' end
+	-- }
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
 	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require('diffview-setting') end }
-	-- use { 'akinsho/git-conflict.nvim', config= function()
-	-- 	require('git-conflict-setting')
-	-- 	end
-	-- }
+	use { 'akinsho/git-conflict.nvim', config= function()
+		require('git-conflict-setting')
+		end
+	}
 	use { 'rhysd/conflict-marker.vim' }
 
 

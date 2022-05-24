@@ -72,3 +72,4 @@ nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 " nnoremap <C-p> :GFiles<CR>
 " nnoremap <leader>pf :Files<CR>
+set statusline+=%{get(b:,'vgit_status','')}

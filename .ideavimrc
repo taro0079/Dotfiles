@@ -18,4 +18,13 @@ nmap <Space>rn :action RenameElement<cr>
 nmap <Space>gd :action GotoDeclaration<cr>
 nmap <Space>gf :action GotoFile<cr>
 nmap <leader>as :action ActivateStructureToolWindow<cr>
+:map <leader>g <Action>(FindInPath)
+:map <leader>b <Action>(Switcher)
+:map <Space>gr <Action>(FindUsages)
+:map <Space>gt <Action>(GotoTest)
+:map <Space>da <Action>(CloseAllEditors)
 nmap <C-n> :NERDTreeToggle<cr>
+
+" ヤンクでクリップボードにコピー
+set clipboard=unnamed
+
