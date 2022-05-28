@@ -26,6 +26,7 @@ require('packer').startup(function()
 		end,
 	}
 	use { 'dense-analysis/ale' }
+	use { 'tpope/vim-rails' }
 
 
 	-- LSP系のプラグイン
