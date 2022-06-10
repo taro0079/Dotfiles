@@ -9,6 +9,8 @@ set incsearch
 
 set surround
 set commentary
+set multiple-cursors
+set easymotion
 set NERDTree
 
 let mapleader ="\"
