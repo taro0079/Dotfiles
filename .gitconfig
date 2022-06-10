@@ -1,3 +1,8 @@
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
 [core]
     pager = delta
 
@@ -6,7 +11,7 @@
 
 [delta]
     navigate = true
-	side-by-side = true
+    side-by-side = true
 
 [merge]
     conflictstyle = diff3
