@@ -1,5 +1,6 @@
 local nvim_lsp = require('lspconfig')
 local lsp_installer = require("nvim-lsp-installer")
+local configs = require'lspconfig.configs'
 
 lsp_installer.setup{}
 
@@ -45,20 +46,39 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
--- require'lspconfig'.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
--- require'lspconfig'.pylsp.setup{on_attach = on_attach, capabilities = capabilities}
--- require'lspconfig'.pyright.setup{on_attach = on_attach, capabilities = capabilities}
+if not configs.ls_emmet then
+  configs.ls_emmet = {
+    default_config = {
+      cmd = { 'ls_emmet', '--stdio' };
+      filetypes = {
+        'html',
+        'css',
+        'scss',
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'haml',
+        'xml',
+        'xsl',
+        'pug',
+        'slim',
+        'sass',
+        'stylus',
+        'less',
+        'sss',
+        'hbs',
+        'handlebars',
+      };
+      root_dir = function(fname)
+        return vim.loop.cwd()
+      end;
+      settings = {};
+    };
+  }
+end
 
--- -- Register a handler that will be called for all installed servers.
--- -- Alternatively, you may also register handlers on specific server instances instead (see example below).
--- lsp_installer.on_server_ready(function(server)
---     local opts = {}
---     opts.on_attach = on_attach
---     opts.capabilities = capabilities
---     server:setup(opts)
--- end)
---
---
+nvim_lsp.ls_emmet.setup { capabilities = capabilities }
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
