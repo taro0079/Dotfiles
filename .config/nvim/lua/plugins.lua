@@ -1,6 +1,12 @@
 vim.cmd [[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
 
+	use { 'windwp/nvim-ts-autotag', config = function() require'nvim-treesitter.config'.setup{
+			autotag ={
+				enable = true
+			}
+		}
+			end}
 	-- motion
 	use { 'easymotion/vim-easymotion' }
 	use { 'justinmk/vim-sneak' }
