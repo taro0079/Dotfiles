@@ -1,7 +1,7 @@
 vim.cmd [[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
 
-	use { 'windwp/nvim-ts-autotag', config = function() require'nvim-treesitter.config'.setup{
+	use { 'windwp/nvim-ts-autotag', config = function() require'nvim-treesitter.configs'.setup{
 			autotag ={
 				enable = true
 			}
