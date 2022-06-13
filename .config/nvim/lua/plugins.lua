@@ -123,6 +123,7 @@ require('packer').startup(function()
 	-- 	'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
 	-- 	config = function() require 'gitsigns-setting' end
 	-- }
+	use { 'skanehira/gh.vim' }
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
 	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require('diffview-setting') end }
@@ -130,7 +131,7 @@ require('packer').startup(function()
 		require('git-conflict-setting')
 	end
 	}
-	use { 'rhysd/conflict-marker.vim' }
+	-- use { 'rhysd/conflict-marker.vim' }
 
 
 
