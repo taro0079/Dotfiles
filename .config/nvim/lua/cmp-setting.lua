@@ -5,7 +5,7 @@ local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 
 cmp.setup {
-	completion = { completeopt = 'menu,menuone,noinsert' },
+	completion = { completeopt = 'menu,menuone,noselect' },
 	snippet = {
 		expand = function(args)
 			--    luasnip.lsp_expand(args.body)
