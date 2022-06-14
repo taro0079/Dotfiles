@@ -1,0 +1,29 @@
+{
+	"Import": {
+		"prefix": [
+			"imp"
+		],
+		"body": [
+			"import ${1:module} as ${2:name}",
+			"$3"
+		]
+	},
+	"From": {
+		"prefix": [
+			"from"
+		],
+		"body": [
+			"from ${1:package} import ${2:module} as ${3:name}",
+			"$4"
+		]
+	},
+	"Def": {
+		"prefix": [
+			"def"
+		],
+		"body": [
+			"def ${1:function_name}(${2:args}):",
+			"\t$3"
+		]
+	}
+}

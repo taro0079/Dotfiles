@@ -1,0 +1,33 @@
+set number
+set sneak
+set relativenumber
+set ignorecase
+set smartcase
+set ideajoin
+
+set incsearch
+
+set surround
+set commentary
+set multiple-cursors
+set easymotion
+set NERDTree
+
+let mapleader ="\"
+nmap <leader>f :action Find<cr>
+nmap <Space>f :action ReformatCode<cr>
+nmap <Space>rn :action RenameElement<cr>
+nmap <Space>gd :action GotoDeclaration<cr>
+nmap <Space>gf :action GotoFile<cr>
+nmap <leader>as :action ActivateStructureToolWindow<cr>
+:map <leader>g <Action>(FindInPath)
+:map <leader>b <Action>(Switcher)
+:map <Space>gr <Action>(FindUsages)
+:map <Space>gt <Action>(GotoTest)
+:map <Space>da <Action>(CloseAllEditors)
+:map <Space>rt <Action>(RunTestGroup)
+nmap <C-n> :NERDTreeToggle<cr>
+
+" ヤンクでクリップボードにコピー
+set clipboard=unnamed
+
