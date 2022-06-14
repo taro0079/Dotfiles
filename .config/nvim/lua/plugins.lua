@@ -149,7 +149,7 @@ require('packer').startup(function()
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
 		config = function() require('nvim-treesitter-settings') end
 	}
-	use { 'lewis6991/spellsitter.nvim', config = function() require 'spellsitter-setting' end }
+	-- use { 'lewis6991/spellsitter.nvim', config = function() require 'spellsitter-setting' end }
 	use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter" })
 
 	-- fern

@@ -5,6 +5,8 @@ set relativenumber
 set nocompatible
 set clipboard+=unnamedplus
 set cursorline
+set termguicolors
+colorscheme catppuccin
 " trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -14,7 +16,7 @@ autocmd FileChangedShellPost *
 
 set pumblend=10
 " set spell
-
+" set spelllang=en,cjk
 lua << EOF
 require'plugins'
 require 'keymaps'
@@ -26,12 +28,8 @@ vim.opt.spelllang = { 'en_us', 'cjk' }
 EOF
 
 
-set termguicolors
-colorscheme catppuccin
 " NOTE: If barbar's option dict isn't created yet, create it
 let bufferline = get(g:, 'bufferline', {})
-
-
 
 let g:fern#renderer = "nerdfont"
 let g:fern#default_hidden=1
