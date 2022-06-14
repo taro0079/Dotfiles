@@ -17,7 +17,17 @@ require('packer').startup(function()
 	use 'liuchengxu/vista.vim'
 	-- for ruby
 	use { 'RRethy/nvim-treesitter-endwise' }
-	use { 'pwntester/octo.nvim' }
+	use { 'pwntester/octo.nvim',
+		requires= {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope.nvim',
+			'kyazdani42/nvim-web-devicons'
+		},
+		config= function ()
+			require"octo".setup()
+		end
+	}
+	use { 'kdheepak/lazygit.nvim' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 
