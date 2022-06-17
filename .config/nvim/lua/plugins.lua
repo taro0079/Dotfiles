@@ -1,14 +1,15 @@
 vim.cmd [[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
 require('packer').startup(function()
 
-	use { 'windwp/nvim-ts-autotag', config = function() require'nvim-treesitter.configs'.setup{
-			autotag ={
+	use { 'windwp/nvim-ts-autotag', config = function() require 'nvim-treesitter.configs'.setup {
+			autotag = {
 				enable = true
 			}
 		}
-			end}
+	end }
 	-- motion
 	use { 'easymotion/vim-easymotion' }
+	use { 'phaazon/hop.nvim', config = function() require 'hop'.setup() end}
 	use { 'justinmk/vim-sneak' }
 	use 'wbthomason/packer.nvim'
 	use { 'stsewd/fzf-checkout.vim' }
@@ -17,7 +18,17 @@ require('packer').startup(function()
 	use 'liuchengxu/vista.vim'
 	-- for ruby
 	use { 'RRethy/nvim-treesitter-endwise' }
-	use { 'pwntester/octo.nvim' }
+	use {
+		'pwntester/octo.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-telescope/telescope.nvim',
+			'kyazdani42/nvim-web-devicons',
+		},
+		config = function()
+			require "octo".setup()
+		end
+	}
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 
@@ -137,7 +148,7 @@ require('packer').startup(function()
 
 	use { 'junegunn/vim-easy-align' } -- 表とかをきれいに整列するプラグイン
 	use { "lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end }
-	use { 'rhysd/clever-f.vim' }
+	-- use { 'rhysd/clever-f.vim' }
 	use { 'haya14busa/vim-edgemotion' }
 	use { 't9md/vim-quickhl' }
 	use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- コメントアウトを行うプラグイン
@@ -159,7 +170,9 @@ require('packer').startup(function()
 	use { 'lambdalisue/fern-renderer-nerdfont.vim' }
 	use { 'lambdalisue/glyph-palette.vim' }
 	use { 'antoinemadec/FixCursorHold.nvim' }
-	use { 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' }, config = function() require('neoclip').setup() end }
+	use { 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' },
+		config = function() require('neoclip').setup() end }
+	use { 'hrsh7th/nvim-pasta' }
 
 	-- use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
 
@@ -175,6 +188,17 @@ require('packer').startup(function()
 	-- Go
 	use { 'ray-x/go.nvim' }
 	use { 'fatih/vim-go' }
+	use {
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
 end)
 -- vim.g.UltiSnipsExpandTrigger = "<C-s>"
 -- vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"

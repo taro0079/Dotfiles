@@ -21,7 +21,7 @@ nnoremap <leader>ps <cmd> lua require('telescope.builtin').grep_string({ search 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 ]]
-vim.api.nvim_set_keymap("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
 
 
 vim.cmd[[
@@ -35,25 +35,9 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- map("n", "<leader>d", ":lua require'dapui'.toggle()<CR>", { silent = true})
--- map("n", "<leader><leader>df", ":lua require'dapui'.eval()<CR>", { silent = true})
--- map("n", "<F5>", ":lua require'dap'.continue()<CR>", { silent = true})
--- map("n", "<F10>", ":lua require'dap'.step_over()<CR>", { silent = true})
--- map("n", "<F11>", ":lua require'dap'.step_into()<CR>", { silent = true})
--- map("n", "<F12>", ":lua require'dap'.step_out()<CR>", { silent = true})
--- map("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", { silent = true})
--- map("n", "<leader>bc", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", { silent = true})
--- map("n", "<leader>l", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", { silent = true})
-
--- " These commands will navigate through buffers in order regardless of which mode you are using
--- " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 vim.cmd[[
 nnoremap <silent>\bb :bnext<CR>
 nnoremap <silent>\B :bprevious<CR>
-" nnoremap <silent>\b :BufferLineMoveNext<CR>
-" nnoremap <silent>\\b :BufferLineMovePrev<CR>
-" nnoremap <silent>be :BufferLineSortByExtension<CR>
-" nnoremap <silent>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
 
 ]]
@@ -132,3 +116,25 @@ vim.api.nvim_set_keymap('n', '<leader>gd', ':VGit buffer_diff_preview<CR>', {
     noremap = true,
     silent = true,
 })
+vim.api.nvim_set_keymap('n', '<C-[>', 'ESC', {
+    noremap = true,
+    silent = true,
+})
+-- vim.api.nvim_set_keymap('n', 'f', '<Plug>(easymotion-fl)', {
+--     noremap = true,
+--     silent = true,
+-- })
+-- map('n', 'f', '<Plug>easymotion-fl', {noremap = true})
+
+-- hrsh7th/nvim-pasta 
+vim.keymap.set({ 'n', 'x' }, 'p', require('pasta.mappings').p)
+vim.keymap.set({ 'n', 'x' }, 'P', require('pasta.mappings').P)
+vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap('n', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
+vim.api.nvim_set_keymap('v', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
+vim.api.nvim_set_keymap('o', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>", {})
