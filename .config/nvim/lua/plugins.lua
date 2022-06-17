@@ -9,6 +9,8 @@ require('packer').startup(function()
 	end }
 	-- motion
 	use { 'easymotion/vim-easymotion' }
+	-- use { 'luisiacc/gruvbox-baby' }
+	use { 'ellisonleao/gruvbox.nvim' }
 	use { 'phaazon/hop.nvim', config = function() require 'hop'.setup() end}
 	use { 'justinmk/vim-sneak' }
 	use 'wbthomason/packer.nvim'

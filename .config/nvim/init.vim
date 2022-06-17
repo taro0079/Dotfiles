@@ -6,7 +6,7 @@ set nocompatible
 set clipboard+=unnamedplus
 set cursorline
 set termguicolors
-colorscheme catppuccin
+colorscheme gruvbox
 " trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
