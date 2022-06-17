@@ -69,9 +69,5 @@ let g:ale_fix_on_save = 1
 " highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-" nnoremap <C-p> :GFiles<CR>
-" nnoremap <leader>pf :Files<CR>
+" nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 set statusline+=%{get(b:,'vgit_status','')}
