@@ -3,12 +3,12 @@ local wezterm = require 'wezterm';
 return {
 	-- font = wezterm.font("JetBrains Mono", {weight="Bold", italic=true}),
 	font = wezterm.font_with_fallback({
-		{ family = "Cascadia Code PL", weight = "Medium", italic = false },
-		{ family = "Cascadia Code PL", weight = "Medium", italic = true },
-		{ family = "CaskaydiaCove Nerd Font", weight = "Medium", italic = false },
-		{ family = "JetBrainsMono Nerd Font", weight = "Medium", italic = false },
-		{ family = "VictorMono Nerd Font Mono", weight = "Medium", italic = true },
-		{ family = "HackGenNerd", weight = "Medium", italic = true },
+		{ family = "Cascadia Code PL", weight = "Regular", italic = false },
+		{ family = "Cascadia Code PL", weight = "Regular", italic = true },
+		{ family = "CaskaydiaCove Nerd Font", weight = "Regular", italic = false },
+		{ family = "JetBrainsMono Nerd Font", weight = "Regular", italic = false },
+		{ family = "VictorMono Nerd Font Mono", weight = "Regular", italic = true },
+		{ family = "HackGenNerd", weight = "Regular", italic = true },
 
 
 	}),
