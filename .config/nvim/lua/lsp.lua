@@ -92,6 +92,7 @@ for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+nvim_lsp.steep.setup{}
 
 nvim_lsp.emmet_ls.setup({
 	capabilities = capabilities,
