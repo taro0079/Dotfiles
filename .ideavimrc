@@ -14,6 +14,7 @@ set easymotion
 set NERDTree
 
 let mapleader ="\"
+nmap <C-c> Esc
 nmap <leader>f :action Find<cr>
 nmap <Space>f :action ReformatCode<cr>
 nmap <Space>rn :action RenameElement<cr>
