@@ -8,6 +8,7 @@ require('packer').startup(function()
 		}
 	end }
 	-- motion
+	
 	use { 'easymotion/vim-easymotion' }
 	-- use { 'luisiacc/gruvbox-baby' }
 	use { 'ellisonleao/gruvbox.nvim' }

@@ -6,7 +6,7 @@ set nocompatible
 set clipboard+=unnamedplus
 set cursorline
 set termguicolors
-colorscheme catppuccin
+colorscheme gruvbox
 " trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -49,12 +49,13 @@ let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enable = 1
 let g:ale_fixers = {
 	\   'ruby': ['rubocop'],
-	\   'javascript': ['prettier'],
-	\   'typescript': ['prettier'],
-	\   'typescriptreact': ['prettier'],
-	\   'css': ['prettier'],
+	\   'javascript': ['eslint'],
+	\   'typescript': ['eslint'],
+	\   'typescriptreact': ['eslint'],
+	\   'css': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 " " disable the default highlight group
 " let g:conflict_marker_highlight_group = ''
 "
