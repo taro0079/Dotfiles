@@ -137,3 +137,7 @@ alias dox='docker exec -it `docker ps --format "{{.Names}}" | fzf` sh'
 fpath=(~/.zsh/completion $fpath)
 source ~/.ghq/github.com/kwhrtsk/docker-fzf-completion/docker-fzf.zsh
 eval "$(zoxide init zsh)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+

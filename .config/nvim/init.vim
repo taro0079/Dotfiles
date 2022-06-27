@@ -6,7 +6,7 @@ set nocompatible
 set clipboard+=unnamedplus
 set cursorline
 set termguicolors
-colorscheme gruvbox
+colorscheme tokyonight
 " trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -24,7 +24,9 @@ vim.o.updatetime = 300
 vim.o.incsearch = false
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'cjk' }
--- vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_lualine_bold = true
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 EOF
 
 

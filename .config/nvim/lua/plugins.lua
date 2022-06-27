@@ -7,8 +7,8 @@ require('packer').startup(function()
 			}
 		}
 	end }
+	use { 'folke/tokyonight.nvim' }
 	-- motion
-	
 	use { 'easymotion/vim-easymotion' }
 	-- use { 'luisiacc/gruvbox-baby' }
 	use { 'ellisonleao/gruvbox.nvim' }
