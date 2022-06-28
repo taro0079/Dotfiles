@@ -7,7 +7,24 @@ set showmatch
 set incsearch
 set nocompatible
 set signcolumn=yes
-syntax on
+set smartcase
+set hlsearch
+set incsearch
+set nobackup
+set nowb
+set noswapfile
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Text, tab
+""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab
+set smarttab
+set shiftwidth=2
+set tabstop=2
+
+set ai "Auto Indent"
+set si "Smart Indent"
+set wrap "Wrap lines"
 
 call plug#begin('~/.vim/plugged')
 Plug 'NLKNguyen/papercolor-theme'
@@ -52,11 +69,6 @@ call plug#end()
 " let g:gitgutter_override_sign_column_highlight = 1
 
 
-set termguicolors
-set background=dark
-" let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_background = 'soft'
-colorscheme gruvbox-material
 
 let g:rufo_auto_formatting = 1
 
@@ -94,40 +106,19 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
-
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
-
-
-" " Use <c-space> to trigger completion.
-
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" " Make <CR> auto-select the first completion item and notify coc.nvim to
-" " format on enter, <cr> could be remapped by other vim plugin
-
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
 
-" " Use `[g` and `]g` to navigate diagnostics
-
-" " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" " GoTo code navigation.
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -148,14 +139,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-
-
-" " Highlight the symbol and its references when holding the cursor.
-
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
-
-" " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
 
@@ -286,3 +269,21 @@ let g:ale_fix_on_save = 1
 nmap <F8> :TagbarToggle<CR>
 
 let g:rustfmt_autosave = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Color
+""""""""""""""""""""""""""""""""""""""""""""""
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+syntax on
+
+set termguicolors
+" $TERMがxterm以外のときは以下を設定する必要がある。
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
+set background=dark
+" let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_background = 'soft'
+colorscheme gruvbox-material
