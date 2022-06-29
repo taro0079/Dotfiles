@@ -1,4 +1,5 @@
 set laststatus=2
+set clipboard+=unnamed
 set showcmd
 set cursorline
 set relativenumber
@@ -250,7 +251,11 @@ let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 let g:ale_linters = {
-      \  'ruby': ['rubocop']
+      \  'ruby': ['rubocop'],
+      \   'javascript': ['eslint'],
+      \   'typescript': ['eslint'],
+      \   'typescriptreact': ['eslint'],
+      \   'css': ['eslint'],
       \  }
 let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enable = 1
@@ -262,7 +267,11 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.branch = ''
 let g:ale_fixers = {
-\   'ruby': ['rubocop'],
+      \   'ruby': ['rubocop'],
+      \   'javascript': ['eslint'],
+      \   'typescript': ['eslint'],
+      \   'typescriptreact': ['eslint'],
+      \   'css': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
 
