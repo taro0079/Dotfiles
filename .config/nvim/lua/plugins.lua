@@ -8,6 +8,13 @@ require('packer').startup(function()
 		}
 	end }
 	use { 'folke/tokyonight.nvim' }
+	use "stevearc/dressing.nvim"
+	use({
+		"ziontee113/icon-picker.nvim",
+		config = function()
+			require("icon-picker")
+		end,
+	})
 	-- motion
 	use { 'easymotion/vim-easymotion' }
 	-- use { 'luisiacc/gruvbox-baby' }

@@ -148,3 +148,7 @@ vim.keymap.set('n', 'cb', '<Plug>(git-conflict-both)')
 vim.keymap.set('n', 'c0', '<Plug>(git-conflict-none)')
 vim.keymap.set('n', ']x', '<Plug>(git-conflict-prev-conflict)')
 vim.keymap.set('n', '[x', '<Plug>(git-conflict-next-conflict)')
+
+vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
+vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
+vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)

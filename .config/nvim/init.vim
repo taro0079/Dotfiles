@@ -1,5 +1,6 @@
 set number
 set exrc
+
 set signcolumn=yes
 set relativenumber
 set nocompatible
