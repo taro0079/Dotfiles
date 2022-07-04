@@ -1,3 +1,5 @@
+let mapleader = ','
+set undofile
 set laststatus=2
 set clipboard+=unnamed
 set showcmd
@@ -29,44 +31,44 @@ set si "Smart Indent"
 set wrap "Wrap lines"
 
 runtime */jetpack.vim
-call jetpack#begin()
-Jetpack 'NLKNguyen/papercolor-theme'
-Jetpack 'vim-denops/denops.vim'
-Jetpack 'morhetz/gruvbox'
-Jetpack 'sainnhe/gruvbox-material'
-Jetpack 'vim-airline/vim-airline'
-Jetpack 'vim-airline/vim-airline-themes'
-Jetpack 'rust-lang/rust.vim'
-Jetpack 'pantharshit00/vim-prisma'
-" Jetpack 'ruby-formatter/rufo-vim'
-Jetpack 'tpope/vim-endwise'
-Jetpack 'jiangmiao/auto-pairs'
-Jetpack 'tpope/vim-surround'
-Jetpack 'tpope/vim-commentary'
+call plug#begin()
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-denops/denops.vim'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rust-lang/rust.vim'
+Plug 'pantharshit00/vim-prisma'
+" Plug 'ruby-formatter/rufo-vim'
+Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
-Jetpack 'sheerun/vim-polyglot'
-Jetpack 'dense-analysis/ale'
-Jetpack 'honza/vim-snippets'
-Jetpack 'SirVer/ultisnips'
-Jetpack 'majutsushi/tagbar'
-Jetpack 'justinmk/vim-sneak'
-Jetpack 'liuchengxu/vista.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'majutsushi/tagbar'
+Plug 'justinmk/vim-sneak'
+Plug 'liuchengxu/vista.vim'
 
-Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
-
-
-" Jetpack 'vim-skk/skkeleton'
-
-Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Jetpack 'junegunn/fzf.vim'
-
-Jetpack 'tpope/vim-fugitive'
-Jetpack 'airblade/vim-gitgutter'
-Jetpack 'fatih/vim-go'
-Jetpack 'easymotion/vim-easymotion'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
-call jetpack#end()
+" Plug 'vim-skk/skkeleton'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'easymotion/vim-easymotion'
+
+
+call plug#end()
 
 
 " let g:gitgutter_override_sign_column_highlight = 1
