@@ -1,6 +1,7 @@
 set laststatus=2
 set clipboard+=unnamed
 set showcmd
+set undofile
 set cursorline
 set relativenumber
 set number

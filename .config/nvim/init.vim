@@ -1,5 +1,6 @@
 set number
 set exrc
+set undofile
 
 set signcolumn=yes
 set relativenumber
