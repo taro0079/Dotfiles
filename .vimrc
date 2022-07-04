@@ -17,6 +17,14 @@ set incsearch
 set nobackup
 set nowb
 set noswapfile
+""""""""""""""""""""""""""""""""""""""""""""""
+" 矢印キーの無効化   
+"""""""""""""""""""""""""""""""""""""""""""""
+map <up> <nop>
+map <down> <nop>
+map <right> <nop>
+map <left> <nop>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Text, tab
@@ -53,7 +61,7 @@ Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-sneak'
 Plug 'liuchengxu/vista.vim'
-
+Plug 'vim-skk/eskk.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
@@ -300,3 +308,10 @@ set background=dark
 " let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_background = 'soft'
 colorscheme gruvbox-material
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" ESKK setting
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:eskk#directory = "~/.config/eskk"
+let g:eskk#dictionary = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
+let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
