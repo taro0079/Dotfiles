@@ -32,6 +32,11 @@ map <down> <nop>
 map <right> <nop>
 map <left> <nop>
 
+map f <Plug>(easymotion-fl)
+map t <Plug>(easymotion-tl)
+map F <Plug>(easymotion-Fl)
+map T <Plug>(easymotion-Tl)
+
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Text, tab
@@ -47,6 +52,7 @@ set wrap "Wrap lines"
 
 runtime */jetpack.vim
 call plug#begin()
+Plug 'tpope/vim-rails'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
 Plug 'morhetz/gruvbox'
