@@ -13,7 +13,7 @@ return {
 
 	}),
 	font_size = 16,
-	color_scheme = "Catppuccin",
+	color_scheme = "Dracula",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
 

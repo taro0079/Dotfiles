@@ -1,4 +1,5 @@
 let mapleader = ','
+set cmdheight=1
 set undofile
 set laststatus=2
 set clipboard+=unnamed
@@ -55,8 +56,7 @@ call plug#begin()
 Plug 'tpope/vim-rails'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
-Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
@@ -108,7 +108,6 @@ set encoding=utf-8
 set hidden
 set nobackup
 set nowritebackup
-set cmdheight=2
 set updatetime=300
 set shortmess+=c
 
@@ -320,7 +319,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 set background=dark
 " let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_background = 'soft'
-colorscheme gruvbox-material
+colorscheme dracula
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " ESKK setting
