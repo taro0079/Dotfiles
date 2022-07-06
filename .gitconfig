@@ -15,7 +15,8 @@
     side-by-side = true
 
 [merge]
-    conflictstyle = diff3
+	conflictstyle = diff3
+	tool = vimdiff
 
 [diff]
     colorMoved = default
@@ -27,3 +28,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[mergetool]
+	prompt = false

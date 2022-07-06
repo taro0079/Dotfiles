@@ -2,6 +2,7 @@ let mapleader = ','
 set cmdheight=1
 set undofile
 set laststatus=2
+set clipboard&
 set clipboard+=unnamed
 set showcmd
 set undofile
@@ -23,7 +24,7 @@ set noswapfile
 " ctagの設定  
 """""""""""""""""""""""""""""""""""""""""""""
 " rubyファイルを保存する度にctagsを実行する
-autocmd BufWritePost *.rb silent! !ctags -R &
+" autocmd BufWritePost *.rb silent! !ctags -R &
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " 矢印キーの無効化   
