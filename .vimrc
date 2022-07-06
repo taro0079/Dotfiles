@@ -54,6 +54,8 @@ set wrap "Wrap lines"
 runtime */jetpack.vim
 call plug#begin()
 Plug 'tpope/vim-rails'
+Plug 'mattn/ctrlp-matchfuzzy'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
 Plug 'dracula/vim'
@@ -76,6 +78,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-skk/eskk.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mileszs/ack.vim'
 
 
 " Plug 'vim-skk/skkeleton'
@@ -327,3 +330,12 @@ colorscheme dracula
 let g:eskk#directory = "~/.config/eskk"
 let g:eskk#dictionary = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP setting
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
