@@ -286,13 +286,13 @@ let g:ale_linters = {
       \  }
 let g:ale_linters_explicit = 1
 let g:airline#extensions#ale#enable = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 "airlineのシンボルの設定
 if !exists('g:airline_symbols')
   let g:airline_symbols ={}
 endif
-let g:airline_symbols.branch = ''
+let g:airline_symbols.branch = ''
 let g:ale_fixers = {
       \   'ruby': ['rubocop'],
       \   'javascript': ['eslint'],
@@ -325,6 +325,11 @@ let g:gruvbox_material_background = 'soft'
 colorscheme dracula
 
 """"""""""""""""""""""""""""""""""""""""""""""
+" Airline setting
+""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#ale#enabled = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""
 " ESKK setting
 """"""""""""""""""""""""""""""""""""""""""""""
 let g:eskk#directory = "~/.config/eskk"
@@ -339,3 +344,4 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
+
