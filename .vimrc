@@ -52,7 +52,6 @@ set ai "Auto Indent"
 set si "Smart Indent"
 set wrap "Wrap lines"
 
-runtime */jetpack.vim
 call plug#begin()
 Plug 'tpope/vim-rails'
 Plug 'mattn/ctrlp-matchfuzzy'
@@ -64,6 +63,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
 Plug 'pantharshit00/vim-prisma'
+Plug 'thinca/vim-qfhl'
+Plug 'junegunn/vim-easy-align'
 " Plug 'ruby-formatter/rufo-vim'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
@@ -80,13 +81,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'vim-skk/eskk.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mileszs/ack.vim'
-
-
-" Plug 'vim-skk/skkeleton'
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
@@ -94,13 +90,6 @@ Plug 'easymotion/vim-easymotion'
 
 
 call plug#end()
-
-
-" let g:gitgutter_override_sign_column_highlight = 1
-
-
-
-let g:rufo_auto_formatting = 1
 
 set imdisable
 
@@ -120,8 +109,6 @@ set shortmess+=c
 " else
 "   set signcolumn=yes
 " endif
-
-
 
 " " Use tab for trigger completion with characters ahead and navigate.
 
@@ -279,13 +266,13 @@ let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 let g:ale_linters = {
-      \  'ruby': ['rubocop'],
-      \   'javascript': ['eslint'],
-      \   'typescript': ['eslint'],
+      \  'ruby':             ['rubocop'],
+      \   'javascript':      ['eslint'],
+      \   'typescript':      ['eslint'],
       \   'typescriptreact': ['eslint'],
-      \   'css': ['eslint'],
+      \   'css':             ['eslint'],
       \  }
-let g:ale_linters_explicit = 1
+let g:ale_linters_explicit          = 1
 let g:airline#extensions#ale#enable = 1
 " let g:airline#extensions#tabline#enabled = 1
 
@@ -295,11 +282,11 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.branch = ''
 let g:ale_fixers = {
-      \   'ruby': ['rubocop'],
-      \   'javascript': ['eslint'],
-      \   'typescript': ['eslint'],
+      \   'ruby':            ['rubocop'],
+      \   'javascript':      ['eslint'],
+      \   'typescript':      ['eslint'],
       \   'typescriptreact': ['eslint'],
-      \   'css': ['eslint'],
+      \   'css':             ['eslint'],
 \}
 let g:ale_fix_on_save = 1
 
@@ -333,18 +320,18 @@ let g:airline#extensions#ale#enabled = 1
 """"""""""""""""""""""""""""""""""""""""""""""
 " ESKK setting
 """"""""""""""""""""""""""""""""""""""""""""""
-let g:eskk#directory = "~/.config/eskk"
-let g:eskk#dictionary = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
+let g:eskk#directory        = "~/.config/eskk"
+let g:eskk#dictionary       = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " CtrlP setting
 """"""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_func        = {'match': 'ctrlp_matchfuzzy#matcher'}
+let g:ctrlp_map               = '<c-p>'
+let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_show_hidden       = 1
 
 " cursor settings for wsl
 if has('vim_starting')
@@ -355,3 +342,12 @@ if has('vim_starting')
     " 置換モード時に非点滅の下線タイプのカーソル
     let &t_SR .= "\e[4 q"
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" EasyAlign setting
+""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
