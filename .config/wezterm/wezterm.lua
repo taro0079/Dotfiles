@@ -5,7 +5,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", italic = false },
 		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", italic = true },
-		{ family = "HackGenNerd", weight = "Regular", italic = true },
+		{ family = "HackGenNerd", weight = "Regular", italic = false },
 
 
 	}),
