@@ -39,6 +39,8 @@ map t <Plug>(easymotion-tl)
 map F <Plug>(easymotion-Fl)
 map T <Plug>(easymotion-Tl)
 
+" Ctrl + cにESCを割り当て
+map <C-c> <ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Text, tab
