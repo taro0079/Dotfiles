@@ -39,8 +39,9 @@ map t <Plug>(easymotion-tl)
 map F <Plug>(easymotion-Fl)
 map T <Plug>(easymotion-Tl)
 
-" Ctrl + cにESCを割り当て
-map <C-c> <ESC>
+" fern のマッピング
+nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+let g:fern#renderer = "devicons"
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Text, tab
@@ -89,8 +90,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
+Plug 'sainnhe/sonokai'
 
-
+" fern
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
+Plug 'lambdalisue/fern-renderer-devicons.vim'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set imdisable
@@ -311,8 +320,10 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 set background=dark
 " let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_background = 'soft'
-colorscheme dracula
+" let g:gruvbox_material_background = 'soft'
+let g:sonokai_style = 'andromeda'
+let g:sonokai_better_performance = 1
+colorscheme sonokai
 
 """"""""""""""""""""""""""""""""""""""""""""""
 " Airline setting
