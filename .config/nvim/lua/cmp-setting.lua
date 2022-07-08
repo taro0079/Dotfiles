@@ -7,13 +7,6 @@ local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 cmp.setup {
 	completion = { completeopt = 'menu,menuone,noselect' },
 	
-	snippet = {
-		expand = function(args)
-			--    luasnip.lsp_expand(args.body)
-			--    vim.fn["UltiSnips#Anon"](args.body)
-			vim.fn["vsnip#anonymous"](args.body)
-		end,
-	},
 	formatting = {
 		format = function(_, vim_item)
 			vim_item.kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
@@ -42,12 +35,12 @@ cmp.setup {
 	sources = {
 		{ name = 'buffer' },
 		{ name = 'nvim_lsp' },
-		{ name = 'nvim_lua' },
+		-- { name = 'nvim_lua' },
 		{ name = 'path' },
 		{ name = 'spell' },
 		-- { name = 'luasnip' },
 		{ name = 'ultisnips' },
-		{ name = 'vsnip' },
+		-- { name = 'vsnip' },
 		{ name = 'copilot' },
 		{ name = 'emoji' },
 		{ name = 'calc' },

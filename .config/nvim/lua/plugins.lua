@@ -62,11 +62,11 @@ require('packer').startup(function()
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
 	use { 'rust-lang/rust.vim' }
-	use { 'hrsh7th/vim-vsnip-integ' }
+	-- use { 'hrsh7th/vim-vsnip-integ' }
 	use { 'L3MON4D3/LuaSnip' }
 	use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
 	-- snippets
-	use { 'hrsh7th/vim-vsnip' }
+	-- use { 'hrsh7th/vim-vsnip' }
 	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
 	use { 'SirVer/ultisnips' }
 	use { 'honza/vim-snippets' }
@@ -103,9 +103,9 @@ require('packer').startup(function()
 	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
 	use { 'hrsh7th/cmp-emoji' }
 	use { 'uga-rosa/cmp-dictionary', config = function() require 'dictionary-setting' end }
-	use 'hrsh7th/cmp-nvim-lua'
-	use { 'hrsh7th/cmp-vsnip', config = function() require 'vsnip-settings' end }
-	use { 'dcampos/cmp-snippy' }
+	-- use 'hrsh7th/cmp-nvim-lua'
+	-- use { 'hrsh7th/cmp-vsnip', config = function() require 'vsnip-settings' end }
+	-- use { 'dcampos/cmp-snippy' }
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
