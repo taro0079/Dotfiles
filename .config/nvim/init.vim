@@ -1,3 +1,4 @@
+let mapleader=','
 set number
 set exrc
 set undofile
@@ -9,7 +10,7 @@ set nocompatible
 set clipboard+=unnamedplus
 set cursorline
 set termguicolors
-colorscheme tokyonight
+colorscheme sonokai
 " trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif

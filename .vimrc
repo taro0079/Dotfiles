@@ -323,6 +323,7 @@ set background=dark
 " let g:gruvbox_material_background = 'soft'
 let g:sonokai_style = 'andromeda'
 let g:sonokai_better_performance = 1
+let g:sonokai_enable_italic = 1
 colorscheme sonokai
 
 """"""""""""""""""""""""""""""""""""""""""""""

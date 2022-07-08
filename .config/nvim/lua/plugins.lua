@@ -88,6 +88,7 @@ require('packer').startup(function()
 	-- Color Scheme
 	use { 'shaunsingh/nord.nvim' }
 	use { 'EdenEast/nightfox.nvim' }
+	use { 'sainnhe/sonokai' }
 	use { 'sainnhe/gruvbox-material' }
 	use({
 		"catppuccin/nvim",
@@ -213,3 +214,4 @@ end)
 -- vim.g.UltiSnipsExpandTrigger = "<C-s>"
 -- vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
 -- vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+

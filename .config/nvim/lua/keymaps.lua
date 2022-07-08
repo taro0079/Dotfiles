@@ -5,29 +5,15 @@ autocmd TermOpen * startinsert
 ]]
 -- vim.cmd[[nnoremap <silent> <leader>gg :LazyGit<CR>]]
 vim.cmd[[
-" nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').search_history()<cr>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<cr>
-" nnoremap <leader>gf <cmd>Telescope git_files theme=get_dropdown<cr>
-nnoremap <leader>b <cmd>Telescope buffers theme=get_dropdown<cr>
-nnoremap <leader>gb <cmd>Telescope git_branches theme=get_dropdown<cr>
-nnoremap <leader>gc <cmd>Telescope git_commits theme=get_dropdown<cr>
-nnoremap <leader>gs <cmd>Telescope git_status theme=get_dropdown<cr>
-nnoremap <leader>fH <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>ps <cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")}) <cr>
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+	xmap ga <Plug>(EasyAlign)
+	nmap ga <Plug>(EasyAlign)
+	map <up> <nop>
+	map <down> <nop>
+	map <right> <nop>
+	map <left> <nop>
 ]]
--- vim.api.nvim_set_keymap("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
 
 
-vim.cmd[[
-nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
-
-]]
 
 local function map(mode, lhs, rhs, opts)
     local options = {noremap = true}
@@ -35,59 +21,9 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-vim.cmd[[
-nnoremap <silent>\bb :bnext<CR>
-nnoremap <silent>\B :bprevious<CR>
-nnoremap <silent><mymap> :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-
-]]
-
--- " These commands will move the current buffer backwards or forwards in the bufferline
-
--- " These commands will sort buffers by directory, language, or a custom criteria
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- Move to previous/next
-map('n', '<A-,>', ':BufferPrevious<CR>', opts)
-
-map('n', '<A-.>', ':BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
-map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
--- Goto buffer in position...
-map('n', '<A-1>', ':BufferGoto 1<CR>', opts)
-
-map('n', '<A-2>', ':BufferGoto 2<CR>', opts)
-map('n', '<A-3>', ':BufferGoto 3<CR>', opts)
-map('n', '<A-4>', ':BufferGoto 4<CR>', opts)
-map('n', '<A-5>', ':BufferGoto 5<CR>', opts)
-map('n', '<A-6>', ':BufferGoto 6<CR>', opts)
-map('n', '<A-7>', ':BufferGoto 7<CR>', opts)
-map('n', '<A-8>', ':BufferGoto 8<CR>', opts)
-map('n', '<A-9>', ':BufferGoto 9<CR>', opts)
-
-map('n', '<A-0>', ':BufferLast<CR>', opts)
--- Close buffer
-map('n', '<A-c>', ':BufferClose<CR>', opts)
--- Wipeout buffer
---                 :BufferWipeout<CR>
--- Close commands
---                 :BufferCloseAllButCurrent<CR>
---                 :BufferCloseBuffersLeft<CR>
---                 :BufferCloseBuffersRight<CR>
--- Magic buffer-picking mode
--- map('n', '<C-p>', ':BufferPick<CR>', opts)
--- Sort automatically by...
--- map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
---
--- map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
--- map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
-
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
 vim.api.nvim_set_keymap('n', '<leader>gp', ':VGit buffer_hunk_preview<CR>', {
     noremap = true,
     silent = true,
@@ -120,11 +56,6 @@ vim.api.nvim_set_keymap('i', '<C-[>', '<ESC>', {
     noremap = true,
     silent = true,
 })
--- vim.api.nvim_set_keymap('n', 'f', '<Plug>(easymotion-fl)', {
---     noremap = true,
---     silent = true,
--- })
--- map('n', 'f', '<Plug>easymotion-fl', {noremap = true})
 
 -- hrsh7th/nvim-pasta 
 vim.keymap.set({ 'n', 'x' }, 'p', require('pasta.mappings').p)
@@ -146,3 +77,23 @@ vim.keymap.set("n", "<leader>fw", "<Plug>(easymotion-overwin-f)", opts)
 vim.keymap.set("n", "s", "<Plug>(easymotion-overwin-f2)", opts)
 vim.keymap.set("n", "<leader>L", "<Plug>(easymotion-overwin-line)", opts)
 vim.keymap.set("n", "<leader>w", "<Plug>(easymotion-overwin-w)", opts)
+vim.keymap.set('n', 'f', '<Plug>(easymotion-fl)')
+vim.keymap.set('n', 'F', '<Plug>(easymotion-Fl)')
+vim.keymap.set('n', 't', '<Plug>(easymotion-tl)')
+vim.keymap.set('n', 'T', '<Plug>(easymotion-Tl)')
+vim.keymap.set('n', "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>")
+vim.keymap.set('n', "<leader>fq", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+vim.keymap.set('n', "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+vim.keymap.set('n', "<leader>fh", "<cmd>lua require('telescope.builtin').search_history()<cr>")
+vim.keymap.set('n', "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>")
+vim.keymap.set('n', "<leader>gb", "<cmd>Telescope git_branches theme=get_dropdown<cr>")
+vim.keymap.set('n', "<leader>gc", "<cmd>Telescope git_commits theme=get_dropdown<cr>")
+vim.keymap.set('n', "<leader>gs", "<cmd>Telescope git_status theme=get_dropdown<cr>")
+vim.keymap.set('n', "<leader>fH", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
+vim.keymap.set('n', "<leader>ps", "<cmd> lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')}) <cr>")
+vim.keymap.set('n', "<C-n>", ":Fern . -reveal=% -drawer -toggle -width=40<CR>")
+vim.keymap.set('c', "<C-j>", "<Plug>(skkeleton-toggle)")
+vim.api.nvim_set_keymap('i', '<C-j>', '<Plug>(skkeleton-toggle)', {
+    noremap = true,
+    silent = true,
+})
