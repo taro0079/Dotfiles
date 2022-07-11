@@ -3,6 +3,7 @@ let mapleader = ','
 set cmdheight=1
 set undofile
 set laststatus=2
+set tags=tags;
 set clipboard&
 set clipboard+=unnamed
 set showcmd
@@ -59,6 +60,10 @@ set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
 Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-bundler'
+Plug 'vim-utils/vim-ruby-fold'
 Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -74,7 +79,6 @@ Plug 'EinfachToll/DidYouMean'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-repeat'
 " Plug 'vim-scripts/Gundo'
-Plug 'vim-utils/vim-ruby-fold'
 " Plug 'ruby-formatter/rufo-vim'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
