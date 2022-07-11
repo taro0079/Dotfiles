@@ -1,3 +1,4 @@
+" basic settings ---------------------------- {{{1
 let mapleader = ','
 set cmdheight=1
 set undofile
@@ -5,9 +6,12 @@ set laststatus=2
 set clipboard&
 set clipboard+=unnamed
 set showcmd
+set ruler
 set undofile
 set cursorline
 set relativenumber
+set linebreak
+set display+=lastline 
 set number
 set showmatch
 set incsearch
@@ -20,32 +24,30 @@ set nobackup
 set nowb
 set noswapfile
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" ctagの設定  
-"""""""""""""""""""""""""""""""""""""""""""""
+
+" ctagの設定  -------------------------------- {{{1
 " rubyファイルを保存する度にctagsを実行する
 " autocmd BufWritePost *.rb silent! !ctags -R &
 
 """"""""""""""""""""""""""""""""""""""""""""""
-" 矢印キーの無効化   
+" 矢印キーの無効化   ------------------------- {{{1
 """""""""""""""""""""""""""""""""""""""""""""
 map <up> <nop>
 map <down> <nop>
 map <right> <nop>
 map <left> <nop>
 
+" eeasymotion settings ----------------------{{{1
 map f <Plug>(easymotion-fl)
 map t <Plug>(easymotion-tl)
 map F <Plug>(easymotion-Fl)
 map T <Plug>(easymotion-Tl)
 
-" fern のマッピング
+" fern のマッピング ------------------------ {{{1
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
-let g:fern#renderer = "devicons"
+let g:fern#renderer = "nerdfont"
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" Text, tab
-""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab --------------------------- {{{1
 set expandtab
 set smarttab
 set shiftwidth=2
@@ -54,7 +56,7 @@ set tabstop=2
 set ai "Auto Indent"
 set si "Smart Indent"
 set wrap "Wrap lines"
-
+" => Plugins ---------------------------------- {{{1
 call plug#begin()
 Plug 'tpope/vim-rails'
 Plug 'mattn/ctrlp-matchfuzzy'
@@ -68,6 +70,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'pantharshit00/vim-prisma'
 Plug 'thinca/vim-qfhl'
 Plug 'junegunn/vim-easy-align'
+Plug 'EinfachToll/DidYouMean'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-repeat'
+" Plug 'vim-scripts/Gundo'
+Plug 'vim-utils/vim-ruby-fold'
 " Plug 'ruby-formatter/rufo-vim'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
@@ -91,20 +98,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
 Plug 'sainnhe/sonokai'
-
 " fern
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
-Plug 'lambdalisue/fern-renderer-devicons.vim'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set imdisable
 
-" " coc settings
+" " coc settings -------------------------- {{{1
 " " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 
 " " unicode characters in the file autoload/float.vim
@@ -114,6 +119,12 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set shortmess+=c
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
 
 " if has("nvim-0.5.0") || has("patch-8.1.1564")
 "   set signcolumn=number
@@ -264,7 +275,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-"" ultisnips setting
+"" ultisnips setting ------------------------- {{{1
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
@@ -275,7 +286,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-
+" ale setting -------------------------------{{{1
 let g:ale_linters = {
       \  'ruby':             ['rubocop'],
       \   'javascript':      ['eslint'],
@@ -305,9 +316,7 @@ nmap <F8> :TagbarToggle<CR>
 
 let g:rustfmt_autosave = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" Color
-""""""""""""""""""""""""""""""""""""""""""""""
+" Color -----------------------------------{{{1
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
@@ -326,28 +335,22 @@ let g:sonokai_better_performance = 1
 let g:sonokai_enable_italic = 1
 colorscheme sonokai
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" Airline setting
-""""""""""""""""""""""""""""""""""""""""""""""
+" Airline setting -----------------------------{{{1
 let g:airline#extensions#ale#enabled = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" ESKK setting
-""""""""""""""""""""""""""""""""""""""""""""""
+" ESKK setting ------------------------------- {{{1
 let g:eskk#directory        = "~/.config/eskk"
 let g:eskk#dictionary       = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP setting
-""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP setting ------------------------------ {{{1
 let g:ctrlp_match_func        = {'match': 'ctrlp_matchfuzzy#matcher'}
 let g:ctrlp_map               = '<c-p>'
 let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden       = 1
 
-" cursor settings for wsl
+" cursor settings for wsl ---------------------------------{{{1
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル
     let &t_SI .= "\e[6 q"
@@ -357,11 +360,16 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" EasyAlign setting
-""""""""""""""""""""""""""""""""""""""""""""""
+" EasyAlign setting --------------------------------- {{{1
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" fold settings ---------------------- {{{1
+set foldmethod=manual
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
