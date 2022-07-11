@@ -78,6 +78,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'EinfachToll/DidYouMean'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-repeat'
+Plug 'yuttie/comfortable-motion.vim'
 " Plug 'vim-scripts/Gundo'
 " Plug 'ruby-formatter/rufo-vim'
 Plug 'tpope/vim-endwise'
@@ -102,6 +103,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
 Plug 'sainnhe/sonokai'
+Plug 'kana/vim-textobj-user'
+Plug 'osyo-manga/vim-textobj-blockwise'
+Plug 'tyru/open-browser.vim'
 " fern
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -378,3 +382,10 @@ augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+" open-browser settings ---------------- {{{1
+nmap <Leader>b <Plug>(openbrowser-smart-search)
+vmap <Leader>b <Plug>(openbrowser-smart-search)
+
+" calendar settings ------------------- {{{1
+let g:calendar_google_calendar = 1
