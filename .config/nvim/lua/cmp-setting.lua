@@ -41,7 +41,6 @@ cmp.setup {
 		-- { name = 'luasnip' },
 		{ name = 'ultisnips' },
 		-- { name = 'vsnip' },
-		{ name = 'copilot' },
 		{ name = 'emoji' },
 		{ name = 'calc' },
 		{ name = 'nvim_lsp_signature_help' },

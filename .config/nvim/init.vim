@@ -10,6 +10,9 @@ set nocompatible
 set clipboard+=unnamedplus
 set cursorline
 set termguicolors
+let g:sonokai_transparent_background = 1
+let g:sonokai_enable_italic = 1
+let g:sonokai_style = 'andromeda'
 colorscheme sonokai
 " trigger `autoread` when files changes on disk
 set autoread

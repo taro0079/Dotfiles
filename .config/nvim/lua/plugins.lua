@@ -7,7 +7,6 @@ require('packer').startup(function()
 			}
 		}
 	end }
-	use { 'folke/tokyonight.nvim' }
 	use "stevearc/dressing.nvim"
 	use({
 		"ziontee113/icon-picker.nvim",
@@ -42,16 +41,6 @@ require('packer').startup(function()
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 
-	use { 'github/copilot.vim' }
-	use {
-		"zbirenbaum/copilot.lua",
-		event = { "VimEnter" },
-		config = function()
-			vim.defer_fn(function()
-				require("copilot").setup()
-			end, 100)
-		end,
-	}
 	use { 'dense-analysis/ale' }
 	use { 'tpope/vim-rails' }
 
@@ -86,16 +75,7 @@ require('packer').startup(function()
 	}
 
 	-- Color Scheme
-	use { 'shaunsingh/nord.nvim' }
-	use { 'EdenEast/nightfox.nvim' }
 	use { 'sainnhe/sonokai' }
-	use { 'sainnhe/gruvbox-material' }
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin"
-	})
-	-- use { 'Mofiqul/vscode.nvim', config = function() require'vscode-setting' end}
-	-- use { 'neoclide/coc.nvim', branch = 'release'}
 	use { 'hrsh7th/nvim-cmp', config = function() require 'cmp-setting' end }
 	use 'hrsh7th/cmp-calc'
 	use 'hrsh7th/cmp-omni'
@@ -103,9 +83,6 @@ require('packer').startup(function()
 	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
 	use { 'hrsh7th/cmp-emoji' }
 	use { 'uga-rosa/cmp-dictionary', config = function() require 'dictionary-setting' end }
-	-- use 'hrsh7th/cmp-nvim-lua'
-	-- use { 'hrsh7th/cmp-vsnip', config = function() require 'vsnip-settings' end }
-	-- use { 'dcampos/cmp-snippy' }
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -113,10 +90,6 @@ require('packer').startup(function()
 	use 'f3fora/cmp-spell'
 	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
 	use { 'saadparwaiz1/cmp_luasnip' }
-	use {
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua", "nvim-cmp" },
-	}
 
 	-- telescope
 	use {
@@ -140,11 +113,6 @@ require('packer').startup(function()
 		end }
 
 	-- git
-	-- use { 'tpope/vim-fugitive' }
-	-- use {
-	-- 	'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-	-- 	config = function() require 'gitsigns-setting' end
-	-- }
 	use { 'skanehira/gh.vim' }
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
 	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
@@ -153,7 +121,6 @@ require('packer').startup(function()
 		require('git-conflict-setting')
 	end
 	}
-	-- use { 'rhysd/conflict-marker.vim' }
 
 
 
@@ -210,6 +177,30 @@ require('packer').startup(function()
 			}
 		end
 	}
+-- 	use({
+--     "aserowy/tmux.nvim",
+--     config = function()
+--         require("tmux").setup({
+--             -- overwrite default configuration
+--             -- here, e.g. to enable default bindings
+--             copy_sync = {
+--                 -- enables copy sync and overwrites all register actions to
+--                 -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
+--                 enable = true,
+--
+--             },
+--             navigation = {
+--                 -- enables default keybindings (C-hjkl) for normal mode
+--                 enable_default_keybindings = true,
+--             },
+--             resize = {
+--
+--                 -- enables default keybindings (A-hjkl) for normal mode
+--                 enable_default_keybindings = true,
+--             }
+--         })
+--     end
+-- })
 end)
 -- vim.g.UltiSnipsExpandTrigger = "<C-s>"
 -- vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
