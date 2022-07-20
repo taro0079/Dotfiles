@@ -14,7 +14,6 @@ let g:sonokai_transparent_background = 1
 let g:sonokai_enable_italic = 1
 let g:sonokai_style = 'andromeda'
 colorscheme sonokai
-" trigger `autoread` when files changes on disk
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " notification after file change
@@ -22,8 +21,8 @@ autocmd FileChangedShellPost *
 \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl Non
 
 set pumblend=10
-" set spell
-" set spelllang=en,cjk
+set spell
+set spelllang=en,cjk
 lua << EOF
 require'plugins'
 require 'keymaps'
@@ -31,14 +30,9 @@ vim.o.updatetime = 300
 vim.o.incsearch = false
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us', 'cjk' }
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_lualine_bold = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 EOF
 
 
-" NOTE: If barbar's option dict isn't created yet, create it
-let bufferline = get(g:, 'bufferline', {})
 
 let g:fern#renderer = "nerdfont"
 let g:fern#default_hidden=1
@@ -65,7 +59,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
-
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 set statusline+=%{get(b:,'vgit_status','')}
