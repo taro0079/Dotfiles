@@ -65,7 +65,8 @@ require('packer').startup(function()
 	}
 
 	-- Color Scheme
-	use { 'sainnhe/sonokai' }
+	-- use { 'sainnhe/sonokai' }
+	use { 'EdenEast/nightfox.nvim' }
 	use { 'hrsh7th/nvim-cmp', config = function() require 'cmp-setting' end }
 	use 'hrsh7th/cmp-calc'
 	use 'hrsh7th/cmp-omni'

@@ -10,10 +10,7 @@ set nocompatible
 set clipboard+=unnamedplus
 set cursorline
 set termguicolors
-let g:sonokai_transparent_background = 1
-let g:sonokai_enable_italic = 1
-let g:sonokai_style = 'andromeda'
-colorscheme sonokai
+colorscheme nightfox
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 " notification after file change
@@ -66,3 +63,5 @@ nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
+map <Space>j <Plug>(edgemotion-j)
+map <Space>k <Plug>(edgemotion-k)

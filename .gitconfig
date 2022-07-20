@@ -6,7 +6,6 @@
 [core]
   pager = delta
 	editor = vim
-	autocrlf = true
 
 [interactive]
     diffFilter = delta --color-only
