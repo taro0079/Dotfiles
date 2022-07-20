@@ -16,9 +16,6 @@ require('packer').startup(function()
 	})
 	-- motion
 	use { 'easymotion/vim-easymotion' }
-	-- use { 'luisiacc/gruvbox-baby' }
-	use { 'ellisonleao/gruvbox.nvim' }
-	use { 'phaazon/hop.nvim', config = function() require 'hop'.setup() end}
 	use { 'justinmk/vim-sneak' }
 	use 'wbthomason/packer.nvim'
 	use { 'stsewd/fzf-checkout.vim' }
@@ -37,7 +34,6 @@ require('packer').startup(function()
 			require"octo".setup()
 		end
 	}
-	use { 'kdheepak/lazygit.nvim' }
 	use 'kat0h/bufpreview.vim'
 	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 
@@ -51,20 +47,14 @@ require('packer').startup(function()
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
 	use { 'rust-lang/rust.vim' }
-	-- use { 'hrsh7th/vim-vsnip-integ' }
-	use { 'L3MON4D3/LuaSnip' }
 	use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
 	-- snippets
-	-- use { 'hrsh7th/vim-vsnip' }
 	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
 	use { 'SirVer/ultisnips' }
 	use { 'honza/vim-snippets' }
-	-- use { 'norcalli/snippets.nvim', config = function () require 'snippets-setting.lua' end }
 	use { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
 	use 'onsails/lspkind-nvim'
 	use { 'williamboman/nvim-lsp-installer' }
-	-- use { 'dcampos/nvim-snippy' }
-	use { 'declancm/cinnamon.nvim' } -- スムーズなスクロールできるプラグイン
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -89,7 +79,6 @@ require('packer').startup(function()
 	use 'hrsh7th/cmp-cmdline'
 	use 'f3fora/cmp-spell'
 	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
-	use { 'saadparwaiz1/cmp_luasnip' }
 
 	-- telescope
 	use {
@@ -103,7 +92,6 @@ require('packer').startup(function()
 	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
 
 	use 'vim-denops/denops.vim'
-	use { "ellisonleao/glow.nvim" } -- markdownをきれいに表示するプラグイン
 
 	use { 'junegunn/fzf', run = ':fzf#install()' }
 	use { 'junegunn/fzf.vim' }
@@ -113,7 +101,6 @@ require('packer').startup(function()
 		end }
 
 	-- git
-	use { 'skanehira/gh.vim' }
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
 	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require('diffview-setting') end }
@@ -126,7 +113,6 @@ require('packer').startup(function()
 
 	use { 'junegunn/vim-easy-align' } -- 表とかをきれいに整列するプラグイン
 	use { "lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end }
-	-- use { 'rhysd/clever-f.vim' }
 	use { 'haya14busa/vim-edgemotion' }
 	use { 't9md/vim-quickhl' }
 	use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- コメントアウトを行うプラグイン
@@ -138,8 +124,6 @@ require('packer').startup(function()
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
 		config = function() require('nvim-treesitter-settings') end
 	}
-	-- use { 'lewis6991/spellsitter.nvim', config = function() require 'spellsitter-setting' end }
-	use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter" })
 
 	-- fern
 	use { 'lambdalisue/fern.vim' }
@@ -153,15 +137,6 @@ require('packer').startup(function()
 	use { 'hrsh7th/nvim-pasta' }
 
 	-- use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
-
-	-- startup plugin
-	use {
-		'goolord/alpha-nvim',
-		requires = { 'kyazdani42/nvim-web-devicons' },
-		config = function()
-			require 'alpha'.setup(require 'alpha.themes.startify'.config)
-		end
-	}
 
 	-- Go
 	use { 'ray-x/go.nvim' }
@@ -177,32 +152,32 @@ require('packer').startup(function()
 			}
 		end
 	}
--- 	use({
---     "aserowy/tmux.nvim",
---     config = function()
---         require("tmux").setup({
---             -- overwrite default configuration
---             -- here, e.g. to enable default bindings
---             copy_sync = {
---                 -- enables copy sync and overwrites all register actions to
---                 -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
---                 enable = true,
---
---             },
---             navigation = {
---                 -- enables default keybindings (C-hjkl) for normal mode
---                 enable_default_keybindings = true,
---             },
---             resize = {
---
---                 -- enables default keybindings (A-hjkl) for normal mode
---                 enable_default_keybindings = true,
---             }
---         })
---     end
--- })
-end)
--- vim.g.UltiSnipsExpandTrigger = "<C-s>"
--- vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
--- vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+	use({
+		"aserowy/tmux.nvim",
+		config = function()
+			require("tmux").setup({
+				-- overwrite default configuration
+				-- here, e.g. to enable default bindings
+				copy_sync = {
+					-- enables copy sync and overwrites all register actions to
+					-- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
+					enable = true,
 
+				},
+				navigation = {
+					-- enables default keybindings (C-hjkl) for normal mode
+					enable_default_keybindings = true,
+				},
+				resize = {
+
+					-- enables default keybindings (A-hjkl) for normal mode
+					enable_default_keybindings = true,
+				}
+			})
+		end
+	})
+	use { 'tpope/vim-repeat' }
+	-- use { 'sidebar-nvim/sidebar.nvim', config = function() require'sidebar_settings' end }
+	use { "petertriho/nvim-scrollbar", config = function() require("scrollbar").setup() end }
+	use 'ggandor/lightspeed.nvim'
+end)

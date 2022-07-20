@@ -65,19 +65,11 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
-" " disable the default highlight group
-" let g:conflict_marker_highlight_group = ''
-"
-" " Include text after begin and end markers
-" let g:conflict_marker_begin = '^<<<<<<< .*$'
-" let g:conflict_marker_end   = '^>>>>>>> .*$'
-"
-" highlight ConflictMarkerBegin guibg=#2f7366
-" highlight ConflictMarkerOurs guibg=#2e5049
-" highlight ConflictMarkerTheirs guibg=#344f69
-" highlight ConflictMarkerEnd guibg=#2f628e
-" highlight ConflictMarkerCommonAncestorsHunk guibg=#754a81
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-" nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
 set statusline+=%{get(b:,'vgit_status','')}
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)

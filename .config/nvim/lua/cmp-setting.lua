@@ -1,12 +1,16 @@
 local cmp = require 'cmp'
 local lspkind = require 'lspkind'
-local luasnip = require 'luasnip'
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 
 cmp.setup {
 	completion = { completeopt = 'menu,menuone,noselect' },
-	
+	snippet = {
+		expand = function(args)
+			vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+		end,
+	},
+
 	formatting = {
 		format = function(_, vim_item)
 			vim_item.kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
@@ -35,12 +39,9 @@ cmp.setup {
 	sources = {
 		{ name = 'buffer' },
 		{ name = 'nvim_lsp' },
-		-- { name = 'nvim_lua' },
 		{ name = 'path' },
 		{ name = 'spell' },
-		-- { name = 'luasnip' },
 		{ name = 'ultisnips' },
-		-- { name = 'vsnip' },
 		{ name = 'emoji' },
 		{ name = 'calc' },
 		{ name = 'nvim_lsp_signature_help' },
@@ -68,7 +69,6 @@ cmp.setup.cmdline('/', {
 		{ name = 'nvim_lsp_document_symbol' }
 	},
 		{
-		{ name = 'buffer' }
-	})
+			{ name = 'buffer' }
+		})
 })
-

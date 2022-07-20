@@ -11,10 +11,10 @@ vim.cmd[[
 	map <down> <nop>
 	map <right> <nop>
 	map <left> <nop>
-	map f <Plug>(easymotion-fl)
-	map t <Plug>(easymotion-tl)
-	map F <Plug>(easymotion-Fl)
-	map T <Plug>(easymotion-Tl)
+	" map f <Plug>(easymotion-fl)
+	" map t <Plug>(easymotion-tl)
+	" map F <Plug>(easymotion-Fl)
+	" map T <Plug>(easymotion-Tl)
 ]]
 
 
@@ -77,10 +77,10 @@ vim.keymap.set('n', '[x', '<Plug>(git-conflict-next-conflict)')
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>PickIcons<cr>", opts)
 vim.keymap.set("i", "<C-i>", "<cmd>PickIconsInsert<cr>", opts)
 vim.keymap.set("i", "<A-i>", "<cmd>PickAltFontAndSymbolsInsert<cr>", opts)
-vim.keymap.set("n", "<leader>fw", "<Plug>(easymotion-overwin-f)", opts)
-vim.keymap.set("n", "s", "<Plug>(easymotion-overwin-f2)", opts)
-vim.keymap.set("n", "<leader>L", "<Plug>(easymotion-overwin-line)", opts)
-vim.keymap.set("n", "<leader>w", "<Plug>(easymotion-overwin-w)", opts)
+-- vim.keymap.set("n", "<leader>fw", "<Plug>(easymotion-overwin-f)", opts)
+-- vim.keymap.set("n", "s", "<Plug>(easymotion-overwin-f2)", opts)
+-- vim.keymap.set("n", "<leader>L", "<Plug>(easymotion-overwin-line)", opts)
+-- vim.keymap.set("n", "<leader>w", "<Plug>(easymotion-overwin-w)", opts)
 -- vim.keymap.set('n', 'f', '<Plug>(easymotion-fl)')
 -- vim.keymap.set('n', 'F', '<Plug>(easymotion-Fl)')
 -- vim.keymap.set('n', 't', '<Plug>(easymotion-tl)')
