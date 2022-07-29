@@ -1,79 +1,76 @@
-vim.cmd [[autocmd BufWritePost init.lua source <afile> | PackerCompile]]
-require('packer').startup(function()
-
-	use { 'windwp/nvim-ts-autotag', config = function() require 'nvim-treesitter.configs'.setup {
-			autotag = {
-				enable = true
-			}
-		}
-	end }
-	use "stevearc/dressing.nvim"
-	use({
-		"ziontee113/icon-picker.nvim",
-		config = function()
-			require("icon-picker")
-		end,
-	})
-	-- motion
-	use { 'easymotion/vim-easymotion' }
-	use { 'justinmk/vim-sneak' }
+return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-	use { 'stsewd/fzf-checkout.vim' }
-	use 'simrat39/symbols-outline.nvim'
-	use { 'simeji/winresizer' } -- windowのサイズを変更するプラグイン
-	use 'liuchengxu/vista.vim'
-	-- for ruby
+	-- colorscheme
+	use {'EdenEast/nightfox.nvim'}
+
+	use {'hoob3rt/lualine.nvim',
+	config = function()
+					require("plugins.lualine")
+	end }
+
+	-- fuzzy finder
+	use {'nvim-telescope/telescope.nvim',
+	requires = { { 'nvim-lua/plenary.nvim' }},
+	config = function() require('plugins.telescope') end
+	}
+	
+	-- treesitter
+	use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = function() require('plugins.tree-sitter') end }
 	use { 'RRethy/nvim-treesitter-endwise' }
-	use { 'pwntester/octo.nvim',
-		requires= {
-			'nvim-lua/plenary.nvim',
-			'nvim-telescope/telescope.nvim',
-			'kyazdani42/nvim-web-devicons'
-		},
-		config= function ()
-			require"octo".setup()
-		end
-	}
-	use 'kat0h/bufpreview.vim'
-	use { "akinsho/toggleterm.nvim", config = function() require 'toggleterm-setting' end }
 
-	use { 'dense-analysis/ale' }
-	use { 'tpope/vim-rails' }
-
-
-	-- LSP系のプラグイン
-	use { 'junegunn/vim-emoji' }
-	use { 'folke/lsp-colors.nvim' }
-	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
-	use { 'RRethy/vim-illuminate' }
+	-- languages
+	use {'tpope/vim-rails'}
 	use { 'rust-lang/rust.vim' }
-	use { 'neovim/nvim-lspconfig', config = function() require 'lsp' end }
-	-- snippets
-	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
-	use { 'SirVer/ultisnips' }
-	use { 'honza/vim-snippets' }
-	use { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
-	use 'onsails/lspkind-nvim'
-	use { 'williamboman/nvim-lsp-installer' }
-	use {
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup {
-			}
-		end
+
+	-- tools
+	use {'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('plugins.skkeleton') end }
+	use {'delphinus/skkeleton_indicator.nvim', config = function() require('skkeleton_indicator').setup{} end }
+	use { "lukas-reineke/indent-blankline.nvim", config = function() require('plugins.indent-blankline') end } -- show indent
+	use { 'haya14busa/vim-edgemotion' }
+	use { 't9md/vim-quickhl' } -- for highlighting
+	use { 'tpope/vim-surround' }
+	use { 'junegunn/vim-easy-align' }
+	use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- plugin for comment out
+	use { 'akinsho/toggleterm.nvim', config = function() require 'plugins.toggleterm' end }
+	use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end }
+	use { 'tpope/vim-repeat' }
+	use { 'petertriho/nvim-scrollbar', config = function() require("scrollbar").setup{} end }
+	use { 'ggandor/lightspeed.nvim' }
+	use { 'folke/todo-comments.nvim', requires = "nvim-lua/plenary.nvim", config = function() require("todo-comments").setup{} end }
+  use({ 'ziontee113/icon-picker.nvim', config = function() require("icon-picker") end })
+
+  -- fern file explorer
+	use { 'lambdalisue/fern.vim' }
+	use { 'lambdalisue/fern-git-status.vim' }
+	use { 'lambdalisue/nerdfont.vim' }
+	use { 'lambdalisue/fern-renderer-nerdfont.vim' }
+	use { 'lambdalisue/glyph-palette.vim' }
+	use { 'antoinemadec/FixCursorHold.nvim' }
+
+	-- assist moving cursor
+	use {'easymotion/vim-easymotion'}
+
+	-- git 
+	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'plugins.vgit' end }
+	use { 'TimUntersberger/neogit', config = function() require 'plugins.neogit' end }
+	-- github
+  use { 'pwntester/octo.nvim', 
+	requires= { 
+					'nvim-lua/plenary.nvim', 
+					'nvim-telescope/telescope.nvim', 
+					'kyazdani42/nvim-web-devicons'
+		},
+		config= function () require"octo".setup() end
 	}
 
-	-- Color Scheme
-	-- use { 'sainnhe/sonokai' }
-	use { 'EdenEast/nightfox.nvim' }
-	use { 'hrsh7th/nvim-cmp', config = function() require 'cmp-setting' end }
+	-- cmp
+  use { 'hrsh7th/nvim-cmp', config = function() require 'plugins.cmp' end }
 	use 'hrsh7th/cmp-calc'
 	use 'hrsh7th/cmp-omni'
 	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
 	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
 	use { 'hrsh7th/cmp-emoji' }
-	use { 'uga-rosa/cmp-dictionary', config = function() require 'dictionary-setting' end }
+	use { 'uga-rosa/cmp-dictionary', config = function() require 'plugins.dictionary' end }
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
@@ -81,104 +78,24 @@ require('packer').startup(function()
 	use 'f3fora/cmp-spell'
 	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
 
-	-- telescope
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = { { 'nvim-lua/plenary.nvim' },
-			config = function() require('telescope-setting') end
-		}
-	}
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  -- LSP系のプラグイン
+	use { 'junegunn/vim-emoji' }
+	use { 'folke/lsp-colors.nvim' }
+	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
+	use { 'RRethy/vim-illuminate' }
+	use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
 
-	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('skkeleton-setting') end }
+	-- snippets
+	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
+	use { 'SirVer/ultisnips' }
+	use { 'honza/vim-snippets' }
+	use { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
+	use 'onsails/lspkind-nvim'
+	use { 'williamboman/nvim-lsp-installer' }
 
-	use 'vim-denops/denops.vim'
+	-- tmux
+	use { 'aserowy/tmux.nvim', config = function() require('plugins.tmux') end }
 
-	use { 'junegunn/fzf', run = ':fzf#install()' }
-	use { 'junegunn/fzf.vim' }
-	use { 'hoob3rt/lualine.nvim',
-		config = function()
-			require("lualine-settings")
-		end }
-
-	-- git
-	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'vgit-setting' end }
-	use { 'TimUntersberger/neogit', config = function() require 'neogit-setting' end }
-	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require('diffview-setting') end }
-	use { 'akinsho/git-conflict.nvim', config = function()
-		require('git-conflict-setting')
-	end
-	}
-
-
-
-	use { 'junegunn/vim-easy-align' } -- 表とかをきれいに整列するプラグイン
-	use { "lukas-reineke/indent-blankline.nvim", config = function() require('indent-blankline-setting') end }
-	use { 'haya14busa/vim-edgemotion' }
-	use { 't9md/vim-quickhl' }
-	use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end } -- コメントアウトを行うプラグイン
-	use { 'tpope/vim-surround' } -- 括弧をつけるプラグイン
-	use { 'windwp/nvim-autopairs',
-		config = function() require('nvim-autopairs').setup() end
-	} -- 自動で括弧をつけるプラグイン
-	-- Treesitter
-	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
-		config = function() require('nvim-treesitter-settings') end
-	}
-
-	-- fern
-	use { 'lambdalisue/fern.vim' }
-	use { 'lambdalisue/fern-git-status.vim' }
-	use { 'lambdalisue/nerdfont.vim' }
-	use { 'lambdalisue/fern-renderer-nerdfont.vim' }
-	use { 'lambdalisue/glyph-palette.vim' }
-	use { 'antoinemadec/FixCursorHold.nvim' }
-	use { 'AckslD/nvim-neoclip.lua', requires = { 'nvim-telescope/telescope.nvim' },
-		config = function() require('neoclip').setup() end }
-	use { 'hrsh7th/nvim-pasta' }
-
-	-- use { 'romgrk/barbar.nvim', config = function() require 'barbar-setting' end }
-
-	-- Go
-	use { 'ray-x/go.nvim' }
-	use { 'fatih/vim-go' }
-	use {
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			require("todo-comments").setup {
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			}
-		end
-	}
-	use({
-		"aserowy/tmux.nvim",
-		config = function()
-			require("tmux").setup({
-				-- overwrite default configuration
-				-- here, e.g. to enable default bindings
-				copy_sync = {
-					-- enables copy sync and overwrites all register actions to
-					-- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
-					enable = true,
-
-				},
-				navigation = {
-					-- enables default keybindings (C-hjkl) for normal mode
-					enable_default_keybindings = true,
-				},
-				resize = {
-
-					-- enables default keybindings (A-hjkl) for normal mode
-					enable_default_keybindings = true,
-				}
-			})
-		end
-	})
-	use { 'tpope/vim-repeat' }
-	-- use { 'sidebar-nvim/sidebar.nvim', config = function() require'sidebar_settings' end }
-	use { "petertriho/nvim-scrollbar", config = function() require("scrollbar").setup() end }
-	use 'ggandor/lightspeed.nvim'
+	-- markdown
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
