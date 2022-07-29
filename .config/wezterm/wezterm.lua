@@ -8,7 +8,7 @@ return {
 
 
 	}),
-	font_size = 14,
+	font_size = 16,
 	color_scheme = "Dracula",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
