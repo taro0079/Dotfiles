@@ -1,4 +1,4 @@
-vim.cmd('colorscheme nightfox')
+vim.cmd('colorscheme onenord')
 require('options')
 require('keys')
 require('plugins')

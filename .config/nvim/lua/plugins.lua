@@ -2,6 +2,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- colorscheme
 	use {'EdenEast/nightfox.nvim'}
+	use 'rmehri01/onenord.nvim'
 
 	use {'hoob3rt/lualine.nvim',
 	config = function()
@@ -92,6 +93,7 @@ return require('packer').startup(function(use)
 	use { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
 	use 'onsails/lspkind-nvim'
 	use { 'williamboman/nvim-lsp-installer' }
+	use { 'nkakouros-original/numbers.nvim', config = function() require('numbers').setup() end }
 
 	-- tmux
 	use { 'aserowy/tmux.nvim', config = function() require('plugins.tmux') end }
