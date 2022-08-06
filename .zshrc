@@ -1,17 +1,5 @@
-# Use powerline
-# USE_POWERLINE="true"
-# Source manjaro-zsh-configuration
-# if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-#   source /usr/share/zsh/manjaro-zsh-config
-# fi
-# # Use manjaro zsh prompt
-# if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#   source /usr/share/zsh/manjaro-zsh-prompt
-# fi
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-# Mac
-#export PATH="~/.local/share/gem/ruby/3.0.0/bin:$PATH"
 
 alias e='exa -la --icons --git'
 alias l=e
@@ -85,11 +73,11 @@ COLOR_YELLOW="\e[1;33m"
 COLOR_WHITE="\e[1;37m"
 COLOR_NONE="\e[0m"
 
-if [ -z "$TMUX" ]; then
-    export TERM=xterm-256color-italic
-else
-    export TERM=tmux-256color
-fi
+# if [ -z "$TMUX" ]; then
+#     export TERM=xterm-256color-italic
+# else
+#     export TERM=tmux-256color
+# fi
 
 fbr() {
   local branches branch
