@@ -9,7 +9,7 @@ return {
 
 	}),
 	font_size = 15,
-	color_scheme = "Dracula",
+	color_scheme = "nord",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
 	window_background_opacity = 0.8
