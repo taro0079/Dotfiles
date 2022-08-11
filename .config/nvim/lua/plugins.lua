@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'plugins.vgit' end }
 	-- use { 'TimUntersberger/neogit', config = function() require 'plugins.neogit' end }
 	use { 'kdheepak/lazygit.nvim' }
-	use { 'lambdalisue/gin.vim' }
+	use { 'lambdalisue/gina.vim' }
 	-- github
 	use { 'pwntester/octo.nvim',
 		requires = {
