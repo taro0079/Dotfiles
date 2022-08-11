@@ -58,8 +58,10 @@ set si "Smart Indent"
 set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
@@ -335,18 +337,22 @@ endif
 
 syntax on
 
+autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+      \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+      \ |    highlight SignColumn ctermbg=NONE guibg=NONE
+let g:gruvbox_transparent_bg = 1
 set termguicolors
+set background=dark
+colorscheme gruvbox
 " $TERMがxterm以外のときは以下を設定する必要がある。
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
-set background=dark
 " let g:gruvbox_material_better_performance = 1
 " let g:gruvbox_material_background = 'soft'
-let g:sonokai_style = 'andromeda'
-let g:sonokai_better_performance = 1
-let g:sonokai_enable_italic = 1
+" let g:sonokai_style = 'andromeda'
+" let g:sonokai_better_performance = 1
+" let g:sonokai_enable_italic = 1
 " let g:sonokai_transparent_background = 1
-colorscheme sonokai
 
 " Airline setting -----------------------------{{{1
 let g:airline#extensions#ale#enabled = 1

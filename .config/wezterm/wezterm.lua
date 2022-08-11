@@ -12,6 +12,6 @@ return {
 	color_scheme = "nord",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
-	window_background_opacity = 0.8
+	window_background_opacity = 0.9
 
 }
