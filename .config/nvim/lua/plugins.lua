@@ -1,5 +1,5 @@
 return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+				use 'wbthomason/packer.nvim'
 	-- colorscheme
 	use { 'EdenEast/nightfox.nvim' }
 	use { 'rmehri01/onenord.nvim', config = function() require('onenord').setup() end }
@@ -54,7 +54,9 @@ return require('packer').startup(function(use)
 
 	-- git
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'plugins.vgit' end }
-	use { 'TimUntersberger/neogit', config = function() require 'plugins.neogit' end }
+	-- use { 'TimUntersberger/neogit', config = function() require 'plugins.neogit' end }
+	use { 'kdheepak/lazygit.nvim' }
+	use { 'lambdalisue/gin.vim' }
 	-- github
 	use { 'pwntester/octo.nvim',
 		requires = {
