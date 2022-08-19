@@ -107,6 +107,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production'  }
 Plug 'sainnhe/sonokai'
 Plug 'kana/vim-textobj-user'
 Plug 'osyo-manga/vim-textobj-blockwise'
@@ -428,3 +429,14 @@ vmap <Leader>b <Plug>(openbrowser-smart-search)
 "   \ asyncomplete#force_refresh()
 
 " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+let g:ale_fixers = {
+\   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
+\   'javascript': ['prettier'],
+\   'javascriptreact': ['prettier'],
+\   'css': ['prettier'],
+\   'html': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
