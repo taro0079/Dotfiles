@@ -1,5 +1,5 @@
 return require('packer').startup(function(use)
-				use 'wbthomason/packer.nvim'
+	use 'wbthomason/packer.nvim'
 	-- colorscheme
 	use { 'EdenEast/nightfox.nvim' }
 	-- use { 'rmehri01/onenord.nvim', config = function() require('onenord').setup() end }
@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 	use { 'rust-lang/rust.vim' }
 
 	-- tools
+	use { 'windwp/nvim-ts-autotag' }
 	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('plugins.skkeleton') end }
 	use { 'delphinus/skkeleton_indicator.nvim', config = function() require('skkeleton_indicator').setup {} end }
 	use { "lukas-reineke/indent-blankline.nvim", config = function() require('plugins.indent-blankline') end } -- show indent
@@ -106,5 +107,5 @@ return require('packer').startup(function(use)
 	-- markdown
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
 		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-		use { 'previm/previm' }
+	use { 'previm/previm' }
 end)
