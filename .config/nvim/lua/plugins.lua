@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- treesitter
+	use { 'windwp/nvim-ts-autotag' }
 	use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = function() require('plugins.tree-sitter') end }
 	use { 'RRethy/nvim-treesitter-endwise' }
 
@@ -25,7 +26,6 @@ return require('packer').startup(function(use)
 	use { 'rust-lang/rust.vim' }
 
 	-- tools
-	use { 'windwp/nvim-ts-autotag' }
 	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('plugins.skkeleton') end }
 	use { 'delphinus/skkeleton_indicator.nvim', config = function() require('skkeleton_indicator').setup {} end }
 	use { "lukas-reineke/indent-blankline.nvim", config = function() require('plugins.indent-blankline') end } -- show indent
@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
 	use { 'kdheepak/lazygit.nvim' }
 	use { 'lambdalisue/gina.vim' }
 	use { 'tpope/vim-fugitive' }
+	-- use { 'dinhhuy258/git.nvim', config = function() require 'plugins.git' end }
 	-- github
 	use { 'pwntester/octo.nvim',
 		requires = {
