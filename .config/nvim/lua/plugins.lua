@@ -1,9 +1,11 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- colorscheme
-	use { 'EdenEast/nightfox.nvim' }
+	-- use { 'EdenEast/nightfox.nvim' }
 	-- use { 'rmehri01/onenord.nvim', config = function() require('onenord').setup() end }
 	use { "ellisonleao/gruvbox.nvim" }
+	use { "sainnhe/everforest"}
+
 
 	use { 'hoob3rt/lualine.nvim',
 		config = function()
