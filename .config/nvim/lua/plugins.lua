@@ -1,10 +1,10 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- colorscheme
-	-- use { 'EdenEast/nightfox.nvim' }
+	use { 'EdenEast/nightfox.nvim' }
 	-- use { 'rmehri01/onenord.nvim', config = function() require('onenord').setup() end }
 	use { "ellisonleao/gruvbox.nvim" }
-	use { "sainnhe/everforest"}
+	-- use { "sainnhe/everforest" }
 
 
 	use { 'hoob3rt/lualine.nvim',
@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
 	use { 'antoinemadec/FixCursorHold.nvim' }
 
 	-- assist moving cursor
-	use { 'easymotion/vim-easymotion' }
+	-- use { 'easymotion/vim-easymotion' }
 
 	-- git
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'plugins.vgit' end }
@@ -111,4 +111,13 @@ return require('packer').startup(function(use)
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
 		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 	use { 'previm/previm' }
+
+	use {
+		'phaazon/hop.nvim',
+		branch = 'v2', -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+		end
+	}
 end)
