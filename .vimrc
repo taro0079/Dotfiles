@@ -65,8 +65,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for':
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
-Plug 'mattn/ctrlp-matchfuzzy'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'mattn/ctrlp-matchfuzzy'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
 Plug 'dracula/vim'
@@ -346,11 +346,11 @@ let g:eskk#dictionary       = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
 
 " CtrlP setting ------------------------------ {{{1
-let g:ctrlp_match_func        = {'match': 'ctrlp_matchfuzzy#matcher'}
-let g:ctrlp_map               = '<c-p>'
-let g:ctrlp_cmd               = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden       = 1
+" let g:ctrlp_match_func        = {'match': 'ctrlp_matchfuzzy#matcher'}
+" let g:ctrlp_map               = '<c-p>'
+" let g:ctrlp_cmd               = 'CtrlP'
+" let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_show_hidden       = 1
 
 " cursor settings for wsl ---------------------------------{{{1
 if has('vim_starting')
@@ -400,3 +400,8 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 " suda setting --------------{{{1
 let g:suda_smart_edit = 1
+
+nmap <C-p> :GFiles<CR>
+nmap <leader>ff :Files<CR>
+nmap <leader>fq :Rg<CR>
+
