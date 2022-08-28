@@ -9,3 +9,5 @@ vim.o.signcolumn = "yes" -- これを設定しないとvgitでガタつく
 vim.updatetime = 300
 vim.o.incsearch = false
 vim.opt.termguicolors = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
