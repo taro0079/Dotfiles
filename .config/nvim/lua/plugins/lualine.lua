@@ -1,7 +1,7 @@
 local lualine = require('lualine')
 lualine.setup{
 				options = {
-								theme = "nightfox",
+								theme = "tokyonight",
 								section_separators = { left = '', right = '' },
 								component_separators = { left = ' ', right = ' ' }
 				},

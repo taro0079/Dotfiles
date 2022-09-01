@@ -1,6 +1,7 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- colorscheme
+	use { 'folke/tokyonight.nvim', config = function() require('plugins.tokyonight') end }
 	use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
 	use { "ellisonleao/gruvbox.nvim" }
 
