@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
 	use { 'folke/tokyonight.nvim', config = function() require('plugins.tokyonight') end }
 	use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
 	use { "ellisonleao/gruvbox.nvim" }
+	use { 'jose-elias-alvarez/null-ls.nvim', config = function() require('plugins.null-ls') end }
 
 
 	use { 'hoob3rt/lualine.nvim',
