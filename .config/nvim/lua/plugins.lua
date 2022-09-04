@@ -94,6 +94,7 @@ return require('packer').startup(function(use)
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
 	use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
+	use { 'fatih/vim-go'}
 
 	-- snippets
 	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
