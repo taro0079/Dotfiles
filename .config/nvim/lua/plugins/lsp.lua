@@ -1,5 +1,5 @@
 local nvim_lsp = require('lspconfig')
-local lsp_installer = require("nvim-lsp-installer")
+local lsp_installer = require("mason")
 local configs = require 'lspconfig.configs'
 
 lsp_installer.setup {}
@@ -32,18 +32,18 @@ local on_attach = function(client, bufnr)
 	require 'illuminate'.on_attach(client)
 end
 
--- illuminate setting
--- Use a loop to conveniently call 'setup' on multiple servers and
----- map buffer local keybindings when the language server attaches
--- local servers = { 'pyright', 'rust_analyzer', 'tsserver' , 'pylsp', 'solargraph', 'hie', 'hls'}
-for _, lsp in ipairs(lsp_installer.get_installed_servers()) do
-	nvim_lsp[lsp.name].setup {
+local mason_lspconfig=require('mason-lspconfig')
+mason_lspconfig.setup_handlers({ function (server_name)
+	nvim_lsp[server_name].setup {
 		on_attach = on_attach,
 		flags = {
 			debounce_text_changes = 150,
 		}
 	}
-end
+
+end})
+-- for _, lsp in ipairs(lsp_installer.get_installed_servers()) do
+-- end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
