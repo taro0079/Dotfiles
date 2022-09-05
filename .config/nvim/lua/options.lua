@@ -1,4 +1,5 @@
 vim.g.maplocalleader = ','
+vim.g.mapleader = ','
 vim.wo.number = true
 vim.o.smarttab = true
 vim.o.cursorline = true
