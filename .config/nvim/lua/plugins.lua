@@ -1,4 +1,15 @@
 return require('packer').startup(function(use)
+	use {
+		'phaazon/hop.nvim',
+		branch = 'v2', -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+		end
+	}
+	if vim.g.vscode then return nil end
+
+
 	use 'wbthomason/packer.nvim'
 	-- colorscheme
 	use { 'folke/tokyonight.nvim', config = function() require('plugins.tokyonight') end }
@@ -115,12 +126,4 @@ return require('packer').startup(function(use)
 		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 	use { 'previm/previm' }
 
-	use {
-		'phaazon/hop.nvim',
-		branch = 'v2', -- optional but strongly recommended
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-		end
-	}
 end)
