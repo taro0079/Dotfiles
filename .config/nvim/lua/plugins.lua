@@ -124,5 +124,9 @@ return require('packer').startup(function(use)
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
 		setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 	use { 'previm/previm' }
+	use {
+		'glacambre/firenvim',
+		run = function() vim.fn['firenvim#install'](0) end
+	}
 
 end)
