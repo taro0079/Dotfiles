@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
 			require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 		end
 	}
-	if vim.g.vscode then return nil end
 
 
 	use 'wbthomason/packer.nvim'
