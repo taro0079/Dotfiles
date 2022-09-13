@@ -12,7 +12,7 @@ return {
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
-	window_background_opacity = 0.4,
+	window_background_opacity = 0.9,
 	colors = {
 					foreground = "#c0caf5",
 					background = "#1a1b26",
