@@ -67,6 +67,7 @@ Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
 " Plug 'mattn/ctrlp-matchfuzzy'
 " Plug 'ctrlpvim/ctrlp.vim'
+" :
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
 Plug 'dracula/vim'
