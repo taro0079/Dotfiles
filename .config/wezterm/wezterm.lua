@@ -4,7 +4,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{ family = "JetBrainsMono Nerd Font", weight = "Medium", italic = false },
 		-- { family = "Agave Nerd Font", weight = "Regular", italic = true },
-		{ family = "HackGenNerd", weight = "Regular", italic = false },
+		{ family = "HackGen35 Console NF", weight = "Regular", italic = false },
 
 
 	}),
