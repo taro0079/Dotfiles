@@ -12,7 +12,7 @@ return {
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
-	window_background_opacity = 0.95,
+	-- window_background_opacity = 0.95,
 	-- colors = {
 	-- 				foreground = "#c0caf5",
 	-- 				background = "#1a1b26",
@@ -25,6 +25,6 @@ return {
 	-- 				brights = { "#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5" }
 
 	-- }
-	color_scheme = "gotham (Gogh)",
+	color_scheme = "Gogh (Gogh)",
 
 }
