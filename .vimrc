@@ -86,6 +86,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'mangeshrex/everblush.vim'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'whatyouhide/vim-gotham'
 
 Plug 'sheerun/vim-polyglot'
@@ -341,10 +342,13 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 " let g:tokyonight_style = 'night'
 " let g:tokyonight_italic = 1
 " set background=dark
-colorscheme gotham256
+" colorscheme gotham256
+colorscheme embark
+let g:embark_terminal_italics = 1
 
 " Airline setting -----------------------------{{{1
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme = 'embark'
 
 " ESKK setting ------------------------------- {{{1
 let g:eskk#directory        = "~/.config/eskk"

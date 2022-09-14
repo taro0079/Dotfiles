@@ -115,7 +115,7 @@ if [ -f '/Users/moritatarou/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 
 # M1 macでsmooth_line_apiのbundle installでmysql2がこけるのを回避
 if [ "$(uname)" = "Darwin" ]; then
-	export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix)/lib
+	export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
