@@ -341,7 +341,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 " let g:tokyonight_style = 'night'
 " let g:tokyonight_italic = 1
 " set background=dark
-colorscheme gotham
+colorscheme gotham256
 
 " Airline setting -----------------------------{{{1
 let g:airline#extensions#ale#enabled = 1
