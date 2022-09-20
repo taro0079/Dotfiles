@@ -1,4 +1,4 @@
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
 	use {
 		'phaazon/hop.nvim',
 		branch = 'v2', -- optional but strongly recommended
@@ -68,11 +68,10 @@ return require('packer').startup(function(use)
 
 	-- git
 	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'plugins.vgit' end }
-	-- use { 'TimUntersberger/neogit', config = function() require 'plugins.neogit' end }
 	use { 'kdheepak/lazygit.nvim' }
 	use { 'lambdalisue/gina.vim' }
+	use { 'lambdalisue/gin.vim'}
 	use { 'tpope/vim-fugitive' }
-	-- use { 'dinhhuy258/git.nvim', config = function() require 'plugins.git' end }
 	-- github
 	use { 'pwntester/octo.nvim',
 		requires = {
@@ -129,4 +128,6 @@ return require('packer').startup(function(use)
 		run = function() vim.fn['firenvim#install'](0) end
 	}
 
-end)
+end,
+	config = {display = {open_cmd = 'leftabove 75vnew \\[packer\\]'}, max_jobs = 10}
+})

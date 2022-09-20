@@ -1,3 +1,4 @@
+let mapleader ="\"
 set number
 set sneak
 set relativenumber
@@ -23,9 +24,8 @@ map <leader>T <Plug>(easymotion-bd-T)
 set NERDTree
 
 
-let mapleader ="\"
 nmap <C-[> Esc
-nmap <leader>f :action Find<cr>
+" nmap <leader>f :action Find<cr>
 nmap <Space>f :action ReformatCode<cr>
 nmap <Space>rn :action RenameElement<cr>
 nmap <Space>gd :action GotoDeclaration<cr>
