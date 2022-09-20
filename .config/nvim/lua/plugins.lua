@@ -1,4 +1,4 @@
-return require('packer').startup({function(use)
+return require('packer').startup({ function(use)
 	use {
 		'phaazon/hop.nvim',
 		branch = 'v2', -- optional but strongly recommended
@@ -9,11 +9,12 @@ return require('packer').startup({function(use)
 	}
 
 
-	use 'wbthomason/packer.nvim'
+
+	use { 'wbthomason/packer.nvim' }
 	-- colorscheme
 	use { 'folke/tokyonight.nvim', config = function() require('plugins.tokyonight') end }
-	use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
-	use { "ellisonleao/gruvbox.nvim" }
+	-- use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
+	-- use { "ellisonleao/gruvbox.nvim" }
 	use { 'jose-elias-alvarez/null-ls.nvim', config = function() require('plugins.null-ls') end }
 
 
@@ -25,17 +26,18 @@ return require('packer').startup({function(use)
 	-- fuzzy finder
 	use { 'nvim-telescope/telescope.nvim',
 		requires = { { 'nvim-lua/plenary.nvim' } },
-		config = function() require('plugins.telescope') end
+		config = function() require('plugins.telescope') end,
+
 	}
 
 	-- treesitter
-	use { 'windwp/nvim-ts-autotag' }
+	use { 'windwp/nvim-ts-autotag', ft = { 'ts', 'tsx' } }
 	use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = function() require('plugins.tree-sitter') end }
 	use { 'RRethy/nvim-treesitter-endwise' }
 
 	-- languages
-	use { 'tpope/vim-rails' }
-	use { 'rust-lang/rust.vim' }
+	use { 'tpope/vim-rails', ft = { 'rb' } }
+	use { 'rust-lang/rust.vim', ft = { 'rs' } }
 
 	-- tools
 	use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' }, config = function() require('plugins.skkeleton') end }
@@ -67,10 +69,11 @@ return require('packer').startup({function(use)
 	-- use { 'easymotion/vim-easymotion' }
 
 	-- git
-	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' }, config = function() require 'plugins.vgit' end }
+	use { 'tanvirtin/vgit.nvim', requires = { 'nvim-lua/plenary.nvim' },
+		config = function() require 'plugins.vgit' end }
 	use { 'kdheepak/lazygit.nvim' }
 	use { 'lambdalisue/gina.vim' }
-	use { 'lambdalisue/gin.vim'}
+	use { 'lambdalisue/gin.vim' }
 	use { 'tpope/vim-fugitive' }
 	-- github
 	use { 'pwntester/octo.nvim',
@@ -103,7 +106,7 @@ return require('packer').startup({function(use)
 	use { 'j-hui/fidget.nvim', config = function() require 'fidget'.setup {} end }
 	use { 'RRethy/vim-illuminate' }
 	use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
-	use { 'fatih/vim-go' }
+	use { 'fatih/vim-go', opt = true, ft = { 'go' } }
 
 	-- snippets
 	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
@@ -116,8 +119,8 @@ return require('packer').startup({function(use)
 	use { 'williamboman/mason-lspconfig.nvim' }
 	use { 'nkakouros-original/numbers.nvim', config = function() require('numbers').setup() end }
 
-	-- tmux
-	use { 'aserowy/tmux.nvim', config = function() require('plugins.tmux') end }
+	-- -- tmux
+	-- use { 'aserowy/tmux.nvim', config = function() require('plugins.tmux') end }
 
 	-- markdown
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
@@ -129,5 +132,5 @@ return require('packer').startup({function(use)
 	}
 
 end,
-	config = {display = {open_cmd = 'leftabove 75vnew \\[packer\\]'}, max_jobs = 10}
+	config = { display = { open_cmd = 'leftabove 75vnew \\[packer\\]' }, max_jobs = 10 }
 })
