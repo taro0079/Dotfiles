@@ -2,13 +2,14 @@ local wezterm = require 'wezterm';
 
 return {
 	font = wezterm.font_with_fallback({
-		{ family = "JetBrainsMono Nerd Font", weight = "Medium", italic = false },
-		-- { family = "Agave Nerd Font", weight = "Regular", italic = true },
+		{ family = "Monofur  Font ", weight = "Medium", italic = false },
+		-- { family = "JetBrainsMono Nerd Font", weight = "Medium", italic = false },
+		-- { family = "Agave Nerd Font", weight = "Regular", italic = false },
 		{ family = "HackGen35 Console NF", weight = "Regular", italic = false },
 
 
 	}),
-	font_size = 14,
+	font_size = 13,
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
