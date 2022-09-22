@@ -2,7 +2,7 @@ local wezterm = require 'wezterm';
 
 return {
 	font = wezterm.font_with_fallback({
-		{ family = "Monofur  Font ", weight = "Medium", italic = false },
+		{ family = "Monofur Font ", weight = "Medium", italic = false },
 		-- { family = "JetBrainsMono Nerd Font", weight = "Medium", italic = false },
 		-- { family = "Agave Nerd Font", weight = "Regular", italic = false },
 		{ family = "HackGen35 Console NF", weight = "Regular", italic = false },
@@ -15,8 +15,8 @@ return {
 	enable_tab_bar = false,
 	-- window_background_opacity = 0.95,
 	-- colors = {
-	-- 				foreground = "#c0caf5",
-	-- 				background = "#1a1b26",
+					-- foreground = "#c0caf5",
+					-- background = "#1a1b26",
 	-- 				cursor_bg = "#c0caf5",
 	-- 				cursor_border = "#c0caf5",
 	-- 				cursor_fg = "#1a1b26",
@@ -26,6 +26,6 @@ return {
 	-- 				brights = { "#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5" }
 
 	-- }
-	color_scheme = "Gogh (Gogh)",
+	color_scheme = "tokyonight",
 
 }
