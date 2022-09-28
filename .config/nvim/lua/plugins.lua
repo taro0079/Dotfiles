@@ -36,7 +36,7 @@ return require('packer').startup({ function(use)
 	use { 'RRethy/nvim-treesitter-endwise' }
 
 	-- languages
-	use { 'tpope/vim-rails', ft = { 'rb' } }
+	use { 'tpope/vim-rails', ft = { 'ruby' } }
 	use { 'rust-lang/rust.vim', ft = { 'rs' } }
 
 	-- tools
