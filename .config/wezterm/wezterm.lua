@@ -11,7 +11,7 @@ return {
 
 
 	}),
-	font_size = 13,
+	font_size = 16,
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
