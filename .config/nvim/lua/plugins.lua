@@ -92,6 +92,7 @@ return require('packer').startup({ function(use)
 	use { 'hrsh7th/nvim-cmp', config = function() require 'plugins.cmp' end }
 	use 'hrsh7th/cmp-calc'
 	use 'hrsh7th/cmp-omni'
+	use { 'hrsh7th/cmp-copilot' }
 	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
 	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
 	use { 'hrsh7th/cmp-emoji' }
