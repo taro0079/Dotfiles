@@ -1,9 +1,7 @@
 require('options')
 require('keys')
 require('plugins')
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_style = "night"
-vim.cmd('colorscheme tokyonight-moon')
+vim.g.boo_colorscheme_theme = 'crimson_moonlight'
+vim.cmd('colorscheme boo')
 require('config')
 require('gui-settings')
-

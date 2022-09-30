@@ -3,8 +3,8 @@ local wezterm = require 'wezterm';
 return {
 				-- font=wezterm.font 'Agave Nerd Font',
 	font = wezterm.font_with_fallback({
-		{ family = "Agave Nerd Font", weight = "Regular", style="Normal"},
-		{ family = "Agave Nerd Font", weight = "Regular", style="Italic"},
+		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style="Normal"},
+		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style="Italic"},
 
 
 	}),
