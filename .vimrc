@@ -1,7 +1,7 @@
 " basic settings ---------------------------- {{{1
 let mapleader = ','
-set cmdheight=1
-set laststatus=2
+" set cmdheight=1
+" set laststatus=2
 set tags=tags;
 set clipboard&
 set clipboard+=unnamed
@@ -58,6 +58,7 @@ set si "Smart Indent"
 set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
+Plug 'axvr/photon.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
@@ -71,6 +72,7 @@ Plug 'vim-utils/vim-ruby-fold'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-denops/denops.vim'
 Plug 'dracula/vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
@@ -90,6 +92,7 @@ Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'whatyouhide/vim-gotham'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'logico/typewriter-vim'
 Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -303,14 +306,15 @@ let g:ale_linters = {
       \   'css':             ['eslint'],
       \  }
 let g:ale_linters_explicit          = 1
-let g:airline#extensions#ale#enable = 1
+" let g:airline#extensions#ale#enable = 1
+
 " let g:airline#extensions#tabline#enabled = 1
 
 "airlineのシンボルの設定
-if !exists('g:airline_symbols')
-  let g:airline_symbols ={}
-endif
-let g:airline_symbols.branch = ''
+" if !exists('g:airline_symbols')
+  " let g:airline_symbols ={}
+" endif
+" let g:airline_symbols.branch = ''
 let g:ale_fixers = {
       \   'ruby':            ['rubocop'],
       \   'javascript':      ['eslint'],
@@ -339,16 +343,21 @@ syntax on
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
 " let g:tokyonight_style = 'night'
 " let g:tokyonight_italic = 1
-" set background=dark
-" colorscheme gotham256
-colorscheme embark
+set background=dark
+" colorscheme typewriter-night
+colorscheme iceberg
+
+" colorscheme gotham
+" colorscheme embark
 let g:embark_terminal_italics = 1
 
 " Airline setting -----------------------------{{{1
-let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'embark'
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline_theme = 'photon'
 
 " ESKK setting ------------------------------- {{{1
 let g:eskk#directory        = "~/.config/eskk"
@@ -406,8 +415,8 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 
 " airline settings --------------------{{{1
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
 " suda setting --------------{{{1
 let g:suda_smart_edit = 1
 
