@@ -59,6 +59,7 @@ set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
 Plug 'axvr/photon.vim'
+Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
