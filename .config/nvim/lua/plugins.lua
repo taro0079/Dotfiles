@@ -9,15 +9,17 @@ return require('packer').startup({ function(use)
 	}
 
 	use 'github/copilot.vim'
+	use { 'ellisonleao/glow.nvim', config = function() require('plugins.glow') end }
 
 
 
 	use { 'wbthomason/packer.nvim' }
 	-- colorscheme
 	use { 'folke/tokyonight.nvim', config = function() require('plugins.tokyonight') end }
-	use { 'rockerBOO/boo-colorscheme-nvim'}
+	use { 'rockerBOO/boo-colorscheme-nvim' }
 	-- use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
 	-- use { "ellisonleao/gruvbox.nvim" }
+	use { 'cocopon/iceberg.vim' }
 	use { 'jose-elias-alvarez/null-ls.nvim', config = function() require('plugins.null-ls') end }
 
 

@@ -1,10 +1,10 @@
 local wezterm = require 'wezterm';
 
 return {
-				-- font=wezterm.font 'Agave Nerd Font',
+	-- font=wezterm.font 'Agave Nerd Font',
 	font = wezterm.font_with_fallback({
-		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style="Normal"},
-		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style="Italic"},
+		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style = "Normal" },
+		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style = "Italic" },
 
 
 	}),
@@ -12,19 +12,20 @@ return {
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
-	-- window_background_opacity = 0.95,
-	-- colors = {
-	-- foreground = "#c0caf5",
-	-- background = "#1a1b26",
-	-- 				cursor_bg = "#c0caf5",
-	-- 				cursor_border = "#c0caf5",
-	-- 				cursor_fg = "#1a1b26",
-	-- 				selection_bg = "#33467C",
-	-- 				selection_fg = "#c0caf5",
-	-- 				ansi = { "#15161E", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#a9b1d6" },
-	-- 				brights = { "#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5" }
+	window_background_opacity = 0.95,
+	colors = {
 
-	-- }
-	color_scheme = "tokyonight",
+		foreground = "#c6c8d1",
+		background = "#161821",
+		cursor_bg = "#c6c8d1",
+		cursor_border = "#c6c8d1",
+		cursor_fg = "#161821",
+		selection_bg = "#c6c8d1",
+		selection_fg = "#161821",
+		ansi = { "#1e2132", "#e27878", "#b4be82", "#e2a478", "#84a0c6", "#a093c7", "#89b8c2", "#c6c8d1" },
+		brights = { "#6b7089", "#e98989", "#c0ca8e", "#e9b189", "#91acd1", "#ada0d3", "#95c4ce", "#d2d4de" }
+
+	}
+	-- color_scheme = "tokyonight",
 
 }

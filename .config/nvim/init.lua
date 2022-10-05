@@ -1,7 +1,6 @@
 require('options')
 require('keys')
 require('plugins')
-vim.g.boo_colorscheme_theme = 'crimson_moonlight'
-vim.cmd('colorscheme boo')
+vim.cmd('colorscheme iceberg')
 require('config')
 require('gui-settings')
