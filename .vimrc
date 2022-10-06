@@ -67,11 +67,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for':
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
-" Plug 'mattn/ctrlp-matchfuzzy'
-" Plug 'ctrlpvim/ctrlp.vim'
-" :
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'vim-denops/denops.vim'
 Plug 'dracula/vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'vim-airline/vim-airline'
@@ -90,8 +86,9 @@ Plug 'tpope/vim-commentary'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'mangeshrex/everblush.vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-Plug 'whatyouhide/vim-gotham'
-
+Plug 'vim-denops/denops.vim'
+Plug 'lambdalisue/gin.vim'
+Plug 'lambdalisue/gina.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'logico/typewriter-vim'
 Plug 'dense-analysis/ale'
