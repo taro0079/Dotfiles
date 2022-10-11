@@ -400,6 +400,7 @@ vmap <Leader>b <Plug>(openbrowser-smart-search)
 
 " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 let g:ale_fixers = {
+      \   'ruby':            ['rubocop'],
 \   'typescript': ['prettier'],
 \   'typescriptreact': ['prettier'],
 \   'javascript': ['prettier'],
