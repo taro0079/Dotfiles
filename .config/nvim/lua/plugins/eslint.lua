@@ -4,12 +4,12 @@ local eslint = require("eslint")
 null_ls.setup()
 
 eslint.setup({
-	bin = 'eslint',
+	bin = "eslint",
 	code_actions = {
 		enable = true,
 		apply_on_save = {
 			enable = true,
-			types = { "problem" },
+			types = { "suggestion" },
 		},
 		disable_rule_comment = {
 			enable = true,
@@ -19,6 +19,6 @@ eslint.setup({
 	deagnostics = {
 		enable = true,
 		report_unused_disable_directives = false,
-		run_on = "type"
-	}
+		run_on = "type",
+	},
 })

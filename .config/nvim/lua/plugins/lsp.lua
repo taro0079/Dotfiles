@@ -10,7 +10,6 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>loa vim.diagnostic.goto_prev<CR>', opts
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
-
 local on_attach = function(client, bufnr)
 
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -30,10 +29,28 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ff', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 	require 'illuminate'.on_attach(client)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = { "*py", "*lua", "*rb" },
+			group = augroup,
+			-- buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({ bufnr = bufnr })
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = { "*.ts", "*.tsx", "*.jsx", "*.js" },
+			group = augroup,
+			-- buffer = bufnr,
+			command = 'silent! EslintFixAll'
+		})
+	end
 end
 
-local mason_lspconfig=require('mason-lspconfig')
-mason_lspconfig.setup_handlers({ function (server_name)
+local mason_lspconfig = require('mason-lspconfig')
+mason_lspconfig.setup_handlers({ function(server_name)
 	nvim_lsp[server_name].setup {
 		on_attach = on_attach,
 		flags = {
@@ -41,52 +58,52 @@ mason_lspconfig.setup_handlers({ function (server_name)
 		}
 	}
 
-end})
+end })
 -- for _, lsp in ipairs(lsp_installer.get_installed_servers()) do
 -- end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-if not configs.ls_emmet then
-	configs.ls_emmet = {
-		default_config = {
-			cmd = { 'ls_emmet', '--stdio' };
-			filetypes = {
-				'html',
-				'css',
-				'scss',
-				'javascript',
-				'javascriptreact',
-				'typescript',
-				'typescriptreact',
-				'haml',
-				'xml',
-				'xsl',
-				'pug',
-				'slim',
-				'sass',
-				'stylus',
-				'less',
-				'sss',
-				'hbs',
-				'handlebars',
-			};
-			root_dir = function(fname)
-				return vim.loop.cwd()
-			end;
-			settings = {};
-		};
-	}
-end
+-- if not configs.ls_emmet then
+-- 	configs.ls_emmet = {
+-- 		default_config = {
+-- 			cmd = { 'ls_emmet', '--stdio' };
+-- 			filetypes = {
+-- 				'html',
+-- 				'css',
+-- 				'scss',
+-- 				'javascript',
+-- 				'javascriptreact',
+-- 				'typescript',
+-- 				'typescriptreact',
+-- 				'haml',
+-- 				'xml',
+-- 				'xsl',
+-- 				'pug',
+-- 				'slim',
+-- 				'sass',
+-- 				'stylus',
+-- 				'less',
+-- 				'sss',
+-- 				'hbs',
+-- 				'handlebars',
+-- 			};
+-- 			root_dir = function(fname)
+-- 				return vim.loop.cwd()
+-- 			end;
+-- 			settings = {};
+-- 		};
+-- 	}
+-- end
 
-nvim_lsp.ls_emmet.setup { capabilities = capabilities }
-vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = false,
-})
+-- nvim_lsp.ls_emmet.setup { capabilities = capabilities }
+-- vim.diagnostic.config({
+-- 	virtual_text = true,
+-- 	signs = true,
+-- 	underline = true,
+-- 	update_in_insert = false,
+-- 	severity_sort = false,
+-- })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
@@ -95,8 +112,8 @@ for type, icon in pairs(signs) do
 end
 nvim_lsp.steep.setup {}
 
-nvim_lsp.emmet_ls.setup({
-	capabilities = capabilities,
-	filetypes = { "html", "css", "typescriptreact", "javascript" }
-
-})
+-- nvim_lsp.emmet_ls.setup({
+-- 	capabilities = capabilities,
+-- 	filetypes = { "html", "css", "typescriptreact", "javascript" }
+--
+-- })
