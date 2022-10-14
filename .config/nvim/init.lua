@@ -1,6 +1,6 @@
 require('options')
 require('keys')
 require('plugins')
-vim.cmd('colorscheme iceberg')
+vim.cmd('colorscheme nordfox')
 require('config')
 require('gui-settings')

@@ -5,7 +5,7 @@ require("null-ls").setup({
 		require("null-ls").builtins.diagnostics.eslint,
 		require("null-ls").builtins.completion.spell,
 		require("null-ls").builtins.code_actions.refactoring,
-		require("null-ls").builtins.formatting.autopep8
+		require("null-ls").builtins.formatting.autopep8,
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
@@ -16,8 +16,9 @@ require("null-ls").setup({
 				buffer = bufnr,
 				callback = function()
 					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-					-- vim.lsp.buf.format({ bufnr = bufnr })
-					vim.lsp.buf.formatting_sync()
+					vim.lsp.buf.format({ bufnr = bufnr })
+					-- vim.lsp.buf.format({ async = true })
+					-- vim.lsp.buf.formatting_sync()
 				end,
 			})
 		end

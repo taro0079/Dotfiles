@@ -17,9 +17,9 @@ return require('packer').startup({ function(use)
 	-- colorscheme
 	use { 'folke/tokyonight.nvim', config = function() require('plugins.tokyonight') end }
 	use { 'rockerBOO/boo-colorscheme-nvim' }
-	-- use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
+	use { 'EdenEast/nightfox.nvim', config = function() require('plugins.nightfox') end }
 	-- use { "ellisonleao/gruvbox.nvim" }
-	use { 'cocopon/iceberg.vim' }
+	-- use { 'cocopon/iceberg.vim' }
 	use { 'jose-elias-alvarez/null-ls.nvim', config = function() require('plugins.null-ls') end }
 
 
@@ -139,6 +139,8 @@ return require('packer').startup({ function(use)
 		'glacambre/firenvim',
 		run = function() vim.fn['firenvim#install'](0) end
 	}
+
+	use { "MunifTanjim/eslint.nvim", config= function() require "plugins.eslint" end }
 
 end,
 	config = { display = { open_cmd = 'leftabove 75vnew \\[packer\\]' }, max_jobs = 10 }

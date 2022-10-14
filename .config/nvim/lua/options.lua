@@ -13,3 +13,4 @@ vim.o.incsearch = false
 vim.opt.termguicolors = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.o.mouse = ""
