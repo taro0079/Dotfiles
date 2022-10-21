@@ -61,7 +61,7 @@ mason_lspconfig.setup_handlers({ function(server_name)
 end })
 -- for _, lsp in ipairs(lsp_installer.get_installed_servers()) do
 -- end
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- if not configs.ls_emmet then

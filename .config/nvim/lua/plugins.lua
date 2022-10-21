@@ -9,6 +9,10 @@ return require("packer").startup({
 			end,
 		})
 
+		-- Coc
+		use {'neoclide/coc.nvim', branch = 'release', config= function() require('plugins.coc') end}
+
+
 		use("github/copilot.vim")
 		use({
 			"ellisonleao/glow.nvim",
@@ -16,7 +20,6 @@ return require("packer").startup({
 				require("plugins.glow")
 			end,
 		})
-
 		use({ "wbthomason/packer.nvim" })
 		-- colorscheme
 		use({
@@ -25,22 +28,12 @@ return require("packer").startup({
 				require("plugins.tokyonight")
 			end,
 		})
-		use({ "rockerBOO/boo-colorscheme-nvim" })
 		use({
 			"EdenEast/nightfox.nvim",
 			config = function()
 				require("plugins.nightfox")
 			end,
 		})
-		-- use { "ellisonleao/gruvbox.nvim" }
-		-- use { 'cocopon/iceberg.vim' }
-		-- use({
-		-- 	"jose-elias-alvarez/null-ls.nvim",
-		-- 	config = function()
-		-- 		require("plugins.null-ls")
-		-- 	end,
-		-- })
-
 		use({
 			"hoob3rt/lualine.nvim",
 			config = function()
@@ -179,75 +172,23 @@ return require("packer").startup({
 			end,
 		})
 
-		-- cmp
-		use({
-			"hrsh7th/nvim-cmp",
-			config = function()
-				require("plugins.cmp")
-			end,
-		})
-		use("hrsh7th/cmp-calc")
-		use("hrsh7th/cmp-omni")
-		use({ "hrsh7th/cmp-copilot" })
-		use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
-		use({ "hrsh7th/cmp-nvim-lsp-document-symbol" })
-		use({ "hrsh7th/cmp-emoji" })
-		use({
-			"uga-rosa/cmp-dictionary",
-			config = function()
-				require("plugins.dictionary")
-			end,
-		})
-		use("hrsh7th/cmp-nvim-lsp")
-		use("hrsh7th/cmp-buffer")
-		use("hrsh7th/cmp-path")
-		use("hrsh7th/cmp-cmdline")
-		use("f3fora/cmp-spell")
-		use({ "rinx/cmp-skkeleton", after = { "nvim-cmp", "skkeleton" } })
-
-		-- LSP系のプラグイン
-		use({ "junegunn/vim-emoji" })
-		use({ "folke/lsp-colors.nvim" })
 		use({
 			"j-hui/fidget.nvim",
 			config = function()
 				require("fidget").setup({})
 			end,
 		})
-		use({ "RRethy/vim-illuminate" })
-		use({
-			"neovim/nvim-lspconfig",
-			config = function()
-				require("plugins.lsp")
-			end,
-		})
 		use({ "fatih/vim-go", opt = true, ft = { "go" } })
 
 		-- snippets
-		use({ "quangnguyen30192/cmp-nvim-ultisnips" })
 		use({ "SirVer/ultisnips" })
 		use({ "honza/vim-snippets" })
-		use({
-			"ray-x/lsp_signature.nvim",
-			config = function()
-				require("lsp_signature").setup()
-			end,
-		})
-		use("onsails/lspkind-nvim")
-		-- use { 'williamboman/nvim-lsp-installer' }
-		use({ "williamboman/mason.nvim" })
-		use({ "williamboman/mason-lspconfig.nvim" })
 		use({
 			"nkakouros-original/numbers.nvim",
 			config = function()
 				require("numbers").setup()
 			end,
 		})
-
-		-- -- tmux
-		-- use { 'aserowy/tmux.nvim', config = function() require('plugins.tmux') end }
-
-		-- markdown
 		use({
 			"iamcco/markdown-preview.nvim",
 			run = "cd app && npm install",
@@ -263,19 +204,6 @@ return require("packer").startup({
 				vim.fn["firenvim#install"](0)
 			end,
 		})
-
-		-- use({
-		-- 	"MunifTanjim/eslint.nvim",
-		-- 	config = function()
-		-- 		require("plugins.eslint")
-		-- 	end,
-		-- })
-		-- use({
-		-- 	"MunifTanjim/prettier.nvim",
-		-- 	config = function()
-		-- 		require("plugins.prettier")
-		-- 	end,
-		-- })
 	end,
 	config = { display = { open_cmd = "leftabove 75vnew \\[packer\\]" }, max_jobs = 10 },
 })
