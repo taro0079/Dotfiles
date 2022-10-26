@@ -75,8 +75,10 @@ keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
 -- Formatting selected code.
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+keyset("n", "<Space>ff", "<Plug>(coc-format)", {silent = true})
+keyset("x", "<Space>ff", "<Plug>(coc-format)", {silent = true})
+
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 
 
 -- Setup formatexpr specified filetype(s).
