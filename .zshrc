@@ -39,6 +39,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 #export FZF_DEFAULT_COMMAND="find -L"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid --line-range :100 {}"'
 
 
 # starship

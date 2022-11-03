@@ -3,8 +3,8 @@ let mapleader = ','
 " set cmdheight=1
 " set laststatus=2
 set tags=tags;
-set clipboard&
-set clipboard+=unnamed
+" set clipboard&
+set clipboard=unnamed,unnamedplus
 set showcmd
 set ruler
 set undofile
@@ -339,7 +339,7 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-colorscheme gruvbox
+colorscheme iceberg
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
@@ -415,5 +415,20 @@ let g:suda_smart_edit = 1
 
 nmap <C-p> :GFiles<CR>
 nmap <leader>ff :Files<CR>
-nmap <leader>fq :Rg<CR>
+nmap <leader>fq :RG<CR>
+if executable('rg')
+  function! FZGrep(query, fullscreen)
+    " --hidden 隠しファイルも隠しディレクトリも含める
+    " --follow シンボリックリンクも含める
+    " --glob   対象ファイルのファイルパターンを指定
+    let command_fmt = 'rg --column --line-number --no-heading --hidden --follow --glob "!.git/*" --color=always --smart-case -- %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+  endfunction
+
+  command! -nargs=* -bang RG call FZGrep(<q-args>, <bang>0)
+endif
+
 
