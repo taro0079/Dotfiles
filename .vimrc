@@ -1,29 +1,3 @@
-" basic settings ---------------------------- {{{1
-let mapleader = ','
-" set cmdheight=1
-" set laststatus=2
-set tags=tags;
-set clipboard&
-set clipboard+=unnamed
-set showcmd
-set ruler
-set undofile
-set cursorline
-set relativenumber
-set linebreak
-set display+=lastline 
-set number
-set showmatch
-set incsearch
-set nocompatible
-set signcolumn=yes
-set smartcase
-set hlsearch
-set incsearch
-set nobackup
-set nowb
-set noswapfile
-
 
 " ctagの設定  -------------------------------- {{{1
 " rubyファイルを保存する度にctagsを実行する
@@ -52,12 +26,15 @@ set expandtab
 set smarttab
 set shiftwidth=2
 set tabstop=2
+set relativenumber
+set number
 
 set ai "Auto Indent"
 set si "Smart Indent"
 set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
+Plug 'fxn/vim-monochrome'
 Plug 'axvr/photon.vim'
 Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
@@ -339,6 +316,7 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
+" let g:monochrome_italic_comments = 1
 colorscheme gruvbox
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
