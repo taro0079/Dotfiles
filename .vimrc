@@ -52,12 +52,15 @@ set expandtab
 set smarttab
 set shiftwidth=2
 set tabstop=2
+set relativenumber
+set number
 
 set ai "Auto Indent"
 set si "Smart Indent"
 set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
+Plug 'fxn/vim-monochrome'
 Plug 'axvr/photon.vim'
 Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'

@@ -11,6 +11,7 @@ return require("packer").startup({
 
 		-- Coc
 		use {'neoclide/coc.nvim', branch = 'release', config= function() require('plugins.coc') end}
+		use {'lervag/vimtex'}
 
 
 		use("github/copilot.vim")
