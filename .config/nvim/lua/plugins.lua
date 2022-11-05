@@ -10,7 +10,6 @@ return require("packer").startup({
 		})
 
 		-- Coc
-		use {'neoclide/coc.nvim', branch = 'release', config= function() require('plugins.coc') end}
 		use {'lervag/vimtex'}
 
 
@@ -86,8 +85,8 @@ return require("packer").startup({
 				require("plugins.indent-blankline")
 			end,
 		}) -- show indent
-		use({ "haya14busa/vim-edgemotion" })
-		use({ "t9md/vim-quickhl" }) -- for highlighting
+		-- use({ "haya14busa/vim-edgemotion" })
+		-- use({ "t9md/vim-quickhl" }) -- for highlighting
 		use({ "tpope/vim-surround" })
 		use({ "junegunn/vim-easy-align" })
 		use({
@@ -152,7 +151,6 @@ return require("packer").startup({
 		use({ "kdheepak/lazygit.nvim" })
 		use({ "lambdalisue/gina.vim" })
 		use({ "lambdalisue/gin.vim" })
-		use({ "tpope/vim-fugitive" })
 		use({
 			"akinsho/git-conflict.nvim",
 			tag = "*",
@@ -160,18 +158,7 @@ return require("packer").startup({
 				require("git-conflict").setup()
 			end,
 		})
-		-- github
-		use({
-			"pwntester/octo.nvim",
-			requires = {
-				"nvim-lua/plenary.nvim",
-				"nvim-telescope/telescope.nvim",
-				"kyazdani42/nvim-web-devicons",
-			},
-			config = function()
-				require("octo").setup()
-			end,
-		})
+		use {'TimUntersberger/neogit'}
 
 		use({
 			"j-hui/fidget.nvim",
@@ -190,21 +177,34 @@ return require("packer").startup({
 				require("numbers").setup()
 			end,
 		})
-		use({
-			"iamcco/markdown-preview.nvim",
-			run = "cd app && npm install",
-			setup = function()
-				vim.g.mkdp_filetypes = { "markdown" }
-			end,
-			ft = { "markdown" },
-		})
 		use({ "previm/previm" })
-		use({
-			"glacambre/firenvim",
-			run = function()
-				vim.fn["firenvim#install"](0)
-			end,
-		})
+
+		-- nvim-lsp
+	use { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end }
+	use 'onsails/lspkind-nvim'
+	use { 'williamboman/mason.nvim' }
+	use { 'williamboman/mason-lspconfig.nvim' }
+	use { 'junegunn/vim-emoji' }
+	use { 'folke/lsp-colors.nvim' }
+	use { 'RRethy/vim-illuminate' }
+	use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
+
+
+-- cmp
+	use { 'hrsh7th/nvim-cmp', config = function() require 'plugins.cmp' end }
+	use 'hrsh7th/cmp-calc'
+	use 'hrsh7th/cmp-omni'
+	use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+	use { 'quangnguyen30192/cmp-nvim-ultisnips' }
+	use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
+	use { 'hrsh7th/cmp-emoji' }
+	use { 'uga-rosa/cmp-dictionary', config = function() require 'plugins.dictionary' end }
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'f3fora/cmp-spell'
+	use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
 	end,
 	config = { display = { open_cmd = "leftabove 75vnew \\[packer\\]" }, max_jobs = 10 },
 })
