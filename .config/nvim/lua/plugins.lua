@@ -190,6 +190,8 @@ return require("packer").startup({
 	use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
 
 
+	-- devicon
+	use { 'nvim-tree/nvim-web-devicons' }
 -- cmp
 	use { 'hrsh7th/nvim-cmp', config = function() require 'plugins.cmp' end }
 	use 'hrsh7th/cmp-calc'
