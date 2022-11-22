@@ -3,12 +3,12 @@ local wezterm = require 'wezterm';
 return {
 	-- font=wezterm.font 'Agave Nerd Font',
 	font = wezterm.font_with_fallback({
-		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style = "Normal" },
-		{ family = "FantasqueSansMono Nerd Font", weight = "Regular", style = "Italic" },
+		{ family = "HackGen35 Console NF", weight = "Regular", style = "Normal" },
+		{ family = "HackGen35 Console NF", weight = "Regular", style = "Italic" },
 
 
 	}),
-	font_size = 17,
+	font_size = 16,
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,

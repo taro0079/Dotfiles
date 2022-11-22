@@ -1,14 +1,14 @@
 font:
   normal:
-    family: FiraCode Nerd Font
-    style: Regular
+    family: DaddyTimeMono Nerd Font
+    style: Book
   bold:
-    family: FiraCode Nerd Font
+    family: DaddyTimeMono Nerd Font
     style: Bold
   italic:
-    family: FiraCode Nerd Font
+    family: DaddyTimeMono Nerd Font
     style: Italic
-  size: 14
+  size: 16
 
 window.opacity: 0.8
 env:
