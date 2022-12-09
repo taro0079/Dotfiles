@@ -1,18 +1,12 @@
 local wezterm = require 'wezterm';
 
 return {
-	-- font=wezterm.font 'Agave Nerd Font',
-	font = wezterm.font_with_fallback({
-		{ family = "HackGen35 Console NF", weight = "Regular", style = "Normal" },
-		{ family = "HackGen35 Console NF", weight = "Regular", style = "Italic" },
+	-- font=wezterm.font 'JetBrainsMono',
 
-
-	}),
-	font_size = 16,
+	-- font_size = 16,
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
-	window_background_opacity = 0.95,
 	colors = {
 
 		foreground = "#c6c8d1",
@@ -26,6 +20,5 @@ return {
 		brights = { "#6b7089", "#e98989", "#c0ca8e", "#e9b189", "#91acd1", "#ada0d3", "#95c4ce", "#d2d4de" }
 
 	}
-	-- color_scheme = "tokyonight",
 
 }
