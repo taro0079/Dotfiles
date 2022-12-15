@@ -154,6 +154,12 @@ return require("packer").startup({
 		-- 		require("plugins.vgit")
 		-- 	end,
 		-- })
+		use({
+			'lewis6991/gitsigns.nvim',
+			config = function()
+				require("plugins.gitsign")
+			end
+		})
 		use({ "kdheepak/lazygit.nvim" })
 		use({ "lambdalisue/gina.vim" })
 		use({ "lambdalisue/gin.vim" })
