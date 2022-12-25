@@ -11,6 +11,11 @@ return require("packer").startup({
 
 		-- Coc
 		use { 'lervag/vimtex' }
+		use { 'koenverburg/peepsight.nvim',
+			config = function()
+				require("plugins.peepsight")
+			end
+		}
 
 
 		use("github/copilot.vim")
