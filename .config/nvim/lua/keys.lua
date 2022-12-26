@@ -32,7 +32,7 @@ api.nvim_set_keymap('n', "<leader>-", "<cmd> vertical resize -5<cr>", { noremap 
 -- source init.lua
 api.nvim_set_keymap('n', "<leader><cr>", "<cmd> so ~/.config/nvim/init.lua <cr>", { noremap = true, silent = true })
 
-api.nvim_set_keymap('n', "<C-n>", ":Fern . -reveal=% -drawer -toggle -width=40<CR>", { noremap = true, silent = true })
+api.nvim_set_keymap('n', "<C-n>", ":NvimTreeToggle<cr>", { noremap = true, silent = true })
 
 -- lsp diagnostic
 api.nvim_set_keymap('n', "<leader>sd", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics() <cr>",

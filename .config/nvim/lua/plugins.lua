@@ -140,13 +140,20 @@ return require("packer").startup({
 			end,
 		})
 
+		use({
+			'nvim-tree/nvim-tree.lua',
+			config = function()
+				require("plugins.nvim-tree")
+			end
+		})
+
 		-- fern file explorer
-		use({ "lambdalisue/fern.vim" })
-		use({ "lambdalisue/fern-git-status.vim" })
-		use({ "lambdalisue/nerdfont.vim" })
-		use({ "lambdalisue/fern-renderer-nerdfont.vim" })
-		use({ "lambdalisue/glyph-palette.vim" })
-		use({ "antoinemadec/FixCursorHold.nvim" })
+		-- use({ "lambdalisue/fern.vim" })
+		-- use({ "lambdalisue/fern-git-status.vim" })
+		-- use({ "lambdalisue/nerdfont.vim" })
+		-- use({ "lambdalisue/fern-renderer-nerdfont.vim" })
+		-- use({ "lambdalisue/glyph-palette.vim" })
+		-- use({ "antoinemadec/FixCursorHold.nvim" })
 
 		-- assist moving cursor
 		-- use { 'easymotion/vim-easymotion' }
