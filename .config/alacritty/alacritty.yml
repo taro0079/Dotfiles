@@ -1,12 +1,12 @@
 font:
   normal:
-    family: CodeNewRoman Nerd Font
+    family: BlexMono Nerd Font
     style: Book
   bold:
-    family: CodeNewRoman Nerd Font
+    family: BlexMono Nerd Font
     style: Bold
   italic:
-    family: CodeNewRoman Nerd Font
+    family: BlexMono Nerd Font
     style: Italic
   size: 14
 
