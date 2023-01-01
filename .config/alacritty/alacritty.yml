@@ -1,12 +1,12 @@
 font:
   normal:
-    family: Hack Nerd Font
-    style: Regular
+    family: CodeNewRoman Nerd Font
+    style: Book
   bold:
-    family: Hack Nerd Font
+    family: CodeNewRoman Nerd Font
     style: Bold
   italic:
-    family: Hack Nerd Font
+    family: CodeNewRoman Nerd Font
     style: Italic
   size: 14
 
