@@ -1,6 +1,12 @@
 return require("packer").startup({
 	function(use)
 		use({
+			"epwalsh/obsidian.nvim",
+			config = function()
+				require("plugins.obsidian")
+			end
+		})
+		use({
 			"phaazon/hop.nvim",
 			branch = "v2", -- optional but strongly recommended
 			config = function()
