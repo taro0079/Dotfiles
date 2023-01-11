@@ -6,6 +6,9 @@ return require("packer").startup({
 				require("plugins.obsidian")
 			end
 		})
+    use ({
+      "fatih/vim-go"
+    })
 		use({
 			"phaazon/hop.nvim",
 			branch = "v2", -- optional but strongly recommended
@@ -196,7 +199,7 @@ return require("packer").startup({
 				require("fidget").setup({})
 			end,
 		})
-		use({ "fatih/vim-go", opt = true, ft = { "go" } })
+		-- use({ "fatih/vim-go", opt = true, ft = { "go" } })
 
 		-- snippets
 		use({ "SirVer/ultisnips" })
