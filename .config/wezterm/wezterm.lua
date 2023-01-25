@@ -1,9 +1,9 @@
 local wezterm = require 'wezterm';
 
 return {
-	-- font=wezterm.font 'JetBrainsMono',
+	font=wezterm.font 'BlexMono Nerd Font',
 
-	-- font_size = 16,
+	font_size = 14,
 	-- color_scheme = "GitHub Dark",
 	send_composed_key_when_right_alt_is_pressed = false,
 	enable_tab_bar = false,
