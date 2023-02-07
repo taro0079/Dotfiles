@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
-  font = wezterm.font('CaskaydiaCove Nerd Font', { weight = 'Bold', italic = false }),
+  font = wezterm.font('PlemolJP Console NF', { weight = 'Medium', italic = false }),
 
   font_size = 16,
   color_scheme = "Galaxy",
