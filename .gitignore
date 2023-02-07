@@ -1,2 +1,3 @@
 .config/nvim/plugin/
 .gitconfig
+*.un~
