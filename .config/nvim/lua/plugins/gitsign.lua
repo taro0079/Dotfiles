@@ -1,8 +1,8 @@
 require('gitsigns').setup {
-	signcolumn = false,
-	numhl = true,
+	signcolumn = true,
+	-- numhl = true,
 	linehl = false,
-	word_diff = true,
+	word_diff = false,
 	current_line_blame = true,
 
 }

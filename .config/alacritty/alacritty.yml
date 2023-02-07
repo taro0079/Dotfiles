@@ -1,12 +1,12 @@
 font:
   normal:
-    family: BlexMono Nerd Font
-    style: Book
+    family: FiraCode Nerd Font
+    style: Regular
   bold:
-    family: BlexMono Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
   italic:
-    family: BlexMono Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
   size: 14
 
