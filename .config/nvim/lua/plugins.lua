@@ -35,13 +35,15 @@ return require("packer").startup({
     }
 
 
-    use(
-      { "projekt0n/github-nvim-theme",
-        config = function()
-          require("plugins.github-nvim-theme")
-        end
-      }
-    )
+    -- use(
+    --   { "projekt0n/github-nvim-theme",
+    --     config = function()
+    --       require("plugins.github-nvim-theme")
+    --     end
+    --   }
+    -- )
+    use { "catppuccin/nvim", as = "catppuccin" }
+
 
     use("github/copilot.vim")
     use({
@@ -66,7 +68,7 @@ return require("packer").startup({
     })
     use({
       "hoob3rt/lualine.nvim",
-      after = "github-nvim-theme",
+      -- after = "github-nvim-theme",
       config = function()
         require("plugins.lualine")
       end,
@@ -237,7 +239,12 @@ return require("packer").startup({
     use { 'junegunn/vim-emoji' }
     use { 'folke/lsp-colors.nvim' }
     use { 'RRethy/vim-illuminate' }
+    use { 'jose-elias-alvarez/null-ls.nvim', config = function() require 'plugins.null-ls' end,
+      requires = { "nvim-lua/plenary.nvim" } }
     use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
+    use('MunifTanjim/prettier.nvim')
+
+
 
 
     -- devicon
