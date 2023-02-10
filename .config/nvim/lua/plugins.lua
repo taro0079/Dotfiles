@@ -242,7 +242,7 @@ return require("packer").startup({
     use { 'jose-elias-alvarez/null-ls.nvim', config = function() require 'plugins.null-ls' end,
       requires = { "nvim-lua/plenary.nvim" } }
     use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
-    use('MunifTanjim/prettier.nvim')
+    use{ 'MunifTanjim/prettier.nvim', config=function() require 'plugins.prettier' end }
 
 
 

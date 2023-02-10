@@ -5,6 +5,14 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
 null_ls.setup({
+
+  vim.lsp.buf.format({ timeout_ms = 5000 }),
+  sources = {
+    null_ls.builtins.diagnostics.rubocop,
+    null_ls.builtins.formatting.rubocop,
+    null_ls.builtins.formatting.prettier
+
+  },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.keymap.set("n", "<Space>ff", function()
@@ -17,7 +25,7 @@ null_ls.setup({
         buffer = bufnr,
         group = group,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr, async = async })
+          vim.lsp.buf.format({ bufnr = bufnr, async = async, timeout_ms = 5000 })
         end,
         desc = "[lsp] format on save",
       })
@@ -29,4 +37,5 @@ null_ls.setup({
       end, { buffer = bufnr, desc = "[lsp] format" })
     end
   end,
+
 })
