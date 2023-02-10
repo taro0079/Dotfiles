@@ -6,7 +6,7 @@ return require("packer").startup({
     })
     use({
       "hrsh7th/nvim-insx",
-      config = require('insx.preset.standard').setup()
+      config = function() require('insx.preset.standard').setup() end
     })
     use({
       "epwalsh/obsidian.nvim",
