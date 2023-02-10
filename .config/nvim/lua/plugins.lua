@@ -4,6 +4,8 @@ return require("packer").startup({
       "numToStr/Navigator.nvim",
       config = function() require("plugins.navigator") end
     })
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config=function() require("plugins.bufferline") end}
+
     use({
       "hrsh7th/nvim-insx",
       config = function() require('insx.preset.standard').setup() end
