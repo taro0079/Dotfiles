@@ -39,6 +39,8 @@ return {
   --
 
 }
-elseif linux
-  return {}
+elseif linux then
+  return {
+    color_scheme = "Catppuccin"
+  }
 end
