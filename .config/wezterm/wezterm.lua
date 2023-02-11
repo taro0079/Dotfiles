@@ -1,5 +1,8 @@
 local wezterm = require 'wezterm';
+local mac = wezterm.target_triple:find("darwin")
+local linux = wezterm.target_triple:find("linux")
 
+if mac then
 return {
   font = wezterm.font('PlemolJP Console NF', { weight = 'Medium', italic = false }),
 
@@ -36,3 +39,6 @@ return {
   --
 
 }
+elseif linux
+  return {}
+end
