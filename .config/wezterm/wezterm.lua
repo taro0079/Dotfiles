@@ -41,6 +41,7 @@ return {
 }
 elseif linux then
   return {
-    color_scheme = "Catppuccin"
+    color_scheme = "Catppuccin",
+    enable_tab_bar = false,
   }
 end
