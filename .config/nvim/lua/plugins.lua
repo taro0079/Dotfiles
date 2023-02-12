@@ -11,12 +11,6 @@ return require("packer").startup({
       config = function() require('insx.preset.standard').setup() end
     })
     use({
-      "epwalsh/obsidian.nvim",
-      config = function()
-        require("plugins.obsidian")
-      end
-    })
-    use({
       "fatih/vim-go"
     })
     use({
@@ -86,7 +80,7 @@ return require("packer").startup({
     })
 
     -- treesitter
-    use({ "windwp/nvim-ts-autotag", ft = { "ts", "tsx", "js", "jsx" }, config = function() require "plugins.nvim-ts-autotag" end })
+    use({ "windwp/nvim-ts-autotag", config = function() require "plugins.nvim-ts-autotag" end })
     use({
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
