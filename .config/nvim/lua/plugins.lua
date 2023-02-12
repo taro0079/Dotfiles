@@ -86,7 +86,7 @@ return require("packer").startup({
     })
 
     -- treesitter
-    use({ "windwp/nvim-ts-autotag", ft = { "ts", "tsx" } })
+    use({ "windwp/nvim-ts-autotag", ft = { "ts", "tsx", "js", "jsx" }, config = function() require "plugins.nvim-ts-autotag" end })
     use({
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
