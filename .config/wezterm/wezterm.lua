@@ -43,5 +43,7 @@ elseif linux then
   return {
     color_scheme = "Catppuccin",
     enable_tab_bar = false,
+    font = wezterm.font('BlexMono Nerd Font', { weight = 'Medium', italic = false }),
+    font_size = 11,
   }
 end

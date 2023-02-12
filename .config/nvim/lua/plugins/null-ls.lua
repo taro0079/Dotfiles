@@ -10,7 +10,8 @@ null_ls.setup({
   sources = {
     null_ls.builtins.diagnostics.rubocop,
     null_ls.builtins.formatting.rubocop,
-    null_ls.builtins.formatting.prettier
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.erb_format
 
   },
   on_attach = function(client, bufnr)
