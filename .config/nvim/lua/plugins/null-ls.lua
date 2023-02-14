@@ -6,7 +6,6 @@ local async = event == "BufWritePost"
 
 null_ls.setup({
 
-  vim.lsp.buf.format({ timeout_ms = 5000 }),
   sources = {
     null_ls.builtins.diagnostics.rubocop,
     null_ls.builtins.formatting.rubocop,
