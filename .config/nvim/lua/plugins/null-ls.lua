@@ -5,8 +5,11 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
 null_ls.setup({
-
   sources = {
+    null_ls.builtins.diagnostics.markdownlint,
+    null_ls.builtins.formatting.deno_fmt.with({
+      filetypes = { "markdown" },
+    }),
     null_ls.builtins.diagnostics.rubocop,
     null_ls.builtins.formatting.rubocop,
     null_ls.builtins.formatting.prettier,
@@ -37,5 +40,4 @@ null_ls.setup({
       end, { buffer = bufnr, desc = "[lsp] format" })
     end
   end,
-
 })
