@@ -4,10 +4,11 @@ local linux = wezterm.target_triple:find("linux")
 
 if mac then
   return {
-    font = wezterm.font('PlemolJP Console NF', { weight = 'Medium', italic = false }),
+    font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular', italic = false }),
 
-    font_size = 16,
-    color_scheme = "Catppuccin",
+    font_size = 14,
+    -- color_scheme = "Catppuccin",
+    color_scheme = "GitHub Dark",
     send_composed_key_when_right_alt_is_pressed = false,
     enable_tab_bar = false,
     -- colors = {

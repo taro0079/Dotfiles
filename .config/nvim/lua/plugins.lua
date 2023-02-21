@@ -1,10 +1,21 @@
 return require("packer").startup({
   function(use)
+    use "whatyouhide/vim-gotham"
+    use {
+      "utilyre/barbecue.nvim",
+      requires = {
+        "SmiteshP/nvim-navic"
+      },
+      config=function() require("barbecue").setup() end
+    }
     use({
       "numToStr/Navigator.nvim",
       config = function() require("plugins.navigator") end
     })
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config=function() require("plugins.bufferline") end}
+    use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons', config = function()
+      require(
+        "plugins.bufferline")
+    end }
 
     use({
       "hrsh7th/nvim-insx",
@@ -238,7 +249,7 @@ return require("packer").startup({
     use { 'jose-elias-alvarez/null-ls.nvim', config = function() require 'plugins.null-ls' end,
       requires = { "nvim-lua/plenary.nvim" } }
     use { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end }
-    use{ 'MunifTanjim/prettier.nvim', config=function() require 'plugins.prettier' end }
+    use { 'MunifTanjim/prettier.nvim', config = function() require 'plugins.prettier' end }
 
 
 

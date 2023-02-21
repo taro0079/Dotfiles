@@ -116,6 +116,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'tyru/open-browser.vim'
 Plug 'itchyny/calendar.vim'
+Plug 'whatyouhide/vim-gotham'
 " fern
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -343,7 +344,7 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-colorscheme iceberg
+colorscheme gotham
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
