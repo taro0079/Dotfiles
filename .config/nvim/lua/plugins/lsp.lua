@@ -12,6 +12,9 @@ vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclis
 
 
 local on_attach = function(client, bufnr)
+  if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+  end
 
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
