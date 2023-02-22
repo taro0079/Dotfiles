@@ -2,11 +2,20 @@ return require("packer").startup({
   function(use)
     use "whatyouhide/vim-gotham"
     use {
+      "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {
+
+        }
+      end
+    }
+    use {
       "utilyre/barbecue.nvim",
       requires = {
         "SmiteshP/nvim-navic"
       },
-      config=function() require("barbecue").setup() end
+      config = function() require("barbecue").setup() end
     }
     use({
       "numToStr/Navigator.nvim",
