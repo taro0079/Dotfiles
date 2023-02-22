@@ -4,9 +4,13 @@ local linux = wezterm.target_triple:find("linux")
 
 if mac then
   return {
-    font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular', italic = false }),
-
-    font_size = 14,
+    font = wezterm.font_with_fallback{
+      {family='Fira Code', weight="Medium", italic=false},
+      {family='FiraCode Nerd Font', weight="Medium", italic=false},
+      {family='Dank Mono', weight="Regular", italic=true},
+      {family='HackGen Console NF', weight="Regular"}
+    },
+    font_size = 13,
     -- color_scheme = "Catppuccin",
     color_scheme = "GitHub Dark",
     send_composed_key_when_right_alt_is_pressed = false,
