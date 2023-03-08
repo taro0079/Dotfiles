@@ -1,6 +1,7 @@
 return require("packer").startup({
   function(use)
     use "whatyouhide/vim-gotham"
+    use 'liuchengxu/vista.vim'
     use "soramugi/auto-ctags.vim"
     use {
       "folke/trouble.nvim",
