@@ -268,9 +268,10 @@ require("lazy").setup({
 
   {
     'lewis6991/gitsigns.nvim',
+    event = "BufEnter",
     config = function()
       require("plugins.gitsign")
-    end
+    end,
   },
   { "kdheepak/lazygit.nvim", cmd = "Lazygit" },
   { "lambdalisue/gina.vim",  cmd = "Gina" },
