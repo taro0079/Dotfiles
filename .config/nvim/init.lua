@@ -1,6 +1,5 @@
 require('options')
-require('keys')
 require('plugins')
-vim.cmd.colorscheme "tokyonight"
+require('keys')
 require('config')
 require('gui-settings')
