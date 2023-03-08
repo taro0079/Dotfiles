@@ -47,8 +47,26 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
-  "folke/which-key.nvim",
+  { "folke/which-key.nvim", lazy=true },
 "soramugi/auto-ctags.vim",
+{
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        opts = {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.norg.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                    },
+                },
+            },
+        },
+        dependencies = { { "nvim-lua/plenary.nvim" } },
+    },
   { "folke/neoconf.nvim", cmd = "Neoconf" },
  {
         "nvim-treesitter/nvim-treesitter",
