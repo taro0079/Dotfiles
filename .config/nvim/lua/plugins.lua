@@ -1,6 +1,3 @@
---     use({
---       "fatih/vim-go"
---     })
 --
 --
 --
@@ -11,28 +8,6 @@
 --
 --
 --
---
---     -- devicon
---     use { 'nvim-tree/nvim-web-devicons' }
---     -- cmp
---     use { 'hrsh7th/nvim-cmp', config = function() require 'plugins.cmp' end }
---     use 'hrsh7th/cmp-calc'
---     use 'hrsh7th/cmp-omni'
---     use 'hrsh7th/cmp-copilot'
---     use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
---     use { 'quangnguyen30192/cmp-nvim-ultisnips' }
---     use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
---     use { 'hrsh7th/cmp-emoji' }
---     use { 'uga-rosa/cmp-dictionary', config = function() require 'plugins.dictionary' end }
---     use 'hrsh7th/cmp-nvim-lsp'
---     use 'hrsh7th/cmp-buffer'
---     use 'hrsh7th/cmp-path'
---     use 'hrsh7th/cmp-cmdline'
---     use 'f3fora/cmp-spell'
---     use { 'aca/marp.nvim' }
---   end,
---   config = { display = { open_cmd = "leftabove 75vnew \\[packer\\]" }, max_jobs = 10 },
--- })
 --
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -357,7 +332,15 @@ ft={"html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue",
       dependencies = { "nvim-lua/plenary.nvim" } },
     { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end },
     { 'MunifTanjim/prettier.nvim', config = function() require 'plugins.prettier' end },
-    { 'rinx/cmp-skkeleton', dependencies = { 'nvim-cmp', 'skkeleton' }, event="InsertEnter" }
+    { 'rinx/cmp-skkeleton', dependencies = { 'nvim-cmp', 'skkeleton' }, event="InsertEnter" },
+    { 'aca/marp.nvim' },
+    
+    {
+      "fatih/vim-go", ft={"go"}
+    },
+    {
+      "sunjon/shade.nvim", config=true
+    }
 
 
 
