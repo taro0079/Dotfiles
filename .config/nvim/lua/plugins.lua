@@ -20,12 +20,17 @@ require("lazy").setup({
     opts = {
       load = {
             ["core.defaults"] = {},       -- Loads default behaviour
-            ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
+            ["core.norg.concealer"] = {
+              config = {
+                folds = false
+              }
+            }, -- Adds pretty icons to your documents
             ["core.presenter"] = {
           config = {
             zen_mode = "zen-mode"
-          }
+          },
         },
+              ["core.export"] = {},
             ["core.norg.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
@@ -229,7 +234,7 @@ require("lazy").setup({
     end,
     event = "InsertEnter",
   },
-  { "tpope/vim-repeat",       event = "BufEnter" },
+  { "tpope/vim-repeat" },
   { "tpope/vim-rails",        ft = { "ruby" } },
   { "rust-lang/rust.vim",     ft = { "rs" } },
 
