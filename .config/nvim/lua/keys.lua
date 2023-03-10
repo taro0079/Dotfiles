@@ -54,14 +54,21 @@ vim.api.nvim_set_keymap('', '<leader><leader>w',
 	"<cmd> HopVertical <cr>"
 	, {})
 
+-- dial
 vim.keymap.set("n", "<C-a>", require("dial.map").inc_normal(), {noremap = true})
 vim.keymap.set("n", "<C-x>", require("dial.map").dec_normal(), {noremap = true})
 vim.keymap.set("v", "<C-a>", require("dial.map").inc_visual(), {noremap = true})
 vim.keymap.set("v", "<C-x>", require("dial.map").dec_visual(), {noremap = true})
 vim.keymap.set("v", "g<C-a>",require("dial.map").inc_gvisual(), {noremap = true})
 vim.keymap.set("v", "g<C-x>",require("dial.map").dec_gvisual(), {noremap = true})
+-- pounce
 vim.keymap.set("n", "s","<cmd>Pounce<CR>", {noremap = true})
 vim.keymap.set("n", "S","<cmd>PounceRepeat<CR>", {noremap = true})
 vim.keymap.set("v", "s","<cmd>Pounce<CR>", {noremap = true})
 vim.keymap.set("o", "gs","<cmd>Pounce<CR>", {noremap = true})
 
+-- navogator
+vim.keymap.set({'n','t'}, '<C-h>', '<cmd>lua require("Navigator").left()<cr>', {noremap = true})
+vim.keymap.set({'n','t'}, '<C-j>', '<cmd>lua require("Navigator").down()<cr>', {noremap = true})
+vim.keymap.set({'n','t'}, '<C-k>', '<cmd>lua require("Navigator").up()<cr>', {noremap = true})
+vim.keymap.set({'n','t'}, '<C-l>', '<cmd>lua require("Navigator").right()<cr>', {noremap = true})
