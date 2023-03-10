@@ -5,11 +5,11 @@ local linux = wezterm.target_triple:find("linux")
 if mac then
   return {
     font = wezterm.font_with_fallback{
-      {family='FantasqueSansMono Nerd Font', weight="Medium", italic=false},
+      {family='VictorMono Nerd Font', weight="Bold", italic=false},
       {family='Dank Mono', weight="Regular", italic=true},
       {family='HackGen Console NF', weight="Regular"}
     },
-    font_size = 15,
+    font_size = 14,
     -- color_scheme = "Catppuccin",
     color_scheme = "tokyonight",
     send_composed_key_when_right_alt_is_pressed = false,
