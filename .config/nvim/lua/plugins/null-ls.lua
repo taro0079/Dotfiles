@@ -11,7 +11,7 @@ null_ls.setup({
       filetypes = { "markdown" },
     }),
     null_ls.builtins.diagnostics.rubocop,
-    -- null_ls.builtins.formatting.rubocop,
+    null_ls.builtins.formatting.rubocop,
     -- null_ls.builtins.formatting.eslint,
     -- null_ls.builtins.diagnostics.eslint,
     -- null_ls.builtins.formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
