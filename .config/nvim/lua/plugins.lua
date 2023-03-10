@@ -46,6 +46,18 @@ require("lazy").setup({
       require("plugins.tree-sitter")
     end,
   },
+  -- fuzzy-motion for neovim
+  {
+    'rlane/pounce.nvim',
+    config = function()
+      require 'pounce'.setup {
+        accept_keys = "JFKDLSAHGNUVRBYTMICEOXWPQZ",
+        accept_best_key = "<enter>",
+        multi_window = true,
+        debug = false,
+      }
+    end,
+  },
   {
     'nvim-treesitter/nvim-treesitter-context',
     config = function()
