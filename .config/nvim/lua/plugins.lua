@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { "folke/which-key.nvim", lazy = true },
+  { "folke/zen-mode.nvim",  cmd = "ZenMode", config = true },
   "soramugi/auto-ctags.vim",
   {
     "nvim-neorg/neorg",
@@ -20,7 +21,12 @@ require("lazy").setup({
       load = {
             ["core.defaults"] = {},       -- Loads default behaviour
             ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-            ["core.norg.dirman"] = {      -- Manages Neorg workspaces
+            ["core.presenter"] = {
+          config = {
+            zen_mode = "zen-mode"
+          }
+        },
+            ["core.norg.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/notes",
@@ -60,16 +66,24 @@ require("lazy").setup({
   "folke/neodev.nvim",
   { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
-
   {
-    "folke/tokyonight.nvim",
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme nightfox]])
     end,
   },
+
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme tokyonight]])
+  --   end,
+  -- },
   {
     "cshuaimin/ssr.nvim",
     -- init is always executed during startup, but doesn't load the plugin yet.
@@ -343,5 +357,8 @@ require("lazy").setup({
   },
   {
     "monaqa/dial.nvim", event = "BufEnter", config = function() require('plugins.dial') end
+  },
+  {
+    'mattn/emmet-vim'
   }
 })
