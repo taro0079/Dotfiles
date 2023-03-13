@@ -91,6 +91,14 @@ require("lazy").setup({
       vim.cmd([[colorscheme nightfox]])
     end,
   },
+  -- {
+  --   "marko-cerovac/material.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme material]])
+  --   end,
+  -- },
 
   -- {
   --   "folke/tokyonight.nvim",
