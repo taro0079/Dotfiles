@@ -6,18 +6,56 @@ require("other-nvim").setup({
     "laravel",
     "rails",
     -- custom mapping
+    -- {
+    --   pattern = "/app/(.*)/.*.rb$",
+    --   target = "/spec/%1/%1/",
+    --   transformer = "lowercase",
+    --   context = "test"
+    -- },
     {
-      pattern = "/app/controllers/(.*)/.*.rb$",
-      target = "/spec/requests/%1/",
-      transformer = "lowercase",
-      context = "test"
-    },
-    {
-      pattern = "/spec/requests/(.*)/.*rb$",
-      target = "/app/controllers/%1/",
+      pattern = "app/controllers/(.*)/(.*).rb",
+      target = "spec/requests/%1/%2_spec.rb",
       transformer = "lowercase",
       context = "controller"
-    }
+    },
+    {
+      pattern = "/spec/(.*)/(.*)_spec.rb",
+      target = {
+        { target = "/db/%1/%2.rb" },
+        { target = "/app/%1/%2.rb" },
+        { target = "%1/%2.rb" },
+      },
+    },
+    {
+      pattern = "/spec/(.*)/(.*)/(.*)_spec.rb",
+      target = {
+        { target = "/db/%1/%2/%3.rb" },
+        { target = "/app/%1/%2/%3.rb" },
+        { target = "%1/%2/%3.rb" },
+      },
+    },
+    {
+      pattern = "/spec/(.*)/(.*)/(.*)/(.*)_spec.rb",
+      target = {
+        { target = "/db/%1/%2/%3/%4.rb" },
+        { target = "/app/%1/%2/%3/%4.rb" },
+        { target = "%1/%2/%3/%4.rb" },
+      },
+    },
+    {
+      pattern = "/spec/(.*)/(.*)/(.*)/(.*)/(.*)_spec.rb",
+      target = {
+        { target = "/db/%1/%2/%3/%4/%5.rb" },
+        { target = "/app/%1/%2/%3/%4/%5.rb" },
+        { target = "%1/%2/%3/%4/%5.rb" },
+      },
+    },
+    {
+      pattern = "/spec/requests/(.*)/(.*)_spec.rb",
+      target = {
+        { target = "/app/controllers/%1/%2.rb" },
+      },
+    },
 
   },
   transformers = {
