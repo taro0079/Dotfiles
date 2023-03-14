@@ -19,18 +19,18 @@ require("lazy").setup({
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-            ["core.defaults"] = {},       -- Loads default behaviour
+            ["core.defaults"] = {}, -- Loads default behaviour
             ["core.norg.concealer"] = {
-              config = {
-                folds = false
-              }
-            }, -- Adds pretty icons to your documents
+          config = {
+            folds = false
+          }
+        },     -- Adds pretty icons to your documents
             ["core.presenter"] = {
           config = {
             zen_mode = "zen-mode"
           },
         },
-              ["core.export"] = {},
+            ["core.export"] = {},
             ["core.norg.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
@@ -41,6 +41,33 @@ require("lazy").setup({
       },
     },
     dependencies = { { "nvim-lua/plenary.nvim" } },
+  },
+  {
+    "stevearc/aerial.nvim",
+    config = function ()
+      require("plugins.aerial")
+    end
+  },
+  {
+    "rgroli/other.nvim",
+    event = "BufEnter",
+    config = function()
+      require("plugins.other")
+    end
+  },
+  {
+    "chentoast/marks.nvim",
+    event = "BufEnter",
+    config = function()
+      require("plugins.marks")
+    end
+  },
+  {
+    "andymass/vim-matchup",
+    config = function()
+      -- may set any options here
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end
   },
   { "folke/neoconf.nvim",   cmd = "Neoconf" },
   {
@@ -88,7 +115,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme nightfox]])
+      vim.cmd([[colorscheme carbonfox]])
     end,
   },
   -- {
