@@ -126,6 +126,8 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lambdalisue/suda.vim'
+Plug 'yuki-yano/fuzzy-motion.vim'
+Plug 'tc50cal/vim-terminal'
 call plug#end()
 
 set imdisable
@@ -436,5 +438,7 @@ if executable('rg')
 
   command! -nargs=* -bang RG call FZGrep(<q-args>, <bang>0)
 endif
+
+nmap <leader>ss :FuzzyMotion<CR>
 
 
