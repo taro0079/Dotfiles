@@ -1,9 +1,6 @@
 local wezterm = require 'wezterm';
 local mac = wezterm.target_triple:find("darwin")
 local linux = wezterm.target_triple:find("linux")
-wezterm.on('window-maximize', function(window, _)
-  window:maximize()
-end)
 
 if mac then
   return {
@@ -15,6 +12,8 @@ if mac then
     -- disable_default_key_bindings = true,
     font_size = 14,
     keys = {
+      { key = 'n', mods = 'CMD', action = wezterm.action.ToggleFullScreen },
+      { key = '8', mods = 'CTRL', action = wezterm.action.PaneSelect },
       { key = "v", mods = "CMD", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
       { key = "s", mods = "CMD", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) }
     },
