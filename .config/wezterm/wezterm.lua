@@ -12,10 +12,10 @@ if mac then
     -- disable_default_key_bindings = true,
     font_size = 14,
     keys = {
-      { key = 'n', mods = 'CMD', action = wezterm.action.ToggleFullScreen },
+      { key = 'n', mods = 'OPT', action = wezterm.action.ToggleFullScreen },
       { key = '8', mods = 'CTRL', action = wezterm.action.PaneSelect },
-      { key = "v", mods = "CMD", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
-      { key = "s", mods = "CMD", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) }
+      { key = "v", mods = "OPT", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+      { key = "s", mods = "OPT", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) }
     },
     color_scheme = "tokyonight",
     send_composed_key_when_right_alt_is_pressed = false,
