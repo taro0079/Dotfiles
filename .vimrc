@@ -60,6 +60,7 @@ set si "Smart Indent"
 set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
+Plug 'taro0079/path_to_clipboard'
 Plug 'fxn/vim-monochrome'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'axvr/photon.vim'

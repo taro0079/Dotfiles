@@ -43,6 +43,9 @@ require("lazy").setup({
     dependencies = { { "nvim-lua/plenary.nvim" } },
   },
   {
+    'taro0079/path_to_clipboard'
+  },
+  {
     "stevearc/aerial.nvim",
     config = function ()
       require("plugins.aerial")
