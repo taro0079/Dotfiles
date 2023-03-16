@@ -24,7 +24,7 @@ require("lazy").setup({
           config = {
             folds = false
           }
-        },     -- Adds pretty icons to your documents
+        }, -- Adds pretty icons to your documents
             ["core.presenter"] = {
           config = {
             zen_mode = "zen-mode"
@@ -47,7 +47,7 @@ require("lazy").setup({
   },
   {
     "stevearc/aerial.nvim",
-    config = function ()
+    config = function()
       require("plugins.aerial")
     end
   },
@@ -335,7 +335,7 @@ require("lazy").setup({
     end
   },
 
-  -- git 
+  -- git
   {
     'sindrets/diffview.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -420,5 +420,8 @@ require("lazy").setup({
   },
   {
     'mattn/emmet-vim'
+  },
+  {
+    'machakann/vim-sandwich'
   }
 })
