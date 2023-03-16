@@ -348,8 +348,8 @@ require("lazy").setup({
     end,
   },
   { "kdheepak/lazygit.nvim", cmd = "Lazygit" },
-  { "lambdalisue/gina.vim",  cmd = "Gina" },
-  { "lambdalisue/gin.vim",   cmd = "Gin" },
+  { "lambdalisue/gina.vim",  dependencies = 'vim-denops/denops.vim' },
+  { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
     "akinsho/git-conflict.nvim",
     config = function()
