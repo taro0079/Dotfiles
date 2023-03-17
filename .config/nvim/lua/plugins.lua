@@ -81,6 +81,9 @@ require("lazy").setup({
       require("plugins.tree-sitter")
     end,
   },
+  {
+    'tpope/vim-fugitive'
+  },
   -- fuzzy-motion for neovim
   {
     'rlane/pounce.nvim',
@@ -92,6 +95,10 @@ require("lazy").setup({
         debug = false,
       }
     end,
+  },
+  {
+    'johmsalas/text-case.nvim',
+    config = true
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
@@ -329,7 +336,6 @@ require("lazy").setup({
   },
   {
     'nvim-tree/nvim-tree.lua',
-    cmd = "NvimTreeToggle",
     config = function()
       require("plugins.nvim-tree")
     end
