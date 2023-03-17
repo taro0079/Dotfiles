@@ -24,7 +24,7 @@ require("lazy").setup({
           config = {
             folds = false
           }
-        },     -- Adds pretty icons to your documents
+        }, -- Adds pretty icons to your documents
             ["core.presenter"] = {
           config = {
             zen_mode = "zen-mode"
@@ -47,7 +47,7 @@ require("lazy").setup({
   },
   {
     "stevearc/aerial.nvim",
-    config = function ()
+    config = function()
       require("plugins.aerial")
     end
   },
@@ -81,6 +81,9 @@ require("lazy").setup({
       require("plugins.tree-sitter")
     end,
   },
+  {
+    'tpope/vim-fugitive'
+  },
   -- fuzzy-motion for neovim
   {
     'rlane/pounce.nvim',
@@ -92,6 +95,10 @@ require("lazy").setup({
         debug = false,
       }
     end,
+  },
+  {
+    'johmsalas/text-case.nvim',
+    config = true
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
@@ -329,13 +336,12 @@ require("lazy").setup({
   },
   {
     'nvim-tree/nvim-tree.lua',
-    cmd = "NvimTreeToggle",
     config = function()
       require("plugins.nvim-tree")
     end
   },
 
-  -- git 
+  -- git
   {
     'sindrets/diffview.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -348,8 +354,8 @@ require("lazy").setup({
     end,
   },
   { "kdheepak/lazygit.nvim", cmd = "Lazygit" },
-  { "lambdalisue/gina.vim",  cmd = "Gina" },
-  { "lambdalisue/gin.vim",   cmd = "Gin" },
+  { "lambdalisue/gina.vim",  dependencies = 'vim-denops/denops.vim' },
+  { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
     "akinsho/git-conflict.nvim",
     config = function()
@@ -420,5 +426,8 @@ require("lazy").setup({
   },
   {
     'mattn/emmet-vim'
+  },
+  {
+    'machakann/vim-sandwich'
   }
 })
