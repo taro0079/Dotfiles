@@ -292,7 +292,6 @@ require("lazy").setup({
   {
     "vim-skk/skkeleton",
     dependencies = { "vim-denops/denops.vim" },
-    event = "InsertEnter",
     config = function()
       require("plugins.skkeleton")
     end,
