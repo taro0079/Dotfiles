@@ -343,6 +343,12 @@ require("lazy").setup({
 
   -- git
   {
+    'ruifm/gitlinker.nvim',
+    config = true,
+    dependencies = 'nvim-lua/plenary.nvim'
+
+  },
+  {
     'sindrets/diffview.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
   },
