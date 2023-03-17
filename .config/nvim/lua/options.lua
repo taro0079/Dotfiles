@@ -17,4 +17,4 @@ vim.opt.termguicolors = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.o.mouse = ""
-
+vim.o.title=true

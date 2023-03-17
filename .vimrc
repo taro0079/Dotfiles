@@ -1,5 +1,6 @@
 " basic settings ---------------------------- {{{1
 let mapleader = ','
+set title
 " set cmdheight=1
 " set laststatus=2
 set tags=tags;
