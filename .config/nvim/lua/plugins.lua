@@ -121,14 +121,13 @@ require("lazy").setup({
   { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
   {
-    "folke/tokyonight.nvim",
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    'shaunsingh/nord.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme tokyonight-moon]])
-    end,
-  },
+    vim.cmd([[colorscheme nord]])
+  end
+},
   {
     "cshuaimin/ssr.nvim",
     -- init is always executed during startup, but doesn't load the plugin yet.
@@ -196,15 +195,6 @@ require("lazy").setup({
     "numToStr/Navigator.nvim",
     config = function() require("plugins.navigator") end
   },
-
-  -- {
-  --   'akinsho/bufferline.nvim',
-  --   dependencies = 'nvim-tree/nvim-web-devicons',
-  --   config = function()
-  --     require("plugins.bufferline")
-  --   end
-  -- },
-  --
   {
     'romgrk/barbar.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',

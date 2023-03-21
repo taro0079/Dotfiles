@@ -37,17 +37,17 @@ cmp.setup {
 		),
 	}),
 	sources = {
-		{ name = 'buffer' },
+		-- { name = 'buffer' },
 		{ name = 'nvim_lsp' },
 		{ name = 'path' },
-		{ name = 'spell' },
+		-- { name = 'spell' },
 		{ name = 'ultisnips' },
 		{ name = 'emoji' },
-		{ name = 'calc' },
-		{ name = 'copilot' },
+		-- { name = 'calc' },
+		-- { name = 'copilot' },
 		{ name = 'nvim_lsp_signature_help' },
-		{ name = 'dictionary',
-			keyword_length = 2 }
+		-- { name = 'dictionary',
+			-- keyword_length = 2 }
 	},
 	experimental = {
 		ghost_text = true

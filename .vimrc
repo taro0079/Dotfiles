@@ -300,7 +300,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "" ultisnips setting ------------------------- {{{1
 let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
