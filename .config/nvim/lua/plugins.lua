@@ -120,23 +120,6 @@ require("lazy").setup({
   "folke/neodev.nvim",
   { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[colorscheme carbonfox]])
-  --   end,
-  -- },
-  -- {
-  --   "marko-cerovac/material.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[colorscheme material]])
-  --   end,
-  -- },
-
   {
     "folke/tokyonight.nvim",
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
@@ -214,12 +197,18 @@ require("lazy").setup({
     config = function() require("plugins.navigator") end
   },
 
+  -- {
+  --   'akinsho/bufferline.nvim',
+  --   dependencies = 'nvim-tree/nvim-web-devicons',
+  --   config = function()
+  --     require("plugins.bufferline")
+  --   end
+  -- },
+  --
   {
-    'akinsho/bufferline.nvim',
+    'romgrk/barbar.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require("plugins.bufferline")
-    end
+    version = '^1.0.0',
   },
 
   {
@@ -345,7 +334,6 @@ require("lazy").setup({
     'ruifm/gitlinker.nvim',
     config = true,
     dependencies = 'nvim-lua/plenary.nvim'
-
   },
   {
     'sindrets/diffview.nvim',
