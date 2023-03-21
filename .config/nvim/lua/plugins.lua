@@ -121,13 +121,13 @@ require("lazy").setup({
   { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
   {
-    'shaunsingh/nord.nvim',
+    "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-    vim.cmd([[colorscheme nord]])
-  end
-},
+      vim.cmd([[colorscheme nordfox]])
+    end,
+  },
   {
     "cshuaimin/ssr.nvim",
     -- init is always executed during startup, but doesn't load the plugin yet.
