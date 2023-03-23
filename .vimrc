@@ -24,6 +24,7 @@ set incsearch
 set nobackup
 set nowb
 set noswapfile
+set noundofile
 
 
 " ctagの設定  -------------------------------- {{{1
@@ -61,7 +62,7 @@ set si "Smart Indent"
 set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
-Plug 'machakann/vim-sandwich'
+" Plug 'machakann/vim-sandwich'
 Plug 'taro0079/path_to_clipboard'
 Plug 'fxn/vim-monochrome'
 Plug 'lifepillar/vim-gruvbox8'
@@ -351,7 +352,7 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-colorscheme nord
+colorscheme sonokai
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
@@ -367,13 +368,6 @@ let g:embark_terminal_italics = 1
 let g:eskk#directory        = "~/.config/eskk"
 let g:eskk#dictionary       = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
-
-" CtrlP setting ------------------------------ {{{1
-" let g:ctrlp_match_func        = {'match': 'ctrlp_matchfuzzy#matcher'}
-" let g:ctrlp_map               = '<c-p>'
-" let g:ctrlp_cmd               = 'CtrlP'
-" let g:ctrlp_working_path_mode = 'ra'
-" let g:ctrlp_show_hidden       = 1
 
 " cursor settings for wsl ---------------------------------{{{1
 if has('vim_starting')
