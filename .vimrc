@@ -221,7 +221,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 " xmap <space>f  <Plug>(coc-format)
-nmap <silent> <space>f  <Plug>(coc-format)
+nmap <silent> <leader>ft  <Plug>(coc-format)
 
 augroup mygroup
   autocmd!
@@ -311,15 +311,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 "let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " ale setting -------------------------------{{{1
+let g:ale_javascript_prettier_use_local_config = 0
 let g:ale_linters = {
       \  'ruby':             ['rubocop'],
-      \   'javascript':      ['eslint'],
-      \   'typescript':      ['eslint'],
-      \   'typescriptreact': ['eslint'],
-      \   'css':             ['eslint'],
+      \   'javascript':      ['prettier'],
+      \   'typescript':      ['prettier'],
+      \   'typescriptreact': ['prettier'],
+      \   'css':             ['prettier'],
       \  }
 let g:ale_linters_explicit          = 1
-" let g:airline#extensions#ale#enable = 1
+let g:airline#extensions#ale#enable = 1
 
 " let g:airline#extensions#tabline#enabled = 1
 
@@ -330,12 +331,14 @@ let g:ale_linters_explicit          = 1
 " let g:airline_symbols.branch = ''
 let g:ale_fixers = {
       \   'ruby':            ['rubocop'],
-      \   'javascript':      ['eslint'],
-      \   'typescript':      ['eslint'],
-      \   'typescriptreact': ['eslint'],
-      \   'css':             ['eslint'],
+      \   'javascript':      ['prettier'],
+      \   'typescript':      ['prettier'],
+      \   'typescriptreact': ['prettier'],
+      \   'css':             ['prettier'],
 \}
 let g:ale_fix_on_save = 1
+" let g:ale_javascript_prettier_use_local_config = 0
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma none'
 
 nmap <F8> :TagbarToggle<CR>
 
@@ -402,19 +405,6 @@ vmap <Leader>b <Plug>(openbrowser-smart-search)
 
 
 " inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-let g:ale_fixers = {
-      \   'ruby':            ['rubocop'],
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
-\   'javascript': ['prettier'],
-\   'javascriptreact': ['prettier'],
-\   'css': ['prettier'],
-\   'html': ['prettier'],
-\   'python': ['autopep8', 'black', 'isort'],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 
 " airline settings --------------------{{{1
 " let g:airline_symbols.readonly = ''
