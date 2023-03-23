@@ -133,6 +133,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'lambdalisue/suda.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 Plug 'tc50cal/vim-terminal'
+Plug 'patstockwell/vim-monokai-tasty'
+
 call plug#end()
 
 set imdisable
@@ -352,7 +354,8 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-colorscheme sonokai
+let g:vim_monokai_tasty_italic=1
+colorscheme vim-monokai-tasty
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
