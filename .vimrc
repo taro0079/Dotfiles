@@ -365,7 +365,7 @@ let g:embark_terminal_italics = 1
 
 " Airline setting -----------------------------{{{1
 " let g:airline#extensions#ale#enabled = 1
-" let g:airline_theme = 'photon'
+let g:airline_theme = 'monokai_tasty'
 
 " ESKK setting ------------------------------- {{{1
 let g:eskk#directory        = "~/.config/eskk"
