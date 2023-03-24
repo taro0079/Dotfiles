@@ -84,18 +84,22 @@ require("lazy").setup({
   {
     'tpope/vim-fugitive'
   },
-  -- fuzzy-motion for neovim
   {
-    'rlane/pounce.nvim',
-    config = function()
-      require 'pounce'.setup {
-        accept_keys = "JFKDLSAHGNUVRBYTMICEOXWPQZ",
-        accept_best_key = "<enter>",
-        multi_window = true,
-        debug = false,
-      }
-    end,
+    'yuki-yano/fuzzy-motion.vim',
+    dependencies = "vim-denops/denops.vim"
   },
+  -- fuzzy-motion for neovim
+  -- {
+  --   'rlane/pounce.nvim',
+  --   config = function()
+  --     require 'pounce'.setup {
+  --       accept_keys = "JFKDLSAHGNUVRBYTMICEOXWPQZ",
+  --       accept_best_key = "<enter>",
+  --       multi_window = true,
+  --       debug = false,
+  --     }
+  --   end,
+  -- },
   {
     'johmsalas/text-case.nvim',
     config = true
@@ -125,7 +129,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme nordfox]])
+      vim.cmd([[colorscheme carbonfox]])
     end,
   },
   {
@@ -201,12 +205,15 @@ require("lazy").setup({
     version = '^1.0.0',
   },
 
+  -- {
+  --   "phaazon/hop.nvim",
+  --   config = function()
+  --     require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+  --   end,
+  --   event = "BufEnter"
+  -- },
   {
-    "phaazon/hop.nvim",
-    config = function()
-      require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-    end,
-    event = "BufEnter"
+    'easymotion/vim-easymotion'
   },
   {
     'koenverburg/peepsight.nvim',
@@ -262,12 +269,12 @@ require("lazy").setup({
   { "tpope/vim-rails",        ft = { "ruby" } },
   { "rust-lang/rust.vim",     ft = { "rs" } },
 
-  {
-    "nkakouros-original/numbers.nvim",
-    config = function()
-      require("numbers").setup()
-    end,
-  },
+  -- {
+  --   "nkakouros-original/numbers.nvim",
+  --   config = function()
+  --     require("numbers").setup()
+  --   end,
+  -- },
   {
     "vim-skk/skkeleton",
     dependencies = { "vim-denops/denops.vim" },
@@ -378,7 +385,6 @@ require("lazy").setup({
   { 'neovim/nvim-lspconfig',     config = function() require 'plugins.lsp' end },
   { 'MunifTanjim/prettier.nvim', config = function() require 'plugins.prettier' end, event = "BufEnter" },
   { 'rinx/cmp-skkeleton',        dependencies = { 'nvim-cmp', 'skkeleton' },         event = "InsertEnter" },
-  { 'aca/marp.nvim' },
 
   {
     "fatih/vim-go", ft = { "go" }
@@ -410,7 +416,7 @@ require("lazy").setup({
   {
     'mattn/emmet-vim'
   },
-  {
-    'machakann/vim-sandwich'
-  }
+  -- {
+  --   'machakann/vim-sandwich'
+  -- }
 })

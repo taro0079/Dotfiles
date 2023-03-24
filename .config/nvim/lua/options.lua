@@ -1,7 +1,7 @@
 vim.g.maplocalleader = ','
 vim.g.mapleader = ','
 vim.o.tags = './tags'
-vim.wo.number = true
+-- vim.wo.number = true
 vim.o.smarttab = true
 vim.o.cursorline = true
 vim.o.pumblend = 20
