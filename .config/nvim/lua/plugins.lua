@@ -165,7 +165,6 @@ require("lazy").setup({
       'hrsh7th/cmp-calc',
       'hrsh7th/cmp-omni',
       'hrsh7th/cmp-nvim-lsp-signature-help',
-      'quangnguyen30192/cmp-nvim-ultisnips',
       'hrsh7th/cmp-nvim-lsp-document-symbol',
       'hrsh7th/cmp-emoji',
       'hrsh7th/cmp-path',
@@ -177,6 +176,10 @@ require("lazy").setup({
     config = function()
       require 'plugins.cmp'
     end,
+  },
+  {
+    'quangnguyen30192/cmp-nvim-ultisnips',
+    config = true
   },
   {
     "utilyre/barbecue.nvim",
