@@ -129,7 +129,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme carbonfox]])
+      vim.cmd([[colorscheme duskfox]])
     end,
   },
   {
@@ -386,7 +386,7 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" }
   },
   { 'neovim/nvim-lspconfig',     config = function() require 'plugins.lsp' end },
-  { 'MunifTanjim/prettier.nvim', config = function() require 'plugins.prettier' end, event = "BufEnter" },
+  -- { 'MunifTanjim/prettier.nvim', config = function() require 'plugins.prettier' end, event = "BufEnter" },
   { 'rinx/cmp-skkeleton',        dependencies = { 'nvim-cmp', 'skkeleton' },         event = "InsertEnter" },
 
   {
