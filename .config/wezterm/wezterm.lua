@@ -42,9 +42,15 @@ if mac then
   }
 elseif linux then
   return {
-    color_scheme = "Catppuccin",
+    color_scheme = "tokyonight",
     enable_tab_bar = false,
-    font = wezterm.font('BlexMono Nerd Font', { weight = 'Medium', italic = false }),
-    font_size = 13,
+    font = wezterm.font('VictorMono Nerd Font', { weight = 'Bold', italic = false }),
+    font_size = 15,
+    window_padding = {
+      left = 0,
+      right = 0,
+      top = 0,
+      bottom = 0
+    },
   }
 end
