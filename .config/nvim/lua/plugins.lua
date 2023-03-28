@@ -385,9 +385,9 @@ require("lazy").setup({
     config = function() require 'plugins.null-ls' end,
     dependencies = { "nvim-lua/plenary.nvim" }
   },
-  { 'neovim/nvim-lspconfig',     config = function() require 'plugins.lsp' end },
+  { 'neovim/nvim-lspconfig', config = function() require 'plugins.lsp' end },
   -- { 'MunifTanjim/prettier.nvim', config = function() require 'plugins.prettier' end, event = "BufEnter" },
-  { 'rinx/cmp-skkeleton',        dependencies = { 'nvim-cmp', 'skkeleton' },         event = "InsertEnter" },
+  { 'rinx/cmp-skkeleton',    dependencies = { 'nvim-cmp', 'skkeleton' },   event = "InsertEnter" },
 
   {
     "fatih/vim-go", ft = { "go" }
@@ -419,6 +419,14 @@ require("lazy").setup({
   {
     'mattn/emmet-vim'
   },
+  {
+    'ldelossa/gh.nvim',
+    dependencies = 'ldelossa/litee.nvim',
+    config = function()
+      require('litee.lib').setup({})
+      require('litee.gh').setup({})
+    end
+  }
   -- {
   --   'machakann/vim-sandwich'
   -- }
