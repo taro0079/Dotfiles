@@ -17,11 +17,12 @@ set surround
 set commentary
 set multiple-cursors
 set easymotion
-map <leader>f <Plug>(easymotion-bd-f)
+map <leader>f <Plug>(easymotion-s)
 map <leader>t <Plug>(easymotion-bd-t)
 map <leader>F <Plug>(easymotion-bd-F)
 map <leader>T <Plug>(easymotion-bd-T)
 set NERDTree
+map <leader>nt :NERDTreeToggle<CR>
 
 
 nmap <C-[> Esc
@@ -37,7 +38,6 @@ nmap <leader>as :action ActivateStructureToolWindow<cr>
 :map <Space>gt <Action>(GotoTest)
 :map <Space>da <Action>(CloseAllEditors)
 :map <Space>rt <Action>(RunTestGroup)
-nmap <C-n> :NERDTreeToggle<cr>
 
 " ヤンクでクリップボードにコピー
 set clipboard+=unnamed

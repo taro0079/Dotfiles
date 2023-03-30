@@ -181,13 +181,13 @@ require("lazy").setup({
     'quangnguyen30192/cmp-nvim-ultisnips',
     config = true
   },
-  {
-    "utilyre/barbecue.nvim",
-    dependencies = {
-      "SmiteshP/nvim-navic"
-    },
-    config = function() require("barbecue").setup() end
-  },
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic"
+  --   },
+  --   config = function() require("barbecue").setup() end
+  -- },
 
   {
     "folke/trouble.nvim",
