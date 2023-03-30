@@ -208,13 +208,6 @@ require("lazy").setup({
     version = '^1.0.0',
   },
 
-  -- {
-  --   "phaazon/hop.nvim",
-  --   config = function()
-  --     require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-  --   end,
-  --   event = "BufEnter"
-  -- },
   {
     'easymotion/vim-easymotion'
   },
@@ -307,7 +300,7 @@ require("lazy").setup({
       require("scrollbar").setup({})
     end,
   },
-  -- use { 'ggandor/lightspeed.nvim' }
+  -- use { 'ggandor/lightspeed.nvim' } -- easymotion的ななにか
   {
     "folke/todo-comments.nvim",
     dependencies = "nvim-lua/plenary.nvim",
@@ -372,7 +365,7 @@ require("lazy").setup({
   -- snippets
   { "SirVer/ultisnips",         event = "InsertEnter" },
   { "honza/vim-snippets",       event = "InsertEnter" },
-  { "previm/previm",            event = "BufEnter" },
+  -- { "previm/previm",            event = "BufEnter" }, -- markdown のプレビュープラグイン
 
   -- nvim-lsp
   { 'ray-x/lsp_signature.nvim', config = function() require "lsp_signature".setup() end },
@@ -427,6 +420,7 @@ require("lazy").setup({
       require('litee.gh').setup({})
     end
   }
+  -- surrounded.vimでいけるから要らないかな。。。
   -- {
   --   'machakann/vim-sandwich'
   -- }
