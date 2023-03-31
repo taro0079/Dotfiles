@@ -431,6 +431,3 @@ if executable('rg')
 endif
 
 nmap <leader><leader>s :FuzzyMotion<CR>
-
-
-

@@ -149,10 +149,7 @@ require("lazy").setup({
   },
   {
     "github/copilot.vim",
-    event = "InsertEnter"
   },
-
-
   {
     "hrsh7th/nvim-cmp",
     -- load cmp on InsertEnter
