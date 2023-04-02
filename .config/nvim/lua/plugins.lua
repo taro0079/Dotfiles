@@ -289,7 +289,7 @@ require("lazy").setup({
   },
   { "haya14busa/vim-edgemotion", event = "BufEnter" },
   { "t9md/vim-quickhl",          event = "BufEnter" },
-  { "tpope/vim-surround",        event = "InsertEnter" },
+  -- { "tpope/vim-surround",        event = "InsertEnter" },
   { "junegunn/vim-easy-align",   event = "BufEnter" },
   {
     "petertriho/nvim-scrollbar",
@@ -416,9 +416,19 @@ require("lazy").setup({
       require('litee.lib').setup({})
       require('litee.gh').setup({})
     end
-  }
-  -- surrounded.vimでいけるから要らないかな。。。
-  -- {
-  --   'machakann/vim-sandwich'
-  -- }
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+},
+{
+  "nvim-treesitter/nvim-treesitter-textobjects",
+  dependencies = "nvim-treesitter/nvim-treesitter",
+}
 })
