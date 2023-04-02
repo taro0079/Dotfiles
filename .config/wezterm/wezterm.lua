@@ -45,7 +45,7 @@ elseif linux then
     color_scheme = "tokyonight",
     enable_tab_bar = false,
     font = wezterm.font('VictorMono Nerd Font', { weight = 'Bold', italic = false }),
-    font_size = 15,
+    font_size = 12,
     window_padding = {
       left = 0,
       right = 0,

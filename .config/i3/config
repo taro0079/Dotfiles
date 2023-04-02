@@ -189,3 +189,5 @@ exec_always --no-startup-id /usr/bin/setxkbmap -option "ctrl:nocaps"
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id fcitx5
+exec --no-startup-id xset r rate 200 50
+
