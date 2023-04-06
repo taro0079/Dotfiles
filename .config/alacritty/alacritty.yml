@@ -1,14 +1,14 @@
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: HackGen Console NF
     style: Regular
   bold:
-    family: FiraCode Nerd Font
+    family: HackGen Console NF
     style: Bold
   italic:
-    family: FiraCode Nerd Font
+    family: HackGen Console NF
     style: Italic
-  size: 13
+  size: 16
 window:
   padding:
     x: 0
