@@ -73,8 +73,8 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
 Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-rbenv'
-Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rbenv'
+" Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim'
@@ -109,7 +109,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-skk/eskk.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
@@ -123,6 +122,7 @@ Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'tyru/open-browser.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'whatyouhide/vim-gotham'
+Plug 'tomasr/molokai'
 " fern
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -358,7 +358,7 @@ syntax on
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
 let g:vim_monokai_tasty_italic=1
-colorscheme vim-monokai-tasty
+colorscheme molokai
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
