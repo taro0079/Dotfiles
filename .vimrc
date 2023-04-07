@@ -25,6 +25,8 @@ set nobackup
 set nowb
 set noswapfile
 set noundofile
+set wildmenu
+set showtabline=2
 
 
 " ctagの設定  -------------------------------- {{{1
