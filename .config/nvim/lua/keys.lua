@@ -105,3 +105,5 @@ vim.keymap.set('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
 -- fuzzy motion
 vim.keymap.set('n', '<leader>s', '<Cmd>FuzzyMotion<CR>', { noremap = true })
+-- vim.cmd[[imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")]]
+
