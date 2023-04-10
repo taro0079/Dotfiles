@@ -100,6 +100,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'mangeshrex/everblush.vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'vim-denops/denops.vim'
+Plug 'soramugi/auto-ctags.vim'
 Plug 'lambdalisue/gin.vim'
 Plug 'lambdalisue/gina.vim'
 Plug 'sheerun/vim-polyglot'
@@ -438,4 +439,5 @@ nmap <leader><leader>s :FuzzyMotion<CR>
 " Github Copilot setting
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+
 
