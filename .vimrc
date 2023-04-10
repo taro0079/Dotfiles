@@ -434,3 +434,8 @@ if executable('rg')
 endif
 
 nmap <leader><leader>s :FuzzyMotion<CR>
+
+" Github Copilot setting
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
