@@ -15,9 +15,9 @@ nnoremap <Space>m :nohlsearch<CR><ESC>
 
 set surround
 set commentary
-set multiple-cursors
+" set multiple-cursors
 set easymotion
-map <leader>f <Plug>(easymotion-s)
+map <leader>f <Plug>(easymotion-f)
 map <leader>t <Plug>(easymotion-bd-t)
 map <leader>F <Plug>(easymotion-bd-F)
 map <leader>T <Plug>(easymotion-bd-T)
