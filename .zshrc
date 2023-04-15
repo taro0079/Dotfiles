@@ -137,3 +137,4 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
 [ -f "/home/taro/.ghcup/env" ] && source "/home/taro/.ghcup/env" # ghcup-env
+export PATH="$HOME/.symfony5/bin:$PATH"

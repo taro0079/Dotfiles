@@ -69,6 +69,7 @@ Plug 'taro0079/path_to_clipboard'
 Plug 'fxn/vim-monochrome'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'axvr/photon.vim'
+Plug 'Aarleks/zettel.vim'
 Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
@@ -440,4 +441,5 @@ nmap <leader><leader>s :FuzzyMotion<CR>
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+let g:zettelkasten = '~/.nb/home'
 
