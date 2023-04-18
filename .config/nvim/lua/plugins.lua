@@ -124,13 +124,23 @@ require("lazy").setup({
   "folke/neodev.nvim",
   { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme duskfox]])
+  --   end,
+  -- },
   {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
+    'catppuccin/nvim', name="catppuccin",
+    lazy=false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme duskfox]])
-    end,
+      vim.cmd([[colorscheme catppuccin]])
+    end
+
+
   },
   {
     "cshuaimin/ssr.nvim",
