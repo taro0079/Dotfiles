@@ -20,7 +20,7 @@ require("lazy").setup({
     opts = {
       load = {
             ["core.defaults"] = {}, -- Loads default behaviour
-            ["core.norg.concealer"] = {
+            ["core.concealer"] = {
           config = {
             folds = false
           }
@@ -31,7 +31,7 @@ require("lazy").setup({
           },
         },
             ["core.export"] = {},
-            ["core.norg.dirman"] = { -- Manages Neorg workspaces
+            ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/notes",
