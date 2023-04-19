@@ -346,7 +346,7 @@ require("lazy").setup({
       require("plugins.gitsign")
     end,
   },
-  { "kdheepak/lazygit.nvim", cmd = "Lazygit" },
+  { "kdheepak/lazygit.nvim", cmd = "LazyGit" },
   { "lambdalisue/gina.vim",  dependencies = 'vim-denops/denops.vim' },
   { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
