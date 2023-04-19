@@ -14,11 +14,13 @@ require("lazy").setup({
   { "folke/which-key.nvim", lazy = true },
   { "folke/zen-mode.nvim",  cmd = "ZenMode", config = true },
   "soramugi/auto-ctags.vim",
+  {'max397574/neorg-zettelkasten'},
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     opts = {
       load = {
+        ["external.zettelkasten"] = {},
             ["core.defaults"] = {}, -- Loads default behaviour
             ["core.concealer"] = {
           config = {
