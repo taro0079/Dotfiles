@@ -75,7 +75,8 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
-Plug 'Yggdroot/indentLine'
+Plug 'preservim/vim-indent-guides'
+" Plug 'Yggdroot/indentLine'
 " Plug 'tpope/vim-rbenv'
 " Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
@@ -139,6 +140,8 @@ Plug 'lambdalisue/suda.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 Plug 'tc50cal/vim-terminal'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'skanehira/preview-uml.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
 
 call plug#end()
 
@@ -443,3 +446,4 @@ let g:copilot_no_tab_map = v:true
 
 let g:zettelkasten = '~/.nb/home'
 
+let g:preview_uml_url='http://localhost:8888'

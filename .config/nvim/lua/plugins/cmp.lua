@@ -40,6 +40,7 @@ cmp.setup {
     -- { name = 'buffer' },
     { name = 'nvim_lsp' },
     { name = 'path' },
+    { name = 'neorg'},
     -- { name = 'spell' },
     { name = 'ultisnips' },
     { name = 'emoji' },

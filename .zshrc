@@ -52,7 +52,6 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:~/.nimble/bin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
@@ -138,3 +137,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 [ -f "/home/taro/.ghcup/env" ] && source "/home/taro/.ghcup/env" # ghcup-env
 export PATH="$HOME/.symfony5/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

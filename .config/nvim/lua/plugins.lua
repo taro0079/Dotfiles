@@ -14,14 +14,19 @@ require("lazy").setup({
   { "folke/which-key.nvim", lazy = true },
   { "folke/zen-mode.nvim",  cmd = "ZenMode", config = true },
   "soramugi/auto-ctags.vim",
-  {'max397574/neorg-zettelkasten'},
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     opts = {
       load = {
-        ["external.zettelkasten"] = {},
             ["core.defaults"] = {}, -- Loads default behaviour
+            ['core.itero'] = {},
+            ['core.keybinds'] = {},
+            ["core.completion"] = {
+              config = {
+                engine = 'nvim-cmp'
+              }
+            },
             ["core.concealer"] = {
           config = {
             folds = false
@@ -141,7 +146,7 @@ require("lazy").setup({
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        transparent_background=true
+        -- transparent_background=true
       })
       vim.cmd([[colorscheme catppuccin]])
     end
