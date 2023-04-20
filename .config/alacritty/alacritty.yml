@@ -1,14 +1,14 @@
 font:
   normal:
-    family: HackGen Console NF
-    style: Regular
+    family: JetBrainsMono Nerd Font
+    style: Medium
   bold:
-    family: HackGen Console NF
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: HackGen Console NF
+    family: JetBrainsMono Nerd Font
     style: Italic
-  size: 16
+  size: 12
 window:
   padding:
     x: 0

@@ -20,12 +20,12 @@ require("lazy").setup({
     opts = {
       load = {
             ["core.defaults"] = {}, -- Loads default behaviour
-            ["core.norg.concealer"] = {
+            ["core.concealer"] = {
           config = {
             folds = false
           }
         }, -- Adds pretty icons to your documents
-            ["core.norg.completion"] = {
+            ["core.completion"] = {
           config = {
             engine = "nvim-cmp"
           }
@@ -36,7 +36,7 @@ require("lazy").setup({
           },
         },
             ["core.export"] = {},
-            ["core.norg.dirman"] = { -- Manages Neorg workspaces
+            ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/.nb/home/",
@@ -350,7 +350,7 @@ require("lazy").setup({
       require("plugins.gitsign")
     end,
   },
-  { "kdheepak/lazygit.nvim", cmd = "Lazygit" },
+  { "kdheepak/lazygit.nvim", cmd = "LazyGit" },
   { "lambdalisue/gina.vim",  dependencies = 'vim-denops/denops.vim' },
   { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
