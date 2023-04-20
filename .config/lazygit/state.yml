@@ -1,7 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/taro/Dotfiles
+- /home/taro/dev/dockers/smooth_line_api/db
 - /home/taro/dev/dockers/smooth_line_api
+- /home/taro/dev/dockers/smoother_ope
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

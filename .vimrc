@@ -69,7 +69,6 @@ Plug 'taro0079/path_to_clipboard'
 Plug 'fxn/vim-monochrome'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'axvr/photon.vim'
-Plug 'Aarleks/zettel.vim'
 Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
@@ -379,9 +378,9 @@ let g:embark_terminal_italics = 1
 let g:airline_theme = 'monokai_tasty'
 
 " ESKK setting ------------------------------- {{{1
-let g:eskk#directory        = "~/.config/eskk"
-let g:eskk#dictionary       = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
-let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
+" let g:eskk#directory        = "~/.config/eskk"
+" let g:eskk#dictionary       = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
+let g:eskk#large_dictionary = {'path': "~/.config/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}
 
 " cursor settings for wsl ---------------------------------{{{1
 if has('vim_starting')
@@ -441,9 +440,7 @@ endif
 nmap <leader><leader>s :FuzzyMotion<CR>
 
 " Github Copilot setting
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
-let g:copilot_no_tab_map = v:true
-
-let g:zettelkasten = '~/.nb/home'
+" imap <silent><script><expr> <C-R> copilot#Accept("\<CR>")
+" let g:copilot_no_tab_map = v:true
 
 let g:preview_uml_url='http://localhost:8888'
