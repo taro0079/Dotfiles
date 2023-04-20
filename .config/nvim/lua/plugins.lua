@@ -20,28 +20,26 @@ require("lazy").setup({
     opts = {
       load = {
             ["core.defaults"] = {}, -- Loads default behaviour
-            ['core.itero'] = {},
-            ['core.keybinds'] = {},
-            ["core.completion"] = {
-              config = {
-                engine = 'nvim-cmp'
-              }
-            },
-            ["core.concealer"] = {
+            ["core.norg.concealer"] = {
           config = {
             folds = false
           }
         }, -- Adds pretty icons to your documents
+            ["core.norg.completion"] = {
+          config = {
+            engine = "nvim-cmp"
+          }
+        },
             ["core.presenter"] = {
           config = {
             zen_mode = "zen-mode"
           },
         },
             ["core.export"] = {},
-            ["core.dirman"] = { -- Manages Neorg workspaces
+            ["core.norg.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
-              notes = "~/notes",
+              notes = "~/.nb/home/",
             },
           },
         },
@@ -140,18 +138,13 @@ require("lazy").setup({
   --   end,
   -- },
   {
-    'catppuccin/nvim', name="catppuccin",
-    lazy=false,
+    'catppuccin/nvim',
+    name = "catppuccin",
+    lazy = false,
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        -- transparent_background=true
-      })
       vim.cmd([[colorscheme catppuccin]])
     end
-
-
   },
   {
     "cshuaimin/ssr.nvim",
@@ -357,7 +350,7 @@ require("lazy").setup({
       require("plugins.gitsign")
     end,
   },
-  { "kdheepak/lazygit.nvim", cmd = "LazyGit" },
+  { "kdheepak/lazygit.nvim", cmd = "Lazygit" },
   { "lambdalisue/gina.vim",  dependencies = 'vim-denops/denops.vim' },
   { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
@@ -443,13 +436,13 @@ require("lazy").setup({
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
-},
-{
-  "nvim-treesitter/nvim-treesitter-textobjects",
-  dependencies = "nvim-treesitter/nvim-treesitter",
-}
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  }
 })

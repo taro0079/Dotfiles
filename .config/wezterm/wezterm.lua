@@ -21,7 +21,7 @@ end
 if mac then
   return {
     font = wezterm.font_with_fallback {
-      { family = 'VictorMono Nerd Font', weight = "Bold",    italic = false },
+      { family = 'JetBrainsMono Nerd Font', weight = "Bold",    italic = false },
       { family = 'Dank Mono',            weight = "Regular", italic = true },
       { family = 'HackGen Console NF',   weight = "Regular" }
     },
