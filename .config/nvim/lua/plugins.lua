@@ -137,13 +137,20 @@ require("lazy").setup({
   --     vim.cmd([[colorscheme duskfox]])
   --   end,
   -- },
+  -- {
+  --   'catppuccin/nvim',
+  --   name = "catppuccin",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme catppuccin]])
+  --   end
+  -- },
   {
-    'catppuccin/nvim',
-    name = "catppuccin",
-    lazy = false,
-    priority = 1000,
+    -- 'nvimdev/zephyr-nvim',
+    'Mofiqul/dracula.nvim',
     config = function()
-      vim.cmd([[colorscheme catppuccin]])
+      vim.cmd([[colorscheme dracula]])
     end
   },
   {
