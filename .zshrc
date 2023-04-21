@@ -43,8 +43,6 @@ export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid --line-range :100 {}"'
 
 
-# starship
-eval "$(starship init zsh)"
 
 export DENO_INSTALL="/home/taro/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -120,9 +118,6 @@ if [ "$(uname)" = "Darwin" ]; then
 	export LIBRARY_PATH=$LIBRARY_PATH:$(brew --prefix zstd)/lib
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias dox='docker exec -it `docker ps --format "{{.Names}}" | fzf` sh'
 fpath=(~/.zsh/completion $fpath)
 source ~/.ghq/github.com/kwhrtsk/docker-fzf-completion/docker-fzf.zsh
@@ -138,3 +133,11 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 [ -f "/home/taro/.ghcup/env" ] && source "/home/taro/.ghcup/env" # ghcup-env
 export PATH="$HOME/.symfony5/bin:$PATH"
+
+# auto suggestion settings
+bindkey '^j' autosuggest-accept
+# starship
+eval "$(starship init zsh)"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
