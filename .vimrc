@@ -74,7 +74,7 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 " Plug 'tpope/vim-rbenv'
 " Plug 'tpope/vim-bundler'
 Plug 'vim-utils/vim-ruby-fold'
@@ -439,5 +439,4 @@ nmap <leader><leader>s :FuzzyMotion<CR>
 " Github Copilot setting
 " imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
-
 

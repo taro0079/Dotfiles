@@ -129,14 +129,14 @@ require("lazy").setup({
   "folke/neodev.nvim",
   { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[colorscheme duskfox]])
-  --   end,
-  -- },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme duskfox]])
+    end,
+  },
   -- {
   --   'catppuccin/nvim',
   --   name = "catppuccin",
@@ -146,13 +146,15 @@ require("lazy").setup({
   --     vim.cmd([[colorscheme catppuccin]])
   --   end
   -- },
-  {
-    -- 'nvimdev/zephyr-nvim',
-    'Mofiqul/dracula.nvim',
-    config = function()
-      vim.cmd([[colorscheme dracula]])
-    end
-  },
+  -- {
+  --   -- 'nvimdev/zephyr-nvim',
+  --   'Mofiqul/dracula.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme dracula]])
+  --   end
+  -- },
   {
     "cshuaimin/ssr.nvim",
     -- init is always executed during startup, but doesn't load the plugin yet.
@@ -362,10 +364,7 @@ require("lazy").setup({
   { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
     "akinsho/git-conflict.nvim",
-    config = function()
-      require("git-conflict").setup()
-    end,
-    event = "BufEnter"
+    config = true
   },
   {
     'TimUntersberger/neogit',
@@ -451,5 +450,12 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = "nvim-treesitter/nvim-treesitter",
+  },
+  -- markdown
+  {
+    "previm/previm",
+    config = function()
+      vim.cmd([[let g:previm_open_cmd = 'open -a "Firefox"']])
+    end
   }
 })
