@@ -1,27 +1,28 @@
 vim.opt.runtimepath:append("~/.local/share/nvim/site/pack/packer/start/nvim-treesitter/parser")
 require 'nvim-treesitter.configs'.setup {
-	endwise = {
-		enable = true
-	},
-	autotag = {
-		enable = true
-	},
-	ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  auto_install=true,
-	ignore_install = { "phpdoc" },
-	yati = { enable = true },
-	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { 'latex' },
-		additional_vim_regex_highlighting = false,
-	},
+  endwise = {
+    enable = true
+  },
+  autotag = {
+    enable = true
+  },
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  auto_install = true,
+  ignore_install = {},
+  indent = {
+    enable = true
+  },
+  yati = { enable = true },
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = { 'latex' },
+    additional_vim_regex_highlighting = false,
+  },
   textobjects = {
     select = {
       enable = true,
-
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
-
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
         ["af"] = "@function.outer",
@@ -42,7 +43,7 @@ require 'nvim-treesitter.configs'.setup {
       -- mapping query_strings to modes.
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
+        ['@function.outer'] = 'V',  -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
       -- If you set this to `true` (default is `false`) then any textobject is
