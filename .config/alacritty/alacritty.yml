@@ -1,12 +1,12 @@
 font:
   normal:
-    family: JetBrainsMono Nerd Font
-    style: Medium
+    family: FiraCode Nerd Font
+    style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
   size: 13
 window:
