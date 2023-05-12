@@ -20,8 +20,9 @@ lualine.setup {
     lualine_b = {
       {
         'branch',
-        icon = { '' }
-      }
+        icon = { '' },
+      },
+      'diff'
     },
     lualine_z = {
       { 'location', separator = { right = '' }, left_padding = 2 },
