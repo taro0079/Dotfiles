@@ -1,0 +1,84 @@
+Please report this error to author.
+`:help eskk` to see author's e-mail address.
+
+Fri 12 May 2023 03:15:25 AM JST
+
+--- char ---
+char: ''(0)
+mode(): i
+--- char ---
+
+--- exception ---
+exception type: Vim internal error
+v:exception: Can't read '/home/taro/.config/eskk/my_jisyo'!
+v:throwpoint: function eskk#filter[75]..<SNR>196_asym_filter[56]..<SNR>196_do_henkan[17]..<SNR>196_do_henkan_other[56]..<SNR>215_Dictionary_refer[13]..<SNR>215_PhysicalDict_update_lines[9]..<SNR>215_PhysicalDict_update_lines_main, line 2
+
+   function <SNR>215_PhysicalDict_update_lines_main() abort dict
+1      unlockvar 1 self._content_lines
+2      let self._content_lines  = readfile(self.path)
+3      lockvar 1 self._content_lines
+4      call self.parse_lines()
+5   
+6      let self._ftime_at_set = getftime(self.path)
+   endfunction
+--- exception ---
+
+--- preedit ---
+(no preedit)
+--- preedit ---
+
+--- Vim's :version ---
+VIM - Vi IMproved 9.0 (2022 Jun 28, compiled May 04 2023 08:18:27)
+Included patches: 1-1506
+Compiled by Arch Linux
+Huge version without GUI.  Features included (+) or not (-):
++acl               +comments          +find_in_path      +lispindent        +multi_byte        +rightleft         +terminal          +wildignore
++arabic            +conceal           +float             +listcmds          +multi_lang        +ruby/dyn          +terminfo          +wildmenu
++autocmd           +cryptv            +folding           +localmap          -mzscheme          +scrollbind        +termresponse      +windows
++autochdir         +cscope            -footer            +lua/dyn           +netbeans_intg     +signs             +textobjects       +writebackup
+-autoservername    +cursorbind        +fork()            +menu              +num64             +smartindent       +textprop          -X11
+-balloon_eval      +cursorshape       +gettext           +mksession         +packages          -sodium            +timers            -xfontset
++balloon_eval_term +dialog_con        -hangul_input      +modify_fname      +path_extra        -sound             +title             -xim
+-browse            +diff              +iconv             +mouse             +perl/dyn          +spell             -toolbar           -xpm
+++builtin_terms    +digraphs          +insert_expand     -mouseshape        +persistent_undo   +startuptime       +user_commands     -xsmp
++byte_offset       -dnd               +ipv6              +mouse_dec         +popupwin          +statusline        +vartabs           -xterm_clipboard
++channel           -ebcdic            +job               +mouse_gpm         +postscript        -sun_workshop      +vertsplit         -xterm_save
++cindent           +emacs_tags        +jumplist          -mouse_jsbterm     +printer           +syntax            +vim9script        
+-clientserver      +eval              +keymap            +mouse_netterm     +profile           +tag_binary        +viminfo           
+-clipboard         +ex_extra          +lambda            +mouse_sgr         -python            -tag_old_static    +virtualedit       
++cmdline_compl     +extra_search      +langmap           -mouse_sysmouse    +python3/dyn       -tag_any_white     +visual            
++cmdline_hist      -farsi             +libcall           +mouse_urxvt       +quickfix          +tcl/dyn           +visualextra       
++cmdline_info      +file_in_path      +linebreak         +mouse_xterm       +reltime           +termguicolors     +vreplace          
+   system vimrc file: "/etc/vimrc"
+     user vimrc file: "$HOME/.vimrc"
+ 2nd user vimrc file: "~/.vim/vimrc"
+      user exrc file: "$HOME/.exrc"
+       defaults file: "$VIMRUNTIME/defaults.vim"
+  fall-back for $VIM: "/usr/share/vim"
+Compilation: gcc -c -I. -Iproto -DHAVE_CONFIG_H -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions -Wformat -Werror=format-security -fstack-clash-protection -fcf-protection -g -ffile-prefix-map=/build/vim/src=/usr/src/debug/vim -flto=auto -D_REENTRANT -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 
+Linking: gcc -Wl,-E -Wl,-rpath,/usr/lib/perl5/5.36/core_perl/CORE -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto=auto -L/usr/local/lib -o vim -lm -ltinfo -lelf -lacl -lattr -lgpm -Wl,-E -Wl,-rpath,/usr/lib/perl5/5.36/core_perl/CORE -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now -flto=auto -fstack-protector-strong -L/usr/local/lib -L/usr/lib/perl5/5.36/core_perl/CORE -lperl -lpthread -ldl -lm -lcrypt -lutil -lc -L/usr/lib -ltclstub8.6 -ldl -lz -lpthread -lm 
+--- Vim's :version ---
+
+
+--- Operating System ---
+"uname -a" = Linux archlinux 6.3.1-arch2-1 #1 SMP PREEMPT_DYNAMIC Wed, 10 May 2023 08:54:47 +0000 x86_64 GNU/Linux
+--- Operating System ---
+
+--- feature-list ---
+gui_running = 0
+unix = 1
+mac = 0
+macunix = 0
+win16 = 0
+win32 = 0
+win64 = 0
+win32unix = 0
+win95 = 0
+amiga = 0
+beos = 0
+dos16 = 0
+dos32 = 0
+os2 = 0
+qnx = 0
+vms = 0
+--- feature-list ---
