@@ -69,6 +69,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'neorg' },
+  {name='nerdfont'},
     -- { name = 'spell' },
     { name = 'ultisnips' },
     { name = 'emoji' },

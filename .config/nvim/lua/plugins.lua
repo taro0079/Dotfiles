@@ -190,7 +190,8 @@ require("lazy").setup({
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'f3fora/cmp-spell',
-      'hrsh7th/cmp-copilot'
+      'hrsh7th/cmp-copilot',
+      'chrisgrieser/cmp-nerdfont'
       -- 'uga-rosa/cmp-dictionary', config = function() require 'plugins.dictionary' end } #TODO
     },
     config = function()
