@@ -14,39 +14,39 @@ require("lazy").setup({
   { "folke/which-key.nvim", lazy = true },
   { "folke/zen-mode.nvim",  cmd = "ZenMode", config = true },
   "soramugi/auto-ctags.vim",
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    opts = {
-      load = {
-            ["core.defaults"] = {}, -- Loads default behaviour
-            ["core.concealer"] = {
-          config = {
-            folds = false
-          }
-        }, -- Adds pretty icons to your documents
-            ["core.completion"] = {
-          config = {
-            engine = "nvim-cmp"
-          }
-        },
-            ["core.presenter"] = {
-          config = {
-            zen_mode = "zen-mode"
-          },
-        },
-            ["core.export"] = {},
-            ["core.dirman"] = { -- Manages Neorg workspaces
-          config = {
-            workspaces = {
-              notes = "~/.nb/home/",
-            },
-          },
-        },
-      },
-    },
-    dependencies = { { "nvim-lua/plenary.nvim" } },
-  },
+  -- {
+  --   "nvim-neorg/neorg",
+  --   build = ":Neorg sync-parsers",
+  --   opts = {
+  --     load = {
+  --           ["core.defaults"] = {}, -- Loads default behaviour
+  --           ["core.concealer"] = {
+  --         config = {
+  --           folds = false
+  --         }
+  --       }, -- Adds pretty icons to your documents
+  --           ["core.completion"] = {
+  --         config = {
+  --           engine = "nvim-cmp"
+  --         }
+  --       },
+  --           ["core.presenter"] = {
+  --         config = {
+  --           zen_mode = "zen-mode"
+  --         },
+  --       },
+  --           ["core.export"] = {},
+  --           ["core.dirman"] = { -- Manages Neorg workspaces
+  --         config = {
+  --           workspaces = {
+  --             notes = "~/.nb/home/",
+  --           },
+  --         },
+  --       },
+  --     },
+  --   },
+  --   dependencies = { { "nvim-lua/plenary.nvim" } },
+  -- },
   {
     'taro0079/path_to_clipboard'
   },
