@@ -8,7 +8,7 @@ font:
   italic:
     family: FiraCode Nerd Font
     style: Italic
-  size: 13
+  size: 12
 window:
   padding:
     x: 0
