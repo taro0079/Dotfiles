@@ -362,18 +362,19 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-" let g:vim_monokai_tasty_italic=1
 colorscheme molokai
+" let g:molokai_original = 1
+" let g:vim_monokai_tasty_italic=1
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[1 q"
-set background=dark
-let g:embark_terminal_italics = 1
+" set background=dark
+" let g:embark_terminal_italics = 1
 
 " Airline setting -----------------------------{{{1
 " let g:airline#extensions#ale#enabled = 1
-" let g:airline_theme = 'molokai'
+let g:airline_theme = 'molokai'
 
 " ESKK setting ------------------------------- {{{1
 let g:eskk#directory        = "~/.config/eskk"
