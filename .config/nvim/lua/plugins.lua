@@ -77,7 +77,6 @@ require("lazy").setup({
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end
   },
-  { "folke/neoconf.nvim",   cmd = "Neoconf" },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -93,18 +92,6 @@ require("lazy").setup({
     'yuki-yano/fuzzy-motion.vim',
     dependencies = "vim-denops/denops.vim"
   },
-  -- fuzzy-motion for neovim
-  -- {
-  --   'rlane/pounce.nvim',
-  --   config = function()
-  --     require 'pounce'.setup {
-  --       accept_keys = "JFKDLSAHGNUVRBYTMICEOXWPQZ",
-  --       accept_best_key = "<enter>",
-  --       multi_window = true,
-  --       debug = false,
-  --     }
-  --   end,
-  -- },
   {
     'johmsalas/text-case.nvim',
     config = true
@@ -126,8 +113,6 @@ require("lazy").setup({
 
     }
   },
-  "folke/neodev.nvim",
-  { 'liuchengxu/vista.vim', cmd = "Vista" },
   { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
   {
     "EdenEast/nightfox.nvim",
@@ -135,34 +120,6 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       vim.cmd([[colorscheme duskfox]])
-    end,
-  },
-  -- {
-  --   'catppuccin/nvim',
-  --   name = "catppuccin",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[colorscheme catppuccin]])
-  --   end
-  -- },
-  -- {
-  --   -- 'nvimdev/zephyr-nvim',
-  --   'Mofiqul/dracula.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd([[colorscheme dracula]])
-  --   end
-  -- },
-  {
-    "cshuaimin/ssr.nvim",
-    -- init is always executed during startup, but doesn't load the plugin yet.
-    init = function()
-      vim.keymap.set({ "n", "x" }, "<leader>cR", function()
-        -- this require will automatically load the plugin
-        require("ssr").open()
-      end, { desc = "Structural Replace" })
     end,
   },
   {
@@ -286,12 +243,6 @@ require("lazy").setup({
   { "tpope/vim-rails",        ft = { "ruby" } },
   { "rust-lang/rust.vim",     ft = { "rs" } },
 
-  -- {
-  --   "nkakouros-original/numbers.nvim",
-  --   config = function()
-  --     require("numbers").setup()
-  --   end,
-  -- },
   {
     "vim-skk/skkeleton",
     dependencies = { "vim-denops/denops.vim" },
@@ -313,20 +264,11 @@ require("lazy").setup({
   },
   { "haya14busa/vim-edgemotion", event = "BufEnter" },
   { "t9md/vim-quickhl",          event = "BufEnter" },
-  -- { "tpope/vim-surround",        event = "InsertEnter" },
   { "junegunn/vim-easy-align",   event = "BufEnter" },
   {
     "petertriho/nvim-scrollbar",
     config = function()
       require("scrollbar").setup({})
-    end,
-  },
-  -- use { 'ggandor/lightspeed.nvim' } -- easymotion的ななにか
-  {
-    "folke/todo-comments.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup({})
     end,
   },
   {
@@ -345,11 +287,6 @@ require("lazy").setup({
 
   -- git
   {
-    'ruifm/gitlinker.nvim',
-    config = true,
-    dependencies = 'nvim-lua/plenary.nvim'
-  },
-  {
     'sindrets/diffview.nvim',
     dependencies = { "nvim-lua/plenary.nvim" },
   },
@@ -361,15 +298,9 @@ require("lazy").setup({
     end,
   },
   { "kdheepak/lazygit.nvim", cmd = "LazyGit" },
-  { "lambdalisue/gina.vim",  dependencies = 'vim-denops/denops.vim' },
-  { "lambdalisue/gin.vim",   dependencies = 'vim-denops/denops.vim' },
   {
     "akinsho/git-conflict.nvim",
     config = true
-  },
-  {
-    'TimUntersberger/neogit',
-    cmd = "Neogit"
   },
 
   {
@@ -378,7 +309,6 @@ require("lazy").setup({
       require("fidget").setup({})
     end,
   },
-  -- use({ "fatih/vim-go", opt = true, ft = { "go" } })
 
   -- snippets
   { "SirVer/ultisnips",         event = "InsertEnter" },
@@ -401,42 +331,10 @@ require("lazy").setup({
   { 'rinx/cmp-skkeleton',    dependencies = { 'nvim-cmp', 'skkeleton' },   event = "InsertEnter" },
 
   {
-    "fatih/vim-go", ft = { "go" }
-  },
-  -- {
-  --   "sunjon/shade.nvim", config=true
-  -- },
-  {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      local dashboard = require('dashboard')
-      local pokemon = require('pokemon')
-      pokemon.setup({
-        number = 'random',
-        size = 'auto',
-      })
-      dashboard.setup {
-        config = {
-          header = pokemon.header()
-        }
-      }
-    end,
-    dependencies = { { 'nvim-tree/nvim-web-devicons', 'ColaMint/pokemon.nvim' } },
-  },
-  {
     "monaqa/dial.nvim", event = "BufEnter", config = function() require('plugins.dial') end
   },
   {
     'mattn/emmet-vim'
-  },
-  {
-    'ldelossa/gh.nvim',
-    dependencies = 'ldelossa/litee.nvim',
-    config = function()
-      require('litee.lib').setup({})
-      require('litee.gh').setup({})
-    end
   },
   {
     "kylechui/nvim-surround",
