@@ -137,7 +137,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'lambdalisue/suda.vim'
 Plug 'yuki-yano/fuzzy-motion.vim'
 Plug 'tc50cal/vim-terminal'
-Plug 'patstockwell/vim-monokai-tasty'
+" Plug 'patstockwell/vim-monokai-tasty'
+Plug 'tomasr/molokai'
 
 call plug#end()
 
@@ -361,8 +362,8 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-let g:vim_monokai_tasty_italic=1
-colorscheme onedark
+" let g:vim_monokai_tasty_italic=1
+colorscheme molokai
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " 背景色
 let &t_SI = "\e[5 q"
@@ -372,7 +373,7 @@ let g:embark_terminal_italics = 1
 
 " Airline setting -----------------------------{{{1
 " let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'monokai_tasty'
+" let g:airline_theme = 'molokai'
 
 " ESKK setting ------------------------------- {{{1
 let g:eskk#directory        = "~/.config/eskk"
