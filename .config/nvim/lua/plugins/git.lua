@@ -1,7 +1,7 @@
 require('git').setup({
   keymaps = {
     -- Open blame window
-    blame = "<Leader>gb",
+    blame = "<Space>gb",
     -- Close blame window
     quit_blame = "q",
     -- Open blame commit

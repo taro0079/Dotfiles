@@ -86,8 +86,12 @@ require("lazy").setup({
     end,
   },
   {
-    'tpope/vim-fugitive'
+    'dinhhuy258/git.nvim',
+    config = function ()
+      require('plugins.git')
+    end
   },
+  {'tpope/vim-fugitive'},
   {
     'yuki-yano/fuzzy-motion.vim',
     dependencies = "vim-denops/denops.vim"
@@ -113,7 +117,7 @@ require("lazy").setup({
 
     }
   },
-  { 'onsails/lspkind-nvim', dependencies = "hrsh7th/nvim-cmp" },
+  { 'onsails/lspkind-nvim',   dependencies = "hrsh7th/nvim-cmp" },
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
@@ -240,8 +244,8 @@ require("lazy").setup({
     event = "InsertEnter",
   },
   { "tpope/vim-repeat" },
-  { "tpope/vim-rails",        ft = { "ruby" } },
-  { "rust-lang/rust.vim",     ft = { "rs" } },
+  { "tpope/vim-rails",    ft = { "ruby" } },
+  { "rust-lang/rust.vim", ft = { "rs" } },
 
   {
     "vim-skk/skkeleton",
