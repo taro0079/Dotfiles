@@ -14,6 +14,10 @@ require("lazy").setup({
   { "folke/which-key.nvim", lazy = true },
   { "folke/zen-mode.nvim",  cmd = "ZenMode", config = true },
   "soramugi/auto-ctags.vim",
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = true
+  },
   -- {
   --   "nvim-neorg/neorg",
   --   build = ":Neorg sync-parsers",
@@ -87,11 +91,17 @@ require("lazy").setup({
   },
   {
     'dinhhuy258/git.nvim',
-    config = function ()
+    config = function()
       require('plugins.git')
     end
   },
-  {'tpope/vim-fugitive'},
+  {
+    'TimUntersberger/neogit',
+    config = function()
+      require('plugins.neogit')
+    end
+
+  },
   {
     'yuki-yano/fuzzy-motion.vim',
     dependencies = "vim-denops/denops.vim"
@@ -301,7 +311,7 @@ require("lazy").setup({
       require("plugins.gitsign")
     end,
   },
-  { "kdheepak/lazygit.nvim", cmd = "LazyGit" },
+  { "kdheepak/lazygit.nvim",    cmd = "LazyGit" },
   {
     "akinsho/git-conflict.nvim",
     config = true
