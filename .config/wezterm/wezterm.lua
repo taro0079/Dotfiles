@@ -25,8 +25,8 @@ if mac then
       { family = 'Dank Mono',            weight = "Regular", italic = true },
       { family = 'HackGen Console NF',   weight = "Regular" }
     },
-    -- disable_default_key_bindings = true,
-    font_size = 14,
+   -- disable_default_key_bindings = true,
+    font_size = 12,
     keys = mykeys,
     color_scheme = "tokyonight",
     send_composed_key_when_right_alt_is_pressed = false,
@@ -44,8 +44,9 @@ elseif linux then
   return {
     color_scheme = "tokyonight",
     enable_tab_bar = false,
-    font = wezterm.font('VictorMono Nerd Font', { weight = 'Bold', italic = false }),
-    font_size = 12,
+    font = wezterm.font('VictorMono Nerd Font', { weight = 'Medium', italic = false }),
+    font_size = 10,
+    color_scheme = 'tokyonight',
     window_padding = {
       left = 0,
       right = 0,

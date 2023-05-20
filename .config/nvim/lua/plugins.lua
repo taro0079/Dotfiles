@@ -129,13 +129,21 @@ require("lazy").setup({
   },
   { 'onsails/lspkind-nvim',   dependencies = "hrsh7th/nvim-cmp" },
   {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme duskfox]])
-    end,
+    'folke/tokyonight.nvim',
+    lazy=false,
+    priority=1000,
+    config= function ()
+      vim.cmd([[colorscheme tokyonight]])
+    end
   },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd([[colorscheme duskfox]])
+  --   end,
+  -- },
   {
     "dstein64/vim-startuptime",
     -- lazy-load on a command
