@@ -67,13 +67,13 @@ require("lazy").setup({
       require("plugins.other")
     end
   },
-  {
-    "chentoast/marks.nvim",
-    event = "BufEnter",
-    config = function()
-      require("plugins.marks")
-    end
-  },
+  -- {
+  --   "chentoast/marks.nvim",
+  --   event = "BufEnter",
+  --   config = function()
+  --     require("plugins.marks")
+  --   end
+  -- },
   {
     "andymass/vim-matchup",
     config = function()
