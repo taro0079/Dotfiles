@@ -128,6 +128,7 @@ eval "$(zoxide init zsh)"
 export PATH="$HOME/zls:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/snap/bin:$PATH"
 # eval "$(pyenv init --path)" # これを追記
 # eval "$(pyenv init -)"
 
