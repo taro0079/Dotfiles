@@ -6,6 +6,7 @@ set title
 set tags=tags;
 " set clipboard&
 set clipboard=unnamed,unnamedplus
+set clipboard=unnamed,unnamedplus
 set showcmd
 set ruler
 set undofile
@@ -65,26 +66,23 @@ set wrap "Wrap lines"
 " => Plugins ---------------------------------- {{{1
 call plug#begin()
 " Plug 'machakann/vim-sandwich'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'taro0079/path_to_clipboard'
-Plug 'fxn/vim-monochrome'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'axvr/photon.vim'
+" Plug 'axvr/photon.vim'
 Plug 'github/copilot.vim'
 Plug 'morhetz/gruvbox'
 " Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
 " Plug 'Yggdroot/indentLine'
 " Plug 'tpope/vim-rbenv'
 " Plug 'tpope/vim-bundler'
 " Plug 'vim-utils/vim-ruby-fold'
-Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim'
-Plug 'cocopon/iceberg.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'rust-lang/rust.vim'
-Plug 'pantharshit00/vim-prisma'
-Plug 'nordtheme/vim'
+Plug 'kenn7/vim-arsync'
+Plug 'prabirshrestha/async.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'rust-lang/rust.vim'
+" Plug 'pantharshit00/vim-prisma'
 Plug 'thinca/vim-qfhl'
 Plug 'junegunn/vim-easy-align'
 Plug 'EinfachToll/DidYouMean'
@@ -95,14 +93,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'mangeshrex/everblush.vim'
-Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'soramugi/auto-ctags.vim'
 Plug 'sheerun/vim-polyglot'
 " Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-sneak'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-skk/eskk.vim'
@@ -115,10 +111,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production'  }
-Plug 'sainnhe/sonokai'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production'  }
 Plug 'kana/vim-textobj-user'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'tomasr/molokai'
@@ -141,7 +136,7 @@ set imdisable
 
 " " " unicode characters in the file autoload/float.vim
 " set encoding=utf-8
-" set hidden
+set hidden
 " set nobackup
 " set nowritebackup
 " set updatetime=300
@@ -354,7 +349,12 @@ syntax on
 " let g:gruvbox_transparent_bg = 1
 " " $TERMがxterm以外のときは以下を設定する必要がある。
 set termguicolors
-colorscheme molokai
+set background=dark
+colorscheme gruvbox
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 " let g:molokai_original = 1
 " let g:vim_monokai_tasty_italic=1
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" " 文字色
@@ -431,3 +431,39 @@ endif
 " imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 " let g:copilot_no_tab_map = v:true
 
+" rsync settings
+function! RpstWorkspaceBindings()
+  " nnoremap <C-b> :w<CR>:!rsync -avr ~/dev/rpst-develop/rspt-v2/dev/ taro_morita@dev-tmorita.precs.jp:/var/www/
+  nnoremap <C-b> :w<CR>:execute "!rsync -avr ~/html/ taro@153.120.37.176:/var/www/html/" . expand('%')
+
+
+endfunction
+
+augroup RpstBinding
+  autocmd!
+  autocmd BufRead,BufNewFile ~/test/* call RpstWorkspaceBindings()
+augroup END
+
+
+" vim-bookmark setting
+nmap <Leader><Leader> <Plug>BookmarkToggle
+nmap <Leader>i <Plug>BookmarkAnnotate
+nmap <Leader>a <Plug>BookmarkShowAll
+nmap <Leader>j <Plug>BookmarkNext
+nmap <Leader>k <Plug>BookmarkPrev
+nmap <Leader>c <Plug>BookmarkClear
+nmap <Leader>x <Plug>BookmarkClearAll
+nmap <Leader>kk <Plug>BookmarkMoveUp
+nmap <Leader>jj <Plug>BookmarkMoveDown
+nmap <Leader>g <Plug>BookmarkMoveToLine
+
+" lsp settings
+let g:lsp_diagnostics_highlights_insert_mode_enabled = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_float_cursor = 1
+let g:lsp_diagnostics_highlights_enabled = 1
+let g:lsp_diagnostics_virtual_text_align = 'after'
+hi DiagnosticError guifg=Red
+hi DiagnosticWarn  guifg=DarkOrange
+hi DiagnosticInfo  guifg=Blue
+hi DiagnosticHint  guifg=Green
