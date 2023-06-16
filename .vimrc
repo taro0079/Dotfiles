@@ -98,6 +98,8 @@ Plug 'sheerun/vim-polyglot'
 " Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'thomasfaingnaert/vim-lsp-snippets'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 " Plug 'majutsushi/tagbar'
 Plug 'justinmk/vim-sneak'
 Plug 'liuchengxu/vista.vim'
@@ -121,7 +123,7 @@ Plug 'tomasr/molokai'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/nerdfont.vim'
-Plug 'tpope/vim-dispatch'
+Plug 'mileszs/ack.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -468,3 +470,25 @@ hi DiagnosticError guifg=Red
 hi DiagnosticWarn  guifg=DarkOrange
 hi DiagnosticInfo  guifg=Blue
 hi DiagnosticHint  guifg=Green
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> gs <plug>(lsp-document-symbol-search)
+  nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+  nmap <buffer> gr <plug>(lsp-references)
+  nmap <buffer> gi <plug>(lsp-implementation)
+  nmap <buffer> gt <plug>(lsp-type-definition)
+  nmap <buffer> <leader>rn <plug>(lsp-rename)
+  nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+  nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+  nmap <buffer> K <plug>(lsp-hover)
+endfunction
+
+
+
