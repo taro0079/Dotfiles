@@ -129,6 +129,7 @@ Plug 'lambdalisue/glyph-palette.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lambdalisue/suda.vim'
 Plug 'tc50cal/vim-terminal'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()
 
@@ -490,5 +491,7 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> K <plug>(lsp-hover)
 endfunction
 
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 

@@ -6,7 +6,9 @@ vim.wo.relativenumber = true
 vim.o.smarttab = true
 vim.o.cursorline = true
 vim.o.pumblend = 20
-vim.o.clipboard = "unnamed,unnamedplus"
+if vim.fn.has("wsl") == 0 then
+  vim.o.clipboard = "unnamed,unnamedplus"
+end
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.expandtab = true
 vim.o.tabstop = 2
