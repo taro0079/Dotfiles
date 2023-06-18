@@ -28,7 +28,7 @@ if mac then
    -- disable_default_key_bindings = true,
     font_size = 12,
     keys = mykeys,
-    color_scheme = "tokyonight",
+    color_scheme = "gruvbox",
     send_composed_key_when_right_alt_is_pressed = false,
     hide_tab_bar_if_only_one_tab = true,
     window_padding = {
