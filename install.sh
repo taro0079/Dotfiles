@@ -39,26 +39,3 @@ if type "exa" > /dev/null 2>&1; then
 else 
 	cargo install exa
 fi
-
-for file in .??*
-do
-    [[ "$file" == ".git" ]] && continue
-    [[ "$file" == ".DS_Store" ]] && continue
-
-
-    if [ $file == ".config" ] ; then
-	    for f in .config/??*
-	    do
-		    ln -sfnv $HOME/Dotfiles/$f $HOME/$f
-	    done
-    # elif [ $file == ".vsnip" ] ; then
-	   #  for f in .vsnip/??*
-	   #  do
-		  #   ln -sfnv $HOME/Dotfiles/$f $HOME/$f
-	   #  done
-    else
-	    ln -sfnv $HOME/Dotfiles/$file $HOME/$file
-    fi
-done
-
-
