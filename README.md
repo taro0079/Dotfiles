@@ -1,4 +1,4 @@
-# このDotfilesは何ですか？
-もりたの環境構築ファイルです。
-このレポジトリをクローンして自分の環境に合ったshファイルを実行するたけで簡単に環境を構築できます。
+# What's this ?
+This repository is deprecated.
+See new one: https://github.com/taro0079/yadm-dotfiles
 
